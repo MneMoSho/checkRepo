@@ -17,6 +17,6 @@ public class Flight {
     @Column(name = "length")
     private int length;
 
-    @Column(name = "name")
+    @Column(name = "enddestination")
     private String endDestination;
 }
