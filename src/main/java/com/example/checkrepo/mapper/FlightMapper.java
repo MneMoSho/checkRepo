@@ -2,7 +2,6 @@ package com.example.checkrepo.mapper;
 
 import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.entities.Flight;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
