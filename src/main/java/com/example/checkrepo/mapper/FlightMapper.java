@@ -7,8 +7,12 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
-@NoArgsConstructor
 public class FlightMapper {
+
+    private FlightMapper(){
+        throw new IllegalStateException("Utility class");
+    }
+
     public static FlightDto mapToFlightDto(Flight flight) {
         return new FlightDto(
                 flight.getId(),
