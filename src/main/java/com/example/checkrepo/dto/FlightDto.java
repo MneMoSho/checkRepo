@@ -1,16 +1,39 @@
 package com.example.checkrepo.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.NoArgsConstructor;
 
-@Getter
-@Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class FlightDto {
-    private Long id;
+    private int id;
     private int length;
     private String endDestination;
+    private String startDestination;
+    public FlightDto(int id, int length,
+                     String startDestination,
+                     String endDestination){
+        this.id = id;
+        this.length = length;
+        this.startDestination = startDestination;
+        this.endDestination = endDestination;
+    }
+    @JsonProperty("id")
+    public int getId(){
+        return id;
+    }
+
+    @JsonProperty("length")
+    public int getLength() {
+        return length;
+    }
+
+    @JsonProperty("startDestination")
+    public String getStartDestination() {
+        return startDestination;
+    }
+
+    @JsonProperty("endDestination")
+    public String getEndDestination() {
+        return endDestination;
+    }
 }

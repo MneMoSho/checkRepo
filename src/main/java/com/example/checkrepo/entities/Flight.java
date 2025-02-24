@@ -8,15 +8,15 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="flights")
+@Table(name = "flights")
 public class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "length")
+    private int id;
+    @Column(nullable = false, unique = true)
     private int length;
-
-    @Column(name = "enddestination")
+    @Column(nullable = false)
+    private String startDestination;
+    @Column(nullable = false)
     private String endDestination;
 }
