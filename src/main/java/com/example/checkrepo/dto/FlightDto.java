@@ -9,16 +9,18 @@ public class FlightDto {
     private int length;
     private String endDestination;
     private String startDestination;
+
     public FlightDto(int id, int length,
                      String startDestination,
-                     String endDestination){
+                     String endDestination) {
         this.id = id;
         this.length = length;
         this.startDestination = startDestination;
         this.endDestination = endDestination;
     }
+
     @JsonProperty("id")
-    public int getId(){
+    public int getId() {
         return id;
     }
 
