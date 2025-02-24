@@ -2,10 +2,12 @@ package com.example.checkrepo.mapper;
 
 import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.entities.Flight;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@NoArgsConstructor
 public class FlightMapper {
     public static FlightDto mapToFlightDto(Flight flight) {
         return new FlightDto(
