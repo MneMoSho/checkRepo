@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class FlightLoader {
-    public List<Flight> createNewFlight(final List<Flight> listFlight) {
+    public List<Flight> createNewFlight(List<Flight> listFlight) {
         Flight flight1 = new Flight(1, 234, "Beijing", "Moscow");
         Flight flight2 = new Flight(2, 456, "Moscow", "Shanghai");
         Flight flight3 = new Flight(3, 123, "Tokyo", "Shanghai");

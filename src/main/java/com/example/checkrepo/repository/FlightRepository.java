@@ -21,19 +21,17 @@ public class FlightRepository {
         return flights.get(id);
     }
 
-    public List<Flight> getByName(final String name) { //поставил final
-        System.out.println("looking by last name");
+    public List<Flight> getByName(final String name) {
         List<Flight> bufList = new ArrayList<>();
         for (Flight flight : flights) {
-            if (flight.getEndDestination().equals(name)) { //поставил final
-                System.out.println(flight.getId());
+            if (flight.getEndDestination().equals(name)) {
                 bufList.add(flight);
             }
         }
         return bufList;
     }
 
-    public void addFlight(final Flight flight) { //поставил final
+    public void addFlight(final Flight flight) {
         flights.add(flight);
     }
 

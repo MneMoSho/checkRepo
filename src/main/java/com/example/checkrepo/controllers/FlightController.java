@@ -50,6 +50,5 @@ public class FlightController {
     @PostMapping("/addFlight")
     public void addNewFlight(@RequestBody FlightDto flightAdd) {
         flightService.addNewFlight(flightAdd);
-        System.out.println("added");
     }
 }

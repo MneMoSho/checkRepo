@@ -8,6 +8,7 @@ class CheckRepoApplicationTests {
 
     @Test
     void contextLoads() {
+        //it's checking that this method is running with no problems
     }
 
 }
