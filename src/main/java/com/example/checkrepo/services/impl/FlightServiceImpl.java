@@ -36,6 +36,10 @@ public class FlightServiceImpl {
     }
 
     public List<FlightDto> deleteFlight(int id) {
+        id -=1;
         return FlightMapper.convertDto(flightRepository.deleteFlight(id));
+    }
+    public List<FlightDto> findByRoute(String startDestination, String endDestination){
+        return FlightMapper.convertDto(flightRepository.getByRoute(startDestination, endDestination));
     }
 }

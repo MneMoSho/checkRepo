@@ -42,6 +42,13 @@ public class FlightController {
         return flightService.findByName(endDestination);
     }
 
+    @GET
+    @GetMapping("/findByRoute")
+    public List<FlightDto> getByRoute(@QueryParam("startDestination") String startDestination,
+                                      @QueryParam("endDestination") String endDestination) {
+        return flightService.findByRoute(startDestination, endDestination);
+    }
+
     @DeleteMapping("/deleteById{id}")
     public List<FlightDto> deleteById(@PathParam("id") int id) {
         return flightService.deleteFlight(id);

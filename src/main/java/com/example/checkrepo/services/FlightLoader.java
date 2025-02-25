@@ -1,4 +1,4 @@
-package com.example.checkrepo.services.dataloader;
+package com.example.checkrepo.services;
 
 import com.example.checkrepo.entities.Flight;
 import java.util.List;

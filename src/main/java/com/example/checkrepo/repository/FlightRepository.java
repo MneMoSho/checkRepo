@@ -1,7 +1,7 @@
 package com.example.checkrepo.repository;
 
 import com.example.checkrepo.entities.Flight;
-import com.example.checkrepo.services.dataloader.FlightLoader;
+import com.example.checkrepo.services.FlightLoader;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
@@ -32,11 +32,23 @@ public class FlightRepository {
     }
 
     public void addFlight(final Flight flight) {
+        flight.setId(flights.size() + 1);
         flights.add(flight);
     }
 
     public List<Flight> deleteFlight(final int numberOfFlight) {
         flights.remove(numberOfFlight);
         return flights;
+    }
+
+    public List<Flight> getByRoute(String startPoint, String endPoint) {
+        List<Flight> bufList = new ArrayList<>();
+        for (Flight flight : flights) {
+            if (flight.getStartDestination().equals(startPoint)
+                    && flight.getEndDestination().equals(endPoint)) {
+                bufList.add(flight);
+            }
+        }
+        return bufList;
     }
 }
