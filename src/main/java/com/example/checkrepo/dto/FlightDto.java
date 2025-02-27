@@ -38,4 +38,6 @@ public class FlightDto {
     public String getEndDestination() {
         return endDestination;
     }
+
+
 }
