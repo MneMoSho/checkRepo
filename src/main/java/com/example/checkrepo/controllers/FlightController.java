@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/flight")
 
 public class FlightController {
-    private final FlightServiceImpl flightService = new FlightServiceImpl();
+    private  FlightServiceImpl flightService;
 
     @GetMapping("/newFlights")
     public void createNewFlight() {
@@ -56,6 +56,7 @@ public class FlightController {
 
     @PostMapping("/addFlight")
     public void addNewFlight(@RequestBody FlightDto flightAdd) {
-        flightService.addNewFlight(flightAdd);
+        //flightService.addNewFlight(flightAdd);
+        flightService.createDbFlight(flightAdd);
     }
 }

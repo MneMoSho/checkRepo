@@ -1,7 +1,9 @@
 package com.example.checkrepo.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -14,10 +16,15 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "flight")
 public class Flight {
     @Id
     private int id;
+
+    @Column(name = "length")
     private int length;
+    @Column(name = "startdestination")
     private String startDestination;
+    @Column(name = "enddestination")
     private String endDestination;
 }
