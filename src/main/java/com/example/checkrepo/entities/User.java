@@ -5,11 +5,10 @@ import com.example.checkrepo.dto.FlightDto;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
-@Data
 @Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -17,15 +16,18 @@ import java.util.List;
 @Table(name = "usertable")
 public class User {
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "username")
     private String userName;
+    @Column(name = "email")
     private String email;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinTable(
             name = "user_flights",
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "flight_id")}
     )
-    private List<Flight> flights = new ArrayList<>();
+    private Set<Flight> flights;
 }

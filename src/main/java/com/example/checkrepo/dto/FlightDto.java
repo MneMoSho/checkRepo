@@ -1,26 +1,21 @@
 package com.example.checkrepo.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
-@NoArgsConstructor
+import java.util.HashSet;
+import java.util.Set;
+
+@AllArgsConstructor
 public class FlightDto {
-    private int id;
+    private Long id;
     private int length;
     private String endDestination;
     private String startDestination;
-
-    public FlightDto(int id, int length,
-                     String startDestination,
-                     String endDestination) {
-        this.id = id;
-        this.length = length;
-        this.startDestination = startDestination;
-        this.endDestination = endDestination;
-    }
+    private Set<UserDto> userDtos;
 
     @JsonProperty("id")
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -39,5 +34,7 @@ public class FlightDto {
         return endDestination;
     }
 
-
+   // public Set<UserDto> getUsers() {
+   //     return userDtos;
+   // }
 }

@@ -6,6 +6,7 @@ import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.repository.FlightRepository;
 import java.util.List;
+import java.util.Optional;
 
 import com.example.checkrepo.services.FlightService;
 import lombok.AllArgsConstructor;
@@ -17,42 +18,49 @@ import org.springframework.stereotype.Service;
 public class FlightServiceImpl implements FlightService {
 
     private final FlightRepository flightRepository = new FlightRepository();
+    private final FlightMapper flightMapper;
     private final FlightRep flightRep;
 
+  //  @Override
+  //  public Optional<FlightDto> findById(int id) {
+  //     // return flightMapper.toFlightDto(flightRepository.getById(id));
+  //     return flightMapper.toFlightDto(flightRep.findById(id));
+  //  }
+//
+  //  public void addNewFlight(FlightDto flightAdd) {
+  //      Flight flightNew = FlightMapper.mapToFlight(flightAdd);
+  //      flightRepository.addFlight(flightNew);
+  //  }
+//
+  //  public List<FlightDto> findByName(String name) {
+  //      return FlightMapper.convertDto(flightRepository.getByName(name));
+  //  }
+//
+  //  public List<FlightDto> getList() {
+  //      return FlightMapper.convertDto(flightRepository.getFlights());
+  //  }
+//
+  //  public List<FlightDto> deleteFlight(int id) {
+  //      id -=1;
+  //      return FlightMapper.convertDto(flightRepository.deleteFlight(id));
+  //  }
+  //  public List<FlightDto> findByRoute(String startDestination, String endDestination){
+  //      return FlightMapper.convertDto(flightRepository.getByRoute(startDestination, endDestination));
+  //  }
 
-    public void createFlight() {
-        flightRepository.createNewFlight();
-    }
-
-    public FlightDto findById(int id) {
-        id -= 1;
-        return FlightMapper.mapToFlightDto(flightRepository.getById(id));
-    }
-
-    public void addNewFlight(FlightDto flightAdd) {
-        Flight flightNew = FlightMapper.mapToFlight(flightAdd);
-        flightRepository.addFlight(flightNew);
-    }
-
-    public List<FlightDto> findByName(String name) {
-        return FlightMapper.convertDto(flightRepository.getByName(name));
-    }
-
-    public List<FlightDto> getList() {
-        return FlightMapper.convertDto(flightRepository.getFlights());
-    }
-
-    public List<FlightDto> deleteFlight(int id) {
-        id -=1;
-        return FlightMapper.convertDto(flightRepository.deleteFlight(id));
-    }
-    public List<FlightDto> findByRoute(String startDestination, String endDestination){
-        return FlightMapper.convertDto(flightRepository.getByRoute(startDestination, endDestination));
+    @Override
+    public void createDbFlight(FlightDto FlightDto) {
+        flightRep.save(flightMapper.toFlight(FlightDto));
     }
 
     @Override
-    public void createDbFlight(FlightDto Flight) {
-        flightRep.save(FlightMapper.mapToFlight(Flight));
+    public Optional<FlightDto> findById(int id) {
+        Optional<Flight> optionalById = flightRep.findById(id);
+        return optionalById.map(flightMapper::toFlightDto);
     }
 
+  //  @Override
+  //  public FlightDto getFlightById(int id) {
+  //      return flightMapper.toFlightDto(flightRep.findById(id).get());
+  //  }
 }

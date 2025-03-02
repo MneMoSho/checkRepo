@@ -1,7 +1,6 @@
 package com.example.checkrepo.repository;
 
 import com.example.checkrepo.entities.Flight;
-import com.example.checkrepo.services.FlightLoader;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
@@ -11,11 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class FlightRepository {
     private List<Flight> flights = new ArrayList<>();
-    private final FlightLoader flightLoader = new FlightLoader();
-
-    public void createNewFlight() {
-        flights = flightLoader.createNewFlight(flights);
-    }
 
     public Flight getById(final int id) {
         return flights.get(id);
@@ -32,8 +26,8 @@ public class FlightRepository {
     }
 
     public void addFlight(final Flight flight) {
-        flight.setId(flights.size() + 1);
-        flights.add(flight);
+       // flight.setId(flights.size() + 1);
+       // flights.add(flight);
     }
 
     public List<Flight> deleteFlight(final int numberOfFlight) {

@@ -7,10 +7,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 @Entity
 @Getter
 @Setter
@@ -18,8 +20,17 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name = "flight")
 public class Flight {
+
+   // public Flight(Long id, int length, String startDestination, String endDestination) {
+   //     this.id = id;
+   //     this.length = length;
+   //     this.startDestination = startDestination;
+   //     this.endDestination = endDestination;
+   // }
+
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(name = "length")
     private int length;
     @Column(name = "startdestination")
@@ -28,5 +39,5 @@ public class Flight {
     private String endDestination;
 
     @ManyToMany(mappedBy = "flights")
-    private List<User> users = new ArrayList<>();
+    private Set<User> users;
 }

@@ -1,19 +1,39 @@
 package com.example.checkrepo.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-@Getter
-@Setter
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @AllArgsConstructor
 public class UserDto {
-    @JsonProperty("id")
-    private int id;
-
-    @JsonProperty("userName")
+    private Long id;
     private String userName;
+    private String email;
+    private Set<FlightDto> flightDtos;
+
+    @JsonProperty("id")
+    public Long getId() {
+        return id;
+    }
+
+    @JsonProperty("username")
+    public String getUserName() {
+        return userName;
+    }
 
     @JsonProperty("email")
-    private String email;
+    public String getEmail() {
+        return email;
+    }
+
+    @JsonProperty("flights")
+    public Set<FlightDto> getFlights() {
+        return flightDtos;
+    }
 }

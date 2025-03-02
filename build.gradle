@@ -39,6 +39,8 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'org.hibernate:hibernate-core:6.2.0.Final'
     implementation group: 'jakarta.ws.rs', name: 'jakarta.ws.rs-api', version: '4.0.0'
+    implementation 'org.mapstruct:mapstruct:1.6.3'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
 }
 
 tasks.named('test') {
