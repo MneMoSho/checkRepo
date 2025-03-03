@@ -8,6 +8,7 @@ import com.example.checkrepo.mapper.UserMapper;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.repository.UserRepository;
 import com.example.checkrepo.services.UserService;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -30,30 +31,23 @@ public class UserServiceImpl implements UserService {
     public UserDto addingNewFlight(Long flightId, Long userId) {
         User newUser = userRepository.findById(userId).get();
         Flight newFlight = flightRep.findById(flightId).get();
+
         newUser.getFlights().add(newFlight);
-        newFlight.getUsers().add(newUser);
-
         userRepository.save(newUser);
-        flightRep.save(newFlight);
 
-        System.out.println("FFFFFFFFFF");
+         System.out.println("FFFFFFFFFF");
         for(Flight key : newUser.getFlights()) {
             System.out.println(key.getStartDestination());
         }
         System.out.println("FFFFFFFFFF");
-
         return userMapper.toUserDto(newUser);
     }
 
     @Override
+    @Transactional
     public Optional<UserDto> getUserById(Long id) {
 
         User newUser = userRepository.findById(id).get();
-
-        for(Flight key : newUser.getFlights()) {
-            System.out.println(key.getStartDestination());
-        }
-
-       return Optional.of(userMapper.toUserDto(newUser));
+        return Optional.of(userMapper.toUserDto(newUser));
     }
 }

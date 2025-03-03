@@ -2,6 +2,7 @@ package com.example.checkrepo.controllers;
 
 import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
+import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.services.impl.FlightServiceImpl;
 import com.example.checkrepo.services.impl.UserServiceImpl;
 import jakarta.websocket.server.PathParam;
@@ -38,12 +39,16 @@ public class FlightController {
     }
 
     @GetMapping("/addingNewFlight")
-    public void addingNewFlight(@QueryParam("flightId") Long flightId, @QueryParam("userId") Long userId) {
-        userService.addingNewFlight(flightId, userId);
+    public UserDto addingNewFlight(@QueryParam("flightId") Long flightId, @QueryParam("userId") Long userId) {
+       return userService.addingNewFlight(flightId, userId);
     }
 
     @GetMapping("/DisplayUser")
     public Optional<UserDto> displayUser(@QueryParam("Id") Long Id) {
+       UserDto newUser = userService.getUserById(Id).get();
+        for(FlightDto key : newUser.getFlights()) {
+            System.out.println(key.getStartDestination());
+        }
         return userService.getUserById(Id);
     }
 }

@@ -2,6 +2,7 @@ package com.example.checkrepo.mapper;
 
 import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
+import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -15,4 +16,6 @@ public interface UserMapper {
     UserDto toUserDto(User user);
     @Mapping(target = "flights", ignore = true)
     User toUser(UserDto userDto);
+    List<FlightDto> toDtoList(List<Flight> flights);
+    List<Flight> toList(List<FlightDto> flightDtos);
 }
