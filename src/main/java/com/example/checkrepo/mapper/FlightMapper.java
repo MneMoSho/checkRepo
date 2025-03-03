@@ -15,8 +15,6 @@ public interface FlightMapper {
     Flight toFlight(FlightDto flightDto);
     @Mapping(target="userDtos", source="users")
     FlightDto toFlightDto(Flight flight);
-    List<FlightDto> toFlightDtoList(List<Flight> flightList);
-    List<Flight> toFlightList(List<FlightDto> flightDtoList);
 }
 
 

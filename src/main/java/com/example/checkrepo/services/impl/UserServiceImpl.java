@@ -1,5 +1,6 @@
 package com.example.checkrepo.services.impl;
 
+import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
 import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
@@ -11,6 +12,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -25,16 +27,33 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto addingNewFlight(int flightId, int userId) {
+    public UserDto addingNewFlight(Long flightId, Long userId) {
         User newUser = userRepository.findById(userId).get();
         Flight newFlight = flightRep.findById(flightId).get();
         newUser.getFlights().add(newFlight);
+        newFlight.getUsers().add(newUser);
+
         userRepository.save(newUser);
+        flightRep.save(newFlight);
+
+        System.out.println("FFFFFFFFFF");
+        for(Flight key : newUser.getFlights()) {
+            System.out.println(key.getStartDestination());
+        }
+        System.out.println("FFFFFFFFFF");
+
         return userMapper.toUserDto(newUser);
     }
 
     @Override
-    public UserDto getUserById(int id) {
-       return userMapper.toUserDto(userRepository.findById(id).get());
+    public Optional<UserDto> getUserById(Long id) {
+
+        User newUser = userRepository.findById(id).get();
+
+        for(Flight key : newUser.getFlights()) {
+            System.out.println(key.getStartDestination());
+        }
+
+       return Optional.of(userMapper.toUserDto(newUser));
     }
 }

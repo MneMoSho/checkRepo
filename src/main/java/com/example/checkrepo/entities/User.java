@@ -5,7 +5,7 @@ import com.example.checkrepo.dto.FlightDto;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Data
@@ -29,5 +29,6 @@ public class User {
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "flight_id")}
     )
-    private Set<Flight> flights;
+
+    private Set<Flight> flights = new HashSet<>();
 }

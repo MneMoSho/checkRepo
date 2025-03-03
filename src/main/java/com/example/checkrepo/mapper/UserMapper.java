@@ -1,5 +1,6 @@
 package com.example.checkrepo.mapper;
 
+import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
 import com.example.checkrepo.entities.User;
 import org.mapstruct.Mapper;

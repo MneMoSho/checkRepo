@@ -22,34 +22,6 @@ public class FlightController {
     private final FlightServiceImpl flightService;
     private final UserServiceImpl userService;
 
-   // @GetMapping("/displayFlights")
-   // public List<FlightDto> displayAllFlights() {
-   //     return flightService.getList();
-   // }
-//
-   // @GetMapping("/{id}")
-   // public FlightDto getById(@PathParam("id") int id) {
-   //     return flightService.findById(id);
-   // }
-//
-   // @GET
-   // @GetMapping("/findByEndDestination")
-   // public List<FlightDto> getByName(@QueryParam("endDestination") String endDestination) {
-   //     return flightService.findByName(endDestination);
-   // }
-//
-   // @GET
-   // @GetMapping("/findByRoute")
-   // public List<FlightDto> getByRoute(@QueryParam("startDestination") String startDestination,
-   //                                   @QueryParam("endDestination") String endDestination) {
-   //     return flightService.findByRoute(startDestination, endDestination);
-   // }
-//
-   // @DeleteMapping("/deleteById{id}")
-   // public List<FlightDto> deleteById(@PathParam("id") int id) {
-   //     return flightService.deleteFlight(id);
-   // }
-
     @PostMapping("/addFlight")
     public void addNewFlight(@RequestBody FlightDto flightAdd) {
         flightService.createDbFlight(flightAdd);
@@ -60,24 +32,18 @@ public class FlightController {
         userService.createUser(userAdd);
     }
 
-    @GetMapping("/addingNewFlight")
-        public UserDto addingNewFlight(@QueryParam("flightId") int flightId, @QueryParam("userId") int userId) {
-        return userService.addingNewFlight(flightId, userId);
-        }
-
     @GetMapping("/{id}")
-    public Optional<FlightDto> getById(@PathParam("id") int id) {
-        System.out.println(id);
+    public Optional<FlightDto> getById(@PathParam("id") Long id) {
         return flightService.findById(id);
     }
 
-    @GetMapping("/DisplayUser")
-    public UserDto displayUser(@QueryParam("Id") int Id) {
-        return userService.getUserById(Id);
+    @GetMapping("/addingNewFlight")
+    public void addingNewFlight(@QueryParam("flightId") Long flightId, @QueryParam("userId") Long userId) {
+        userService.addingNewFlight(flightId, userId);
     }
 
-   // @GetMapping("/DisplayFlight")
-   // public FlightDto displayFlight(@RequestParam("Id") int Id) {
-   //     return flightService.getFlightById(Id);
-   // }
+    @GetMapping("/DisplayUser")
+    public Optional<UserDto> displayUser(@QueryParam("Id") Long Id) {
+        return userService.getUserById(Id);
+    }
 }

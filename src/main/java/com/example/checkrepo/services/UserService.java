@@ -1,5 +1,6 @@
 package com.example.checkrepo.services;
 
+import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,7 @@ import java.util.Optional;
 public interface UserService {
     void createUser(UserDto userDto);
 
-    UserDto addingNewFlight(int flightId, int userId);
+    UserDto addingNewFlight(Long flightId, Long userId);
 
-    UserDto getUserById(int id);
+    Optional<UserDto> getUserById(Long id);
 }

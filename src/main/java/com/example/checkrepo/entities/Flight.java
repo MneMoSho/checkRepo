@@ -1,5 +1,6 @@
 package com.example.checkrepo.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,14 +21,6 @@ import java.util.List;
 @AllArgsConstructor
 @Table(name = "flight")
 public class Flight {
-
-   // public Flight(Long id, int length, String startDestination, String endDestination) {
-   //     this.id = id;
-   //     this.length = length;
-   //     this.startDestination = startDestination;
-   //     this.endDestination = endDestination;
-   // }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -39,5 +32,5 @@ public class Flight {
     private String endDestination;
 
     @ManyToMany(mappedBy = "flights")
-    private Set<User> users;
+    private Set<User> users = new HashSet<>();
 }

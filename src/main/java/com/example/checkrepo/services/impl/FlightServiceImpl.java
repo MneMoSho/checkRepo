@@ -4,7 +4,6 @@ import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.FlightRep;
-import com.example.checkrepo.repository.FlightRepository;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +16,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class FlightServiceImpl implements FlightService {
 
-    private final FlightRepository flightRepository = new FlightRepository();
+    //private final FlightRepository flightRepository = new FlightRepository();
     private final FlightMapper flightMapper;
     private final FlightRep flightRep;
 
@@ -54,7 +53,7 @@ public class FlightServiceImpl implements FlightService {
     }
 
     @Override
-    public Optional<FlightDto> findById(int id) {
+    public Optional<FlightDto> findById(Long id) {
         Optional<Flight> optionalById = flightRep.findById(id);
         return optionalById.map(flightMapper::toFlightDto);
     }

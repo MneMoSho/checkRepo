@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface FlightService {
    void createDbFlight(FlightDto FlightDto);
 
-   Optional<FlightDto> findById(int id);
+   Optional<FlightDto> findById(Long id);
 
  //  FlightDto getFlightById(int id);
 }
