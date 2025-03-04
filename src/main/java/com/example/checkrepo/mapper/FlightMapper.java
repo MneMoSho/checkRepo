@@ -13,7 +13,7 @@ import java.util.List;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface FlightMapper {
-    @Mapping(target="users", ignore = true)
+    //@Mapping(target="users", source = "userDtos")
     Flight toFlight(FlightDto flightDto);
     @Mapping(target="userDtos", source="users")
     FlightDto toFlightDto(Flight flight);

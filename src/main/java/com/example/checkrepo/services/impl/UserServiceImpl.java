@@ -19,28 +19,28 @@ import java.util.Optional;
 @AllArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
-    private final UserMapper userMapper;
     private final FlightRep flightRep;
 
     @Override
     public void createUser(UserDto userDto) {
-        userRepository.save(userMapper.toUser(userDto));
+        userRepository.save(UserMapper.toUser(userDto));
     }
 
     @Override
     public UserDto addingNewFlight(Long flightId, Long userId) {
         User newUser = userRepository.findById(userId).get();
         Flight newFlight = flightRep.findById(flightId).get();
-
         newUser.getFlights().add(newFlight);
         userRepository.save(newUser);
 
-         System.out.println("FFFFFFFFFF");
-        for(Flight key : newUser.getFlights()) {
+        UserDto showUser = UserMapper.toUserDto(newUser);
+
+        System.out.println("FFFFFFFFFF");
+        for(FlightDto key : showUser.getFlights()) {
             System.out.println(key.getStartDestination());
         }
         System.out.println("FFFFFFFFFF");
-        return userMapper.toUserDto(newUser);
+        return showUser;
     }
 
     @Override
@@ -48,6 +48,6 @@ public class UserServiceImpl implements UserService {
     public Optional<UserDto> getUserById(Long id) {
 
         User newUser = userRepository.findById(id).get();
-        return Optional.of(userMapper.toUserDto(newUser));
+        return Optional.of(UserMapper.toUserDto(newUser));
     }
 }
