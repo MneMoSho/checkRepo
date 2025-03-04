@@ -12,5 +12,9 @@ public interface UserService {
 
     UserDto addingNewFlight(Long flightId, Long userId);
 
-    Optional<UserDto> getUserById(Long id);
+    UserDto getUserById(Long id);
+
+    List<UserDto> getAllUsers();
+
+    void deleteById(Long id);
 }

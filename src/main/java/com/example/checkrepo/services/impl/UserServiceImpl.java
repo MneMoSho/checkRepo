@@ -12,6 +12,7 @@ import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,22 +33,28 @@ public class UserServiceImpl implements UserService {
         Flight newFlight = flightRep.findById(flightId).get();
         newUser.getFlights().add(newFlight);
         userRepository.save(newUser);
-
         UserDto showUser = UserMapper.toUserDto(newUser);
-
-        System.out.println("FFFFFFFFFF");
-        for(FlightDto key : showUser.getFlights()) {
-            System.out.println(key.getStartDestination());
-        }
-        System.out.println("FFFFFFFFFF");
         return showUser;
     }
 
     @Override
     @Transactional
-    public Optional<UserDto> getUserById(Long id) {
+    public UserDto getUserById(Long id) {
+        User newUser;
+        if(userRepository.existsById(id)) {
+            newUser = userRepository.findById(id).get();
+            return UserMapper.toUserDto(newUser);
+        }
+        return null;
+    }
 
-        User newUser = userRepository.findById(id).get();
-        return Optional.of(UserMapper.toUserDto(newUser));
+    @Override
+    public List<UserDto> getAllUsers() {
+       return UserMapper.toDtoList(userRepository.findAll());
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        userRepository.deleteById(id);
     }
 }

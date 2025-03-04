@@ -1,19 +1,13 @@
 package com.example.checkrepo.mapper;
 
-import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
-import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.UtilityClass;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingConstants;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Getter
@@ -27,7 +21,7 @@ public class UserMapper {
         userDto.setEmail(user.getEmail());
         System.out.println("I'm there");
         if(user.getFlights() != null) {
-            userDto.setFlightDtos(user.getFlights().stream().map(testClass::toDtoShallow).collect(Collectors.toSet()));
+            userDto.setFlightDtos(user.getFlights().stream().map(FlightMapper::toDtoShallow).collect(Collectors.toSet()));
         }
         return userDto;
     }
@@ -44,5 +38,21 @@ public class UserMapper {
         user.setUserName(userDto.getUserName());
         user.setEmail(userDto.getEmail());
         return user;
+    }
+
+    public List<UserDto> toDtoList(List<User> userList) {
+        List<UserDto> dtoList = new ArrayList<>();
+        for(User source : userList) {
+            dtoList.add(UserMapper.toUserDto(source));
+        }
+        return dtoList;
+    }
+
+    public List<User> toEntityList(List<UserDto> userDtoList) {
+        List<User> list = new ArrayList<>();
+        for(UserDto source : userDtoList) {
+            list.add(UserMapper.toUser(source));
+        }
+        return list;
     }
 }

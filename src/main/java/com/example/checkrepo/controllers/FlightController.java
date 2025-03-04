@@ -28,27 +28,13 @@ public class FlightController {
         flightService.createDbFlight(flightAdd);
     }
 
-    @PostMapping("/newUser")
-    public void newUser(@RequestBody UserDto userAdd) {
-        userService.createUser(userAdd);
-    }
-
-    @GetMapping("/{id}")
-    public Optional<FlightDto> getById(@PathParam("id") Long id) {
+        @GetMapping("/{id}")
+    public Optional<FlightDto> getById(@PathVariable Long id) {
         return flightService.findById(id);
     }
 
-    @GetMapping("/addingNewFlight")
+    @PutMapping("/addingFlight")
     public UserDto addingNewFlight(@QueryParam("flightId") Long flightId, @QueryParam("userId") Long userId) {
        return userService.addingNewFlight(flightId, userId);
-    }
-
-    @GetMapping("/DisplayUser")
-    public Optional<UserDto> displayUser(@QueryParam("Id") Long Id) {
-       UserDto newUser = userService.getUserById(Id).get();
-        for(FlightDto key : newUser.getFlights()) {
-            System.out.println(key.getStartDestination());
-        }
-        return userService.getUserById(Id);
     }
 }

@@ -33,6 +33,6 @@ public class Flight {
     @Column(name = "enddestination")
     private String endDestination;
 
-    @ManyToMany(mappedBy = "flights")
+    @ManyToMany(mappedBy = "flights", fetch = FetchType.LAZY)
     private Set<User> users = new HashSet<>();
 }
