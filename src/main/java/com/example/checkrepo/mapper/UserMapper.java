@@ -28,6 +28,7 @@ public class UserMapper {
 
     public UserDto toDtoShallow(User user) {
         UserDto dto = new UserDto();
+        dto.setId(user.getId());
         dto.setUserName(user.getUserName());
         dto.setEmail(user.getEmail());
         return dto;

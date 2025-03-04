@@ -33,8 +33,7 @@ public class UserServiceImpl implements UserService {
         Flight newFlight = flightRep.findById(flightId).get();
         newUser.getFlights().add(newFlight);
         userRepository.save(newUser);
-        UserDto showUser = UserMapper.toUserDto(newUser);
-        return showUser;
+        return UserMapper.toUserDto(newUser);
     }
 
     @Override

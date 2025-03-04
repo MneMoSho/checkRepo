@@ -20,7 +20,7 @@ public class FlightMapper {
         dto.setId(flight.getId());
         dto.setStartDestination(flight.getStartDestination());
         dto.setEndDestination(flight.getEndDestination());
-        System.out.println("I'm there");
+        System.out.println(flight.getId());
         if(flight.getUsers() != null) {
             dto.setUserDtos(flight.getUsers().stream().map(UserMapper::toDtoShallow).collect(Collectors.toSet()));
         }
@@ -29,6 +29,7 @@ public class FlightMapper {
 
     public FlightDto toDtoShallow(Flight flight) {
         FlightDto dto = new FlightDto();
+        dto.setId(flight.getId());
         dto.setStartDestination(flight.getStartDestination());
         dto.setEndDestination(flight.getEndDestination());
         dto.setLength(flight.getLength());
