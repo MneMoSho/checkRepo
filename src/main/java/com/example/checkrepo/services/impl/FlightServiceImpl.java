@@ -5,6 +5,7 @@ import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.FlightRep;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,5 +38,16 @@ public class FlightServiceImpl implements FlightService {
     public Optional<FlightDto> findById(Long id) {
         Optional<Flight> optionalById = flightRepository.findById(id);
         return optionalById.map(FlightMapper::toFlightDto);
+    }
+
+    @Override
+    public List<FlightDto> getByStartDest(String startName) {
+        List<Flight> startList = new ArrayList<>();
+        for(Flight source : flightRepository.findAll()) {
+            if(source.getStartDestination().equals(startName)) {
+                startList.add(source);
+            }
+        }
+        return FlightMapper.toDtoList(startList);
     }
 }

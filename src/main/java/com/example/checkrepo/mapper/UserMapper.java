@@ -21,12 +21,12 @@ public class UserMapper {
         userDto.setEmail(user.getEmail());
         System.out.println("I'm there");
         if(user.getFlights() != null) {
-            userDto.setFlightDtos(user.getFlights().stream().map(FlightMapper::toDtoShallow).collect(Collectors.toSet()));
+            userDto.setFlightDtos(user.getFlights().stream().map(FlightMapper::toFlightDtoShallow).collect(Collectors.toSet()));
         }
         return userDto;
     }
 
-    public UserDto toDtoShallow(User user) {
+    public UserDto toUserDtoShallow(User user) {
         UserDto dto = new UserDto();
         dto.setId(user.getId());
         dto.setUserName(user.getUserName());

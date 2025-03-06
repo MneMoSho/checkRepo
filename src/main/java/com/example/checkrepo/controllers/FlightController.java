@@ -44,4 +44,9 @@ public class FlightController {
     public UserDto addingNewFlight(@QueryParam("flightId") Long flightId, @QueryParam("userId") Long userId) {
        return userService.addingNewFlight(flightId, userId);
     }
+
+    @GetMapping("/getByStart")
+    public List<FlightDto> getBySameStart(@QueryParam("startingPoint") String flightStart) {
+        return flightService.getByStartDest(flightStart);
+    }
 }

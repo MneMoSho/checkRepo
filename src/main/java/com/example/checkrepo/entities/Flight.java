@@ -1,20 +1,12 @@
 package com.example.checkrepo.entities;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.HashSet;
 import java.util.Set;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
@@ -32,6 +24,10 @@ public class Flight {
     private String startDestination;
     @Column(name = "enddestination")
     private String endDestination;
+
+    @ManyToOne
+    @JoinColumn(name = "flightComp_id", nullable = false)
+    private FlightCompany flightCompany;
 
     @ManyToMany(mappedBy = "flights", fetch = FetchType.LAZY)
     private Set<User> users = new HashSet<>();
