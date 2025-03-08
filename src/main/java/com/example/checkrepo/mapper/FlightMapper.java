@@ -1,11 +1,7 @@
 package com.example.checkrepo.mapper;
 
 import com.example.checkrepo.dto.FlightDto;
-import com.example.checkrepo.dto.FlightDto;
-import com.example.checkrepo.dto.UserDto;
 import com.example.checkrepo.entities.Flight;
-import com.example.checkrepo.entities.Flight;
-import com.example.checkrepo.entities.User;
 import lombok.experimental.UtilityClass;
 
 import java.util.ArrayList;
@@ -18,16 +14,17 @@ public class FlightMapper {
     public FlightDto toFlightDto(Flight flight) {
         FlightDto dto = new FlightDto();
         dto.setId(flight.getId());
+        dto.setLength(flight.getLength());
         dto.setStartDestination(flight.getStartDestination());
         dto.setEndDestination(flight.getEndDestination());
         System.out.println(flight.getId());
         if(flight.getUsers() != null) {
-            dto.setUserDtos(flight.getUsers().stream().map(UserMapper::toDtoShallow).collect(Collectors.toSet()));
+            dto.setUserDtos(flight.getUsers().stream().map(UserMapper::toUserDtoShallow).collect(Collectors.toSet()));
         }
         return dto;
     }
 
-    public FlightDto toDtoShallow(Flight flight) {
+    public FlightDto toFlightDtoShallow(Flight flight) {
         FlightDto dto = new FlightDto();
         dto.setId(flight.getId());
         dto.setStartDestination(flight.getStartDestination());
@@ -38,6 +35,7 @@ public class FlightMapper {
 
     public Flight toEntity(FlightDto flightDto) {
         Flight flight= new Flight();
+        flight.setLength(flightDto.getLength());
         flight.setStartDestination(flightDto.getStartDestination());
         flight.setEndDestination(flightDto.getEndDestination());
         flight.setId(flightDto.getId());

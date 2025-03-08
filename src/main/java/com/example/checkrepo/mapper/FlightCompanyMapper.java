@@ -13,24 +13,25 @@ public class FlightCompanyMapper {
 
     public FlightCompanyDto toFlightCompanyDto(FlightCompany flightCompany) {
         FlightCompanyDto dto = new FlightCompanyDto();
+        dto.setCompanyId(flightCompany.getId());
         dto.setCompanyName(flightCompany.getCompanyName());
         if (flightCompany.getFlights() != null) {
-            dto.setFlights(flightCompany.getFlights().stream().map(FlightMapper::toFlightDtoShallow).collect(Collectors.toSet()));
+            dto.setFlights(flightCompany.getFlights().stream().map(FlightMapper::toFlightDto).collect(Collectors.toSet()));
         }
         return dto;
     }
 
-    public FlightCompanyDto toDtoShallow(FlightCompany flight) {
+    public FlightCompanyDto toDtoShallow(FlightCompany flightCompany) {
         FlightCompanyDto dto = new FlightCompanyDto();
-        dto.setId(flight.getId());
-        dto.setCompanyName(flight.getCompanyName());
+        dto.setCompanyId(flightCompany.getId());
+        dto.setCompanyName(flightCompany.getCompanyName());
         return dto;
     }
 
     public FlightCompany toEntity(FlightCompanyDto flightCompanyDto) {
         FlightCompany flightCompany = new FlightCompany();
         flightCompany.setCompanyName(flightCompanyDto.getCompanyName());
-        flightCompany.setId(flightCompanyDto.getId());
+        flightCompany.setId(flightCompanyDto.getCompanyId());
         return flightCompany;
     }
 

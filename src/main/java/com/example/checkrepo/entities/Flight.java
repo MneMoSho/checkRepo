@@ -24,9 +24,9 @@ public class Flight {
     private String startDestination;
     @Column(name = "enddestination")
     private String endDestination;
+    @ManyToOne(fetch = FetchType.LAZY)
 
-    @ManyToOne
-    @JoinColumn(name = "flightComp_id", nullable = false)
+    @JoinColumn(name = "companies_id")
     private FlightCompany flightCompany;
 
     @ManyToMany(mappedBy = "flights", fetch = FetchType.LAZY)

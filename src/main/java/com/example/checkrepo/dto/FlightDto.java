@@ -12,9 +12,13 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FlightDto {
+    @JsonProperty("id")
     private Long id;
+    @JsonProperty("length")
     private int length;
+    @JsonProperty("endDestination")
     private String endDestination;
+    @JsonProperty("startDestination")
     private String startDestination;
 
     @JsonProperty("users")

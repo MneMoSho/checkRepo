@@ -2,6 +2,7 @@ package com.example.checkrepo.services.impl;
 
 import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.entities.Flight;
+import com.example.checkrepo.entities.User;
 import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.FlightRep;
 
@@ -31,6 +32,14 @@ public class FlightServiceImpl implements FlightService {
 
     @Override
     public void deleteFlight(Long id) {
+        for(Flight sourceFlight : flightRepository.findAll()) {
+            if(sourceFlight.getId().equals(id)) {
+                for(User sourceUser : sourceFlight.getUsers()) {
+                    sourceUser.getFlights().remove(sourceFlight);
+                    sourceFlight.getUsers().remove(sourceUser);
+                }
+            }
+        }
         flightRepository.deleteById(id);
     }
 
