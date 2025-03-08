@@ -10,6 +10,7 @@ import com.example.checkrepo.repository.FlightCompanyRepository;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.services.FlightCompanyService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.lang.invoke.SwitchPoint;
@@ -46,10 +47,7 @@ public class FlightCompanyServiceImpl implements FlightCompanyService {
 
     @Override
     public void deleteCompany(Long id) {
-        ;
         System.out.println(id);
-        //for (Flight sourceFlight : flightRepository.findAll()) {
-
         for (FlightCompany companySource : flightCompanyRepository.findAll()) {
             if (companySource.getId().equals(id)) {
                 for(Flight flightSource : companySource.getFlights()) {
@@ -64,10 +62,5 @@ public class FlightCompanyServiceImpl implements FlightCompanyService {
             }
         }
     }
-
-   // @Override
-   // public List<FlightDto> getByQueryParam(String companyName, Long destLength) {
-   //
-   // }
 }
 

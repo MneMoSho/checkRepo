@@ -59,4 +59,14 @@ public class FlightServiceImpl implements FlightService {
         }
         return FlightMapper.toDtoList(startList);
     }
+
+    @Override
+    public List<FlightDto> getByQueryParam(String companyName, Long maxLength) {
+
+        System.out.println(companyName);
+
+        List<Flight> flightList = flightRepository.findByCompany(companyName, maxLength);
+        System.out.println(flightList.get(0).getFlightCompany());
+        return FlightMapper.toDtoList(flightList);
+    }
 }

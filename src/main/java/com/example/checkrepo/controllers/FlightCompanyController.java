@@ -31,11 +31,6 @@ public class FlightCompanyController {
         return flightCompanyService.showAll();
     }
 
-   // @GetMapping("/selectByparametres")
-   // public List<FlightDto> selectByParametres(@QueryParam("CompanyName") String companyName, @QueryParam("distanceLess") String distance) {
-   //     //return
-   // }
-
     @DeleteMapping("/{CompanyId}")
     public void deleteById(@PathVariable Long CompanyId) {
         flightCompanyService.deleteCompany(CompanyId);

@@ -49,4 +49,10 @@ public class FlightController {
     public List<FlightDto> getBySameStart(@QueryParam("startingPoint") String flightStart) {
         return flightService.getByStartDest(flightStart);
     }
+
+    @GetMapping("/selectByParametres")
+    public List <FlightDto> selectByParametres(@QueryParam("companyName") String companyName, @QueryParam("maxLength") Long maxLength) {
+        System.out.println(companyName);
+        return flightService.getByQueryParam(companyName, maxLength);
+    }
 }

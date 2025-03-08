@@ -15,4 +15,7 @@ public interface FlightService {
    List<FlightDto> displayAll();
 
    List<FlightDto> getByStartDest(String startName);
+
+
+   List <FlightDto> getByQueryParam(String companyName, Long maxLength);
 }

@@ -16,6 +16,4 @@ public interface FlightCompanyService {
     List<FlightCompanyDto> showAll();
 
     void deleteCompany(Long id);
-
-  //  List<FlightDto> getByQueryParam(String companyName, Long destLength);
 }
