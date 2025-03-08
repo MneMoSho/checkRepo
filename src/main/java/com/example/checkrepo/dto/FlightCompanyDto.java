@@ -16,6 +16,6 @@ public class FlightCompanyDto {
     private Long companyId;
     @JsonProperty("companyName")
     private String companyName;
-    @JsonProperty("flightsCompany")
+    @JsonProperty("flights")
     private Set<FlightDto> flights;
 }
