@@ -21,10 +21,8 @@ public class FlightDto {
     private String endDestination;
     @JsonProperty("startDestination")
     private String startDestination;
-
     @JsonProperty("company")
     private String flightCompany;
-
     @JsonProperty("users")
     private Set<UserDto> userDtos;
 }

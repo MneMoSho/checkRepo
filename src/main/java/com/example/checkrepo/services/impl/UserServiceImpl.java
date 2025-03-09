@@ -4,6 +4,8 @@ import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
 import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
+import com.example.checkrepo.exception.IncorrectInputException;
+import com.example.checkrepo.exception.ObjectNotFoundException;
 import com.example.checkrepo.mapper.UserMapper;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.repository.UserRepository;
@@ -24,13 +26,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createUser(UserDto userDto) {
-        userRepository.save(UserMapper.toUser(userDto));
+            userRepository.save(UserMapper.toUser(userDto));
     }
 
     @Override
     public UserDto addingNewFlight(Long flightId, Long userId) {
-        User newUser = userRepository.findById(userId).get();
-        Flight newFlight = flightRep.findById(flightId).get();
+        User newUser = userRepository.findById(userId).orElseThrow(() -> new ObjectNotFoundException("not found"));
+        Flight newFlight = flightRep.findById(flightId).orElseThrow(() -> new ObjectNotFoundException("not found"));
         newUser.getFlights().add(newFlight);
         userRepository.save(newUser);
         return UserMapper.toUserDto(newUser);
@@ -40,20 +42,24 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public UserDto getUserById(Long id) {
         User newUser;
-        if(userRepository.existsById(id)) {
+        if (userRepository.existsById(id)) {
             newUser = userRepository.findById(id).get();
             return UserMapper.toUserDto(newUser);
         }
-        return null;
+        else
+            throw new ObjectNotFoundException("not found");
     }
 
     @Override
     public List<UserDto> getAllUsers() {
-       return UserMapper.toDtoList(userRepository.findAll());
+        if (userRepository.findAll().isEmpty())
+            throw new ObjectNotFoundException("nothing can be found");
+        return UserMapper.toDtoList(userRepository.findAll());
     }
 
     @Override
     public void deleteById(Long id) {
+        userRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("not found"));
         userRepository.deleteById(id);
     }
 }

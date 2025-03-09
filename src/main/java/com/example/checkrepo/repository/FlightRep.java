@@ -15,5 +15,7 @@ public interface FlightRep extends JpaRepository<Flight, Long> {
     @Query("SELECT m from Flight m where m.flightCompany.companyName =:flightCompany AND m.length< :maxLength")
     List<Flight> findByCompany(@Param("flightCompany") String flightCompany, @Param("maxLength") Long maxLength);
 
+    @Query("SELECT m from Flight m where m.startDestination =:startDestination")
+    List<Flight> findByStartDestination(@Param("startDestination") String start);
 }
 

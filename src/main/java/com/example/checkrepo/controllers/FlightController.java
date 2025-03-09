@@ -2,6 +2,7 @@ package com.example.checkrepo.controllers;
 
 import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
+import com.example.checkrepo.exception.IncorrectInputException;
 import com.example.checkrepo.services.impl.FlightServiceImpl;
 import com.example.checkrepo.services.impl.UserServiceImpl;
 import jakarta.ws.rs.QueryParam;
@@ -51,8 +52,12 @@ public class FlightController {
     }
 
     @GetMapping("/selectByParametres")
-    public List <FlightDto> selectByParametres(@QueryParam("companyName") String companyName, @QueryParam("maxLength") Long maxLength) {
-        System.out.println(companyName);
+    public List <FlightDto> selectByParameters(@QueryParam("companyName") String companyName, @QueryParam("maxLength") Long maxLength) {
+
+        if(maxLength == null) {
+            System.out.println("TTTTTTTTTTTT");
+        }
+
         return flightService.getByQueryParam(companyName, maxLength);
     }
 }

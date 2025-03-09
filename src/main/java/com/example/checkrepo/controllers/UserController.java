@@ -21,14 +21,10 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserDto> displayUser(@PathVariable Long id) {
+    public UserDto displayUser(@PathVariable Long id) {
         System.out.println(id);
         UserDto newUser = userService.getUserById(id);
-        if (newUser == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<>(newUser, HttpStatus.OK);
-        }
+        return newUser;
     }
 
     @GetMapping("/users")

@@ -20,9 +20,6 @@ public class FlightCompany {
     @Column(name = "company_name")
     private String companyName;
 
-    @OneToMany(mappedBy = "flightCompany", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-   // @JoinTable(name = "flight_company",
-   //         joinColumns = {@JoinColumn(name = "company_id")},
-   //         inverseJoinColumns = {@JoinColumn(name = "flight_id")})
+    @OneToMany(mappedBy = "flightCompany", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     private Set<Flight> flights;
 }
