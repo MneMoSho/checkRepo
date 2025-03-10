@@ -56,7 +56,7 @@ public class FlightServiceImpl implements FlightService {
                 sourceUser.getFlights().remove(deleteFlight);
                 deleteFlight.getUsers().remove(sourceUser);
             }
-            cache.remove(id, deleteFlight);
+            cache.remove(id);
         }
         flightRepository.deleteById(id);
     }

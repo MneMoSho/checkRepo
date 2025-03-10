@@ -16,7 +16,7 @@ public class FlightCache {
         cache.putIfAbsent(key, flight);
     }
 
-    public void remove(Long key, Flight flight) {
+    public void remove(Long key) {
         cache.remove(key);
     }
 

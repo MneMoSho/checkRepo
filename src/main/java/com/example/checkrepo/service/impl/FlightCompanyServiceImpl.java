@@ -41,7 +41,7 @@ public class FlightCompanyServiceImpl implements FlightCompanyService {
     @Override
     public List<FlightCompanyDto> showAll() {
         if (flightCompanyRepository.findAll().isEmpty()) {
-            throw new ObjectNotFoundException("Company cannot be found");
+            throw new ObjectNotFoundException("Company List is empty, change parametres or search for something else ");
         }
         return FlightCompanyMapper.toDtoList(flightCompanyRepository.findAll());
     }
@@ -50,7 +50,7 @@ public class FlightCompanyServiceImpl implements FlightCompanyService {
     public void deleteCompany(Long companyId) {
         for (FlightCompany companySource : flightCompanyRepository.findAll()) {
             FlightCompany sourceFlightCompany = flightCompanyRepository.findById(companyId)
-                    .orElseThrow(() -> new ObjectNotFoundException("Company cannot be found"));
+                    .orElseThrow(() -> new ObjectNotFoundException("Company List is empty"));
             for (Flight flightSource : sourceFlightCompany.getFlights()) {
                 for (User userSource : flightSource.getUsers()) {
                     userSource.getFlights().remove(flightSource);

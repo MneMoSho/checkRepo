@@ -59,10 +59,6 @@ public class FlightController {
     @GetMapping("/selectByParametres")
     public List<FlightDto> selectByParameters(@QueryParam("companyName") String companyName,
                                                @QueryParam("maxLength") Long maxLength) {
-        if (maxLength == null) {
-            System.out.println("TTTTTTTTTTTT");
-        }
-
         return flightService.getByQueryParam(companyName, maxLength);
     }
 }

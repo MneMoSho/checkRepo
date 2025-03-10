@@ -18,7 +18,6 @@ public class UserMapper {
         userDto.setId(user.getId());
         userDto.setUserName(user.getUserName());
         userDto.setEmail(user.getEmail());
-        System.out.println("I'm there");
         if (user.getFlights() != null) {
             userDto.setFlightDtos(user.getFlights().stream()
                     .map(FlightMapper::toFlightDtoShallow).collect(Collectors.toSet()));
