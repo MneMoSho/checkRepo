@@ -21,19 +21,19 @@ import org.springframework.web.bind.annotation.RestController;
 public class FlightCompanyController {
     private FlightCompanyServiceImpl flightCompanyService;
 
-    @PostMapping("/addNew")
+    @PostMapping("/companies")
     void newCompany(@RequestBody FlightCompanyDto flightCompanyDto) {
         flightCompanyService.addFlightCompany(flightCompanyDto);
     }
 
-    @PutMapping("/assign")
+    @PutMapping("/assignFlight")
     public Optional<FlightCompanyDto> addFlightToCompany(
            @QueryParam("flightId") Long flightId,
            @QueryParam("flightCompanyId") Long flightCompanyId) {
         return flightCompanyService.addFlightToCompany(flightId, flightCompanyId);
     }
 
-    @GetMapping("/displayAll")
+    @GetMapping("/yAll")
     public List<FlightCompanyDto> displayAll() {
         return flightCompanyService.showAll();
     }

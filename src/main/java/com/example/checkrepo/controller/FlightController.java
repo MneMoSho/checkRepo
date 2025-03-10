@@ -25,7 +25,7 @@ public class FlightController {
     private final FlightServiceImpl flightService;
     private final UserServiceImpl userService;
 
-    @PostMapping("/addFlight")
+    @PostMapping("/flights")
     public void addNewFlight(@RequestBody FlightDto flightAdd) {
         flightService.createDbFlight(flightAdd);
     }
@@ -35,28 +35,28 @@ public class FlightController {
         return flightService.findById(id);
     }
 
-    @GetMapping("displayAll")
+    @GetMapping("/flights")
     public List<FlightDto> displayAllFlight() {
         return flightService.displayAll();
     }
 
-    @DeleteMapping("/remove/{id}")
+    @DeleteMapping("/{id}")
     public void deleteFlight(@PathVariable Long id) {
         flightService.deleteFlight(id);
     }
 
-    @PutMapping("/addFlightToUser")
+    @PutMapping("/assignFlightToUser")
     public UserDto addingNewFlight(@QueryParam("flightId") Long flightId,
                                    @QueryParam("userId") Long userId) {
         return userService.addingNewFlight(flightId, userId);
     }
 
-    @GetMapping("/getByStart")
+    @GetMapping("/flights/start")
     public List<FlightDto> getBySameStart(@QueryParam("startingPoint") String flightStart) {
         return flightService.getByStartDest(flightStart);
     }
 
-    @GetMapping("/selectByParametres")
+    @GetMapping("/flights/search")
     public List<FlightDto> selectByParameters(@QueryParam("companyName") String companyName,
                                                @QueryParam("maxLength") Long maxLength) {
         return flightService.getByQueryParam(companyName, maxLength);

@@ -57,7 +57,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteById(Long id) {
-        userRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("wrong enter, user can't be deleted"));
+        userRepository.findById(id).orElseThrow(()
+                -> new ObjectNotFoundException("wrong enter, user can't be deleted"));
         userRepository.deleteById(id);
     }
 }

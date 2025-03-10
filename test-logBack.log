@@ -416,3 +416,1720 @@
 148343 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
 148344 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
 148354 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+645  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 2428 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+647  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+1102 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+1154 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+1688 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1699 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1701 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1701 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1745 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1746 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 1055 ms
+1913 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1973 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+2003 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+2253 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+2286 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+2426 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@698ac187
+2427 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+2456 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2474 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+3423 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+3591 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+3876 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+4352 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+4699 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+4715 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+4719 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 4.57 seconds (process running for 5.258)
+33942 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+33942 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+33942 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 0 ms
+34084 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+34084 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+34085 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 66
+34085 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 66
+48281 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+48281 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+48281 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 8
+48281 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 8
+184299 [http-nio-8080-exec-6] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+184299 [http-nio-8080-exec-6] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+184299 [http-nio-8080-exec-6] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 3
+184299 [http-nio-8080-exec-6] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 3
+242747 [http-nio-8080-exec-7] WARN  o.h.e.jdbc.spi.SqlExceptionHelper -- SQL Error: 0, SQLState: 23505
+242747 [http-nio-8080-exec-7] ERROR o.h.e.jdbc.spi.SqlExceptionHelper -- ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "usertable_pkey"
+  Подробности: Ключ "(id)=(1)" уже существует.
+242756 [http-nio-8080-exec-7] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "usertable_pkey"
+  Подробности: Ключ "(id)=(1)" уже существует.] [insert into usertable (email,username) values (?,?)]; SQL [insert into usertable (email,username) values (?,?)]; constraint [null]] with root cause
+org.postgresql.util.PSQLException: ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "usertable_pkey"
+  Подробности: Ключ "(id)=(1)" уже существует.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:116)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:47)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:194)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:132)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:95)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:682)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:293)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:274)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:324)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:393)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:307)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:223)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:136)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:177)
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:95)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:761)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364)
+	at jdk.proxy2/jdk.proxy2.$Proxy129.persist(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:320)
+	at jdk.proxy2/jdk.proxy2.$Proxy129.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:636)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:752)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy2/jdk.proxy2.$Proxy138.save(Unknown Source)
+	at com.example.checkrepo.service.impl.UserServiceImpl.createUser(UserServiceImpl.java:24)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:723)
+	at com.example.checkrepo.service.impl.UserServiceImpl$$SpringCGLIB$$0.createUser(<generated>)
+	at com.example.checkrepo.controller.UserController.newUser(UserController.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.UserController$$SpringCGLIB$$0.newUser(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+257506 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+257512 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+257515 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+257517 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+257525 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+471  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 28468 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+473  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+872  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+914  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+1317 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1325 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1327 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1328 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1362 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1362 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 855 ms
+1472 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1509 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1534 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1730 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1749 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1852 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@698ac187
+1854 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1876 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1887 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2510 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2671 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2883 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3235 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3492 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3502 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3507 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.423 seconds (process running for 3.859)
+16221 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+16221 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+16222 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 1 ms
+16382 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+16382 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+16382 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 69
+16382 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 69
+29300 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+29300 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+29300 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 7
+29300 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 7
+44986 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+44994 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+44997 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+44998 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+45003 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+398  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 6620 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+404  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+789  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+828  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
+1192 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1199 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1201 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1201 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1246 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1246 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 804 ms
+1346 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1371 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1388 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1563 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1579 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1682 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4fea5ee0
+1684 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1708 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1720 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2316 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2466 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2660 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3013 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3342 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3353 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3357 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.27 seconds (process running for 3.666)
+6106 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+6106 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+6108 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 2 ms
+6235 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+6235 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+6236 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 58
+6236 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 58
+24783 [http-nio-8080-exec-7] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+24783 [http-nio-8080-exec-7] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+24783 [http-nio-8080-exec-7] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 3
+24783 [http-nio-8080-exec-7] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 3
+38882 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+38882 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+38883 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 3
+38883 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 3
+120692 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: [com.example.checkrepo.dto.UserDto@7e2d3b7c, com.example.checkrepo.dto.UserDto@9efa796, com.example.checkrepo.dto.UserDto@4b472705]
+120692 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: [com.example.checkrepo.dto.UserDto@7e2d3b7c, com.example.checkrepo.dto.UserDto@9efa796, com.example.checkrepo.dto.UserDto@4b472705]
+120692 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.getAll. Execution 70
+120692 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.getAll. Execution 70
+127783 [http-nio-8080-exec-8] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: com.example.checkrepo.dto.UserDto@6c8de7e3
+127783 [http-nio-8080-exec-8] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: com.example.checkrepo.dto.UserDto@6c8de7e3
+127783 [http-nio-8080-exec-8] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.displayUser. Execution 34
+127783 [http-nio-8080-exec-8] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.displayUser. Execution 34
+140531 [http-nio-8080-exec-9] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+140531 [http-nio-8080-exec-9] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+140531 [http-nio-8080-exec-9] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.addNewFlight. Execution 8
+140531 [http-nio-8080-exec-9] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.addNewFlight. Execution 8
+162199 [http-nio-8080-exec-10] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+162199 [http-nio-8080-exec-10] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+162199 [http-nio-8080-exec-10] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.addNewFlight. Execution 4
+162199 [http-nio-8080-exec-10] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.addNewFlight. Execution 4
+179660 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+179660 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+179660 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.addNewFlight. Execution 10
+179660 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.addNewFlight. Execution 10
+320296 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: com.example.checkrepo.dto.UserDto@15b40efe
+320296 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: com.example.checkrepo.dto.UserDto@15b40efe
+320296 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.displayUser. Execution 5
+320296 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.displayUser. Execution 5
+369847 [http-nio-8080-exec-5] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null
+	at com.example.checkrepo.mapper.FlightMapper.toFlightDto(FlightMapper.java:19)
+	at com.example.checkrepo.service.impl.FlightServiceImpl.findById(FlightServiceImpl.java:73)
+	at com.example.checkrepo.controller.FlightController.getById(FlightController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.FlightController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+375942 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null
+	at com.example.checkrepo.mapper.FlightMapper.toFlightDto(FlightMapper.java:19)
+	at com.example.checkrepo.service.impl.FlightServiceImpl.findById(FlightServiceImpl.java:73)
+	at com.example.checkrepo.controller.FlightController.getById(FlightController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.FlightController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+376688 [http-nio-8080-exec-9] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null
+	at com.example.checkrepo.mapper.FlightMapper.toFlightDto(FlightMapper.java:19)
+	at com.example.checkrepo.service.impl.FlightServiceImpl.findById(FlightServiceImpl.java:73)
+	at com.example.checkrepo.controller.FlightController.getById(FlightController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.FlightController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+377250 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null
+	at com.example.checkrepo.mapper.FlightMapper.toFlightDto(FlightMapper.java:19)
+	at com.example.checkrepo.service.impl.FlightServiceImpl.findById(FlightServiceImpl.java:73)
+	at com.example.checkrepo.controller.FlightController.getById(FlightController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.FlightController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+394457 [http-nio-8080-exec-7] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null
+	at com.example.checkrepo.mapper.FlightMapper.toFlightDto(FlightMapper.java:19)
+	at com.example.checkrepo.service.impl.FlightServiceImpl.findById(FlightServiceImpl.java:73)
+	at com.example.checkrepo.controller.FlightController.getById(FlightController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.FlightController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+398481 [http-nio-8080-exec-5] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null
+	at com.example.checkrepo.mapper.FlightMapper.toFlightDto(FlightMapper.java:19)
+	at com.example.checkrepo.service.impl.FlightServiceImpl.findById(FlightServiceImpl.java:73)
+	at com.example.checkrepo.controller.FlightController.getById(FlightController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.FlightController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+403105 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+403113 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+403115 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+403117 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+403121 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+464  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 16044 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+467  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+907  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+950  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+1339 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1346 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1347 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1347 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1388 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1389 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 887 ms
+1499 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1524 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1540 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1717 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1737 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1839 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4fea5ee0
+1840 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1868 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1880 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2521 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2668 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2885 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3251 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3524 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3541 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3545 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.428 seconds (process running for 3.868)
+5211 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+5211 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+5212 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 1 ms
+5284 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null
+	at com.example.checkrepo.mapper.FlightMapper.toFlightDto(FlightMapper.java:19)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at com.example.checkrepo.service.impl.FlightServiceImpl.findById(FlightServiceImpl.java:71)
+	at com.example.checkrepo.controller.FlightController.getById(FlightController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.FlightController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+236178 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+236183 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+236185 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+236188 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+236199 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+498  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 6844 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+501  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+901  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+937  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
+1298 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1305 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1306 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1306 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1350 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1351 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 807 ms
+1484 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1522 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1549 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1754 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1775 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1886 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5909ae90
+1887 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1912 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1933 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2542 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2689 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2955 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3309 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3638 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3648 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3653 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.571 seconds (process running for 3.963)
+14462 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+14462 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+14463 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 1 ms
+14550 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null
+	at com.example.checkrepo.mapper.FlightMapper.toFlightDto(FlightMapper.java:19)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at com.example.checkrepo.service.impl.FlightServiceImpl.findById(FlightServiceImpl.java:72)
+	at com.example.checkrepo.controller.FlightController.getById(FlightController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.FlightController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+29747 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+29751 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+29753 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+29754 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+29759 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+389  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 4148 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+390  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+780  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+817  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 32 ms. Found 3 JPA repository interfaces.
+1182 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1189 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1191 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1191 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1223 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1224 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 800 ms
+1333 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1364 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1382 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1536 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1553 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1649 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@70022d44
+1650 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1669 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1680 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2238 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2391 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2585 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+2956 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3252 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3263 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3268 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.182 seconds (process running for 3.564)
+5647 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+5648 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+5648 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 0 ms
+5728 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null
+	at com.example.checkrepo.mapper.FlightMapper.toFlightDto(FlightMapper.java:19)
+	at com.example.checkrepo.service.impl.FlightServiceImpl.findById(FlightServiceImpl.java:73)
+	at com.example.checkrepo.controller.FlightController.getById(FlightController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.FlightController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+9571 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+9575 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+9577 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+9578 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+9583 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+402  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 28612 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+404  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+815  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+859  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 40 ms. Found 3 JPA repository interfaces.
+1234 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1246 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1247 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1247 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1281 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1281 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 829 ms
+1387 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1416 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1434 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1600 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1616 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1717 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1029cf9
+1718 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1740 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1752 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2326 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2470 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2683 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3056 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3358 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3370 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3375 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.285 seconds (process running for 3.674)
+6436 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+6436 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+6437 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 1 ms
+6511 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null
+	at com.example.checkrepo.mapper.FlightMapper.toFlightDto(FlightMapper.java:19)
+	at com.example.checkrepo.service.impl.FlightServiceImpl.findById(FlightServiceImpl.java:73)
+	at com.example.checkrepo.controller.FlightController.getById(FlightController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.FlightController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+41536 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+41542 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+41545 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+41547 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+41553 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+418  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 20388 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+422  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+830  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+869  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
+1260 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1267 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1268 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1268 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1300 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1301 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 838 ms
+1393 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1417 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1434 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1637 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1655 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1755 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7b1c501d
+1759 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1779 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1790 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2345 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2491 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2715 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3084 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3363 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3374 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3378 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.278 seconds (process running for 3.904)
+13617 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+13617 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+13619 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 1 ms
+13699 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null
+	at com.example.checkrepo.mapper.FlightMapper.toFlightDto(FlightMapper.java:19)
+	at com.example.checkrepo.service.impl.FlightServiceImpl.findById(FlightServiceImpl.java:73)
+	at com.example.checkrepo.controller.FlightController.getById(FlightController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.FlightController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+23523 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+23528 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+23533 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+23534 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+23539 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+432  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 17708 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+436  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+865  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+903  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 32 ms. Found 3 JPA repository interfaces.
+1298 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1305 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1306 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1307 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1340 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1341 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 866 ms
+1455 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1479 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1496 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1668 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1685 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1783 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5909ae90
+1784 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1804 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1816 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2362 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2504 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2710 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3055 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3316 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3327 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3331 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.238 seconds (process running for 3.71)
+5075 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+5075 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+5076 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 0 ms
+5148 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: Optional[com.example.checkrepo.dto.FlightDto@4e1071b3]
+5148 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: Optional[com.example.checkrepo.dto.FlightDto@4e1071b3]
+5149 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.getById. Execution 48
+5149 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.getById. Execution 48
+9464 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+9470 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+9472 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+9473 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+9479 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+407  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 22524 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+409  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+776  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+812  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
+1190 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1199 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1200 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1200 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1240 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1240 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 801 ms
+1334 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1371 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1389 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1560 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1576 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1673 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7b1c501d
+1673 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1693 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1704 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2282 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2426 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2627 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+2954 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3212 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3223 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3227 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.137 seconds (process running for 3.58)
+7451 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+7451 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+7453 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 0 ms
+7523 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null
+	at com.example.checkrepo.mapper.FlightMapper.toFlightDto(FlightMapper.java:19)
+	at com.example.checkrepo.service.impl.FlightServiceImpl.findById(FlightServiceImpl.java:73)
+	at com.example.checkrepo.controller.FlightController.getById(FlightController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.FlightController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+14361 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+14365 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+14367 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+14368 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+14373 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+413  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 23268 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+419  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+777  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+814  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 32 ms. Found 3 JPA repository interfaces.
+1211 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1219 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1220 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1220 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1259 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1259 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 802 ms
+1369 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1394 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1411 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1583 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1600 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1693 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5d3b6585
+1694 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1714 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1724 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2330 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2483 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2692 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3051 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3329 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3342 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3346 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.263 seconds (process running for 3.747)
+5887 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+5887 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+5888 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 1 ms
+6007 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] -- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.checkrepo.entities.FlightCompany.getCompanyName()" because the return value of "com.example.checkrepo.entities.Flight.getFlightCompany()" is null
+	at com.example.checkrepo.mapper.FlightMapper.toFlightDto(FlightMapper.java:19)
+	at com.example.checkrepo.service.impl.FlightServiceImpl.findById(FlightServiceImpl.java:73)
+	at com.example.checkrepo.controller.FlightController.getById(FlightController.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.example.checkrepo.aspect.LoggingAspect.logExecutionTime(LoggingAspect.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.checkrepo.controller.FlightController$$SpringCGLIB$$0.getById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+10768 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+10772 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+10774 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+10775 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+10780 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+384  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 12676 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+385  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+764  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+801  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 32 ms. Found 3 JPA repository interfaces.
+1146 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1153 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1155 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1155 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1191 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1192 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 778 ms
+1286 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1311 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1329 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1510 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1526 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1623 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@65f5cae3
+1624 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1644 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1655 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2229 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2370 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2587 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+2931 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3178 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3188 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3191 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.113 seconds (process running for 3.552)
+5481 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+5481 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+5482 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 1 ms
+5643 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+5643 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+5643 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.addNewFlight. Execution 91
+5643 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.addNewFlight. Execution 91
+10644 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: Optional[com.example.checkrepo.dto.FlightDto@70102faa]
+10644 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: Optional[com.example.checkrepo.dto.FlightDto@70102faa]
+10644 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.getById. Execution 11
+10644 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.getById. Execution 11
+14633 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+14638 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+14645 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+14647 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+14650 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+403  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 13520 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+405  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+816  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+864  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 43 ms. Found 3 JPA repository interfaces.
+1236 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1246 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1248 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1248 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1292 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1293 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 852 ms
+1404 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1441 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1470 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1635 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1656 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1764 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5abbb273
+1765 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1785 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1796 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2390 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2551 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2752 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3165 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3482 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3498 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3503 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.418 seconds (process running for 3.791)
+5904 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+5904 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+5905 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 1 ms
+5994 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: []
+5994 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: []
+5994 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.getBySameStart. Execution 54
+5994 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.FlightController.getBySameStart. Execution 54
+134334 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+134339 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+134342 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+134343 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+134353 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.

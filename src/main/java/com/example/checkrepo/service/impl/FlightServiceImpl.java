@@ -65,10 +65,10 @@ public class FlightServiceImpl implements FlightService {
     public Optional<FlightDto> findById(Long id) {
         Flight foundFlight = cache.get(id);
         if (foundFlight == null) {
-            flightRepository.findById(id)
+            Flight flightById = flightRepository.findById(id)
                     .orElseThrow(() -> new ObjectNotFoundException("Flight cannot be found"));
-            cache.putIfAbsent(id, flightRepository.findById(id).get());
-            return flightRepository.findById(id).map(FlightMapper::toFlightDto);
+            cache.putIfAbsent(id, flightById);
+            return Optional.ofNullable(FlightMapper.toFlightDto(flightById));
         } else {
             return Optional.ofNullable(FlightMapper.toFlightDto(foundFlight));
         }
@@ -76,6 +76,11 @@ public class FlightServiceImpl implements FlightService {
 
     @Override
     public List<FlightDto> getByStartDest(String startName) {
+
+        List<Flight> flightList = flightRep.findByStartDestination(startName);
+        if (flightList.isEmpty()) {
+            throw new ObjectNotFoundException("List is empty");
+        }
         return FlightMapper.toDtoList(flightRep.findByStartDestination(startName));
     }
 

@@ -18,12 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     private final UserServiceImpl userService;
 
-    @PostMapping("/newUser")
+    @PostMapping("/users")
     public void newUser(@RequestBody UserDto userAdd) {
         userService.createUser(userAdd);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/users/{id}")
     public UserDto displayUser(@PathVariable Long id) {
         return userService.getUserById(id);
     }
@@ -33,7 +33,7 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/users/{id}")
     public void deleteById(@PathVariable Long id) {
         userService.deleteById(id);
     }

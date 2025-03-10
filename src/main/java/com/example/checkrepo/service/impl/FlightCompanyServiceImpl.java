@@ -41,7 +41,7 @@ public class FlightCompanyServiceImpl implements FlightCompanyService {
     @Override
     public List<FlightCompanyDto> showAll() {
         if (flightCompanyRepository.findAll().isEmpty()) {
-            throw new ObjectNotFoundException("Company List is empty, change parametres or search for something else ");
+            throw new ObjectNotFoundException("Company List is empty search for something else ");
         }
         return FlightCompanyMapper.toDtoList(flightCompanyRepository.findAll());
     }
