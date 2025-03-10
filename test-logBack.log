@@ -1,0 +1,299 @@
+387  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 296 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+389  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+767  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+807  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+1230 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1238 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1239 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1240 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1276 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1277 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 852 ms
+1378 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1419 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1436 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1607 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1624 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1728 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@698ac187
+1729 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1750 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1761 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2323 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2475 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2676 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3032 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3313 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3324 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3329 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.235 seconds (process running for 3.623)
+13195 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+13195 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+13196 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 1 ms
+13353 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+13353 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+13354 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- method executed succesfully: com.example.checkrepo.controller.UserController.newUser
+13354 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- method executed succesfully: com.example.checkrepo.controller.UserController.newUser
+13354 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.newUser. Execution 71
+13354 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.newUser. Execution 71
+31909 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+31909 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+31910 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- method executed succesfully: com.example.checkrepo.controller.UserController.newUser
+31910 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- method executed succesfully: com.example.checkrepo.controller.UserController.newUser
+31910 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.newUser. Execution 9
+31910 [http-nio-8080-exec-3] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.newUser. Execution 9
+39203 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver -- Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'id': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "rythrthrt"]
+58156 [http-nio-8080-exec-6] INFO  c.e.checkrepo.aspect.LoggingAspect -- method executed succesfully: com.example.checkrepo.controller.UserController.displayUser
+58156 [http-nio-8080-exec-6] INFO  c.e.checkrepo.aspect.LoggingAspect -- method executed succesfully: com.example.checkrepo.controller.UserController.displayUser
+81970 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+81977 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+81981 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+81983 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+81988 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+401  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 22568 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+405  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+786  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+827  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+1199 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1206 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1207 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1207 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1244 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1245 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 793 ms
+1350 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1375 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1391 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1551 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1568 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1686 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@698ac187
+1687 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1712 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1723 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2380 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2529 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2740 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3096 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3407 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3418 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3423 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.337 seconds (process running for 3.875)
+7504 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+7504 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+7505 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 1 ms
+7598 [http-nio-8080-exec-1] ERROR c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.displayUser. Execution 0
+7598 [http-nio-8080-exec-1] ERROR c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.displayUser. Execution 0
+7598 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- method executed succesfully: com.example.checkrepo.controller.UserController.displayUser
+7598 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- method executed succesfully: com.example.checkrepo.controller.UserController.displayUser
+14942 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+14946 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+14949 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+14950 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+14954 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+439  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 12452 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+440  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+961  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+1004 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+1413 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1420 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1421 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1422 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1460 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1460 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 981 ms
+1607 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1638 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1656 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1816 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1832 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1935 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4fea5ee0
+1936 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1956 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1967 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2546 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2703 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2926 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3330 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3612 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3630 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3635 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.534 seconds (process running for 3.924)
+5883 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+5883 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+5884 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 1 ms
+5990 [http-nio-8080-exec-1] ERROR c.e.checkrepo.aspect.LoggingAspect -- Exception thrown com.example.checkrepo.exception.ObjectNotFoundException: not found, 0
+5990 [http-nio-8080-exec-1] ERROR c.e.checkrepo.aspect.LoggingAspect -- Exception thrown com.example.checkrepo.exception.ObjectNotFoundException: not found, 0
+5991 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- method executed succesfully: com.example.checkrepo.controller.UserController.displayUser
+5991 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- method executed succesfully: com.example.checkrepo.controller.UserController.displayUser
+37111 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+37115 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+37118 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+37119 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+37124 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+409  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 28108 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+410  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+833  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+874  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+1304 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1312 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1313 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1313 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1353 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1354 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 905 ms
+1504 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1536 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1555 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1720 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1736 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1846 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@698ac187
+1848 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1869 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1880 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2444 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2584 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2796 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3161 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3421 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3436 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3440 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.347 seconds (process running for 3.729)
+5579 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+5580 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+5581 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 1 ms
+5668 [http-nio-8080-exec-1] ERROR c.e.checkrepo.aspect.LoggingAspect -- Exception thrown com.example.checkrepo.exception.ObjectNotFoundException: not found, 0
+5668 [http-nio-8080-exec-1] ERROR c.e.checkrepo.aspect.LoggingAspect -- Exception thrown com.example.checkrepo.exception.ObjectNotFoundException: not found, 0
+12153 [http-nio-8080-exec-3] ERROR c.e.checkrepo.aspect.LoggingAspect -- Exception thrown com.example.checkrepo.exception.ObjectNotFoundException: not found, 0
+12153 [http-nio-8080-exec-3] ERROR c.e.checkrepo.aspect.LoggingAspect -- Exception thrown com.example.checkrepo.exception.ObjectNotFoundException: not found, 0
+15674 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: com.example.checkrepo.dto.UserDto@4bb1f70e
+15674 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: com.example.checkrepo.dto.UserDto@4bb1f70e
+15674 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.displayUser. Execution 41
+15674 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.displayUser. Execution 41
+23823 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+23828 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+23831 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+23832 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+23836 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+400  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 2504 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+401  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+802  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+840  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 33 ms. Found 3 JPA repository interfaces.
+1218 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1225 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1226 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1226 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1264 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1264 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 823 ms
+1376 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1401 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1423 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1586 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1601 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1702 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6630dd28
+1703 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1722 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1733 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2300 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2440 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2645 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+2982 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3246 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3262 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3266 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.186 seconds (process running for 3.58)
+12389 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+12390 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+12391 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 1 ms
+12521 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+12521 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+12522 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.newUser. Execution 54
+12522 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.newUser. Execution 54
+45275 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+45275 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+45275 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.newUser. Execution 7
+45275 [http-nio-8080-exec-2] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.newUser. Execution 7
+58449 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+58449 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+58449 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.newUser. Execution 8
+58449 [http-nio-8080-exec-4] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.newUser. Execution 8
+65863 [http-nio-8080-exec-7] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+65863 [http-nio-8080-exec-7] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+65863 [http-nio-8080-exec-7] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.newUser. Execution 7
+65863 [http-nio-8080-exec-7] INFO  c.e.checkrepo.aspect.LoggingAspect -- Execution method: com.example.checkrepo.controller.UserController.newUser. Execution 7
+72770 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+72775 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+72777 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+72778 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+72785 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+470  [main] INFO  c.e.checkrepo.CheckRepoApplication -- Starting CheckRepoApplication using Java 23.0.2 with PID 9528 (H:\labs 4 term\PNAJAVU\checkRepo\build\classes\java\main started by Gleb in H:\labs 4 term\PNAJAVU\checkRepo)
+476  [main] INFO  c.e.checkrepo.CheckRepoApplication -- No active profile set, falling back to 1 default profile: "default"
+877  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+914  [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 33 ms. Found 3 JPA repository interfaces.
+1297 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (http)
+1305 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Initializing ProtocolHandler ["http-nio-8080"]
+1306 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+1306 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.36]
+1339 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+1339 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 826 ms
+1442 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+1468 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.6.8.Final
+1485 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+1650 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+1670 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+1801 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5f2b9da8
+1802 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+1823 [main] WARN  org.hibernate.orm.deprecation -- HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+1833 [main] INFO  o.hibernate.orm.connections.pooling -- HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2412 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2559 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+2785 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactory -- Hibernate is in classpath; If applicable, HQL parser will be used.
+3131 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+3406 [main] INFO  o.a.coyote.http11.Http11NioProtocol -- Starting ProtocolHandler ["http-nio-8080"]
+3417 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (http) with context path '/'
+3422 [main] INFO  c.e.checkrepo.CheckRepoApplication -- Started CheckRepoApplication in 3.27 seconds (process running for 3.735)
+10170 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+10170 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+10170 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 0 ms
+10304 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+10304 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- return value: null
+10304 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 56
+10304 [http-nio-8080-exec-1] INFO  c.e.checkrepo.aspect.LoggingAspect -- Executed successfully: com.example.checkrepo.controller.UserController.newUser. Execution 56
+19204 [http-nio-8080-exec-3] ERROR c.e.checkrepo.aspect.LoggingAspect -- Exception thrown com.example.checkrepo.exception.ObjectNotFoundException: not found, 0
+19204 [http-nio-8080-exec-3] ERROR c.e.checkrepo.aspect.LoggingAspect -- Exception thrown com.example.checkrepo.exception.ObjectNotFoundException: not found, 0
+33015 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete
+33019 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown -- Graceful shutdown complete
+33022 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+33023 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+33028 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
