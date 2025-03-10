@@ -1,4 +1,4 @@
-package com.example.checkrepo.services.cache;
+package com.example.checkrepo.service.cache;
 
 import com.example.checkrepo.entities.Flight;
 import org.springframework.stereotype.Service;

@@ -1,22 +1,18 @@
-package com.example.checkrepo.services.impl;
+package com.example.checkrepo.service.impl;
 
-import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
 import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
-import com.example.checkrepo.exception.IncorrectInputException;
 import com.example.checkrepo.exception.ObjectNotFoundException;
 import com.example.checkrepo.mapper.UserMapper;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.repository.UserRepository;
-import com.example.checkrepo.services.UserService;
+import com.example.checkrepo.service.UserService;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor

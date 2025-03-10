@@ -1,8 +1,7 @@
-package com.example.checkrepo.controllers;
+package com.example.checkrepo.controller;
 
 import com.example.checkrepo.dto.FlightCompanyDto;
-import com.example.checkrepo.dto.FlightDto;
-import com.example.checkrepo.services.impl.FlightCompanyServiceImpl;
+import com.example.checkrepo.service.impl.FlightCompanyServiceImpl;
 import jakarta.ws.rs.QueryParam;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

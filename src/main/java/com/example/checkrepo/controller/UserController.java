@@ -1,10 +1,8 @@
-package com.example.checkrepo.controllers;
+package com.example.checkrepo.controller;
 
 import com.example.checkrepo.dto.UserDto;
-import com.example.checkrepo.services.impl.UserServiceImpl;
+import com.example.checkrepo.service.impl.UserServiceImpl;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

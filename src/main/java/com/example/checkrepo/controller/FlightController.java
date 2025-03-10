@@ -1,10 +1,9 @@
-package com.example.checkrepo.controllers;
+package com.example.checkrepo.controller;
 
 import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
-import com.example.checkrepo.exception.IncorrectInputException;
-import com.example.checkrepo.services.impl.FlightServiceImpl;
-import com.example.checkrepo.services.impl.UserServiceImpl;
+import com.example.checkrepo.service.impl.FlightServiceImpl;
+import com.example.checkrepo.service.impl.UserServiceImpl;
 import jakarta.ws.rs.QueryParam;
 
 import java.util.List;

@@ -17,5 +17,6 @@ public class FlightCompanyDto {
     @JsonProperty("companyName")
     private String companyName;
     @JsonProperty("flights")
-    private Set<FlightDto> flights;
+    private Set<FlightDto>
+            flights;
 }

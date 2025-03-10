@@ -1,4 +1,4 @@
-package com.example.checkrepo.services;
+package com.example.checkrepo.service;
 
 import com.example.checkrepo.dto.FlightDto;
 

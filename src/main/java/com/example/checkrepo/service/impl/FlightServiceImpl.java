@@ -1,4 +1,4 @@
-package com.example.checkrepo.services.impl;
+package com.example.checkrepo.service.impl;
 
 import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.entities.Flight;
@@ -10,12 +10,11 @@ import com.example.checkrepo.exception.ObjectOutOfRangeException;
 import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.FlightRep;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.checkrepo.services.FlightService;
-import com.example.checkrepo.services.cache.FlightCache;
+import com.example.checkrepo.service.FlightService;
+import com.example.checkrepo.service.cache.FlightCache;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +25,6 @@ public class FlightServiceImpl implements FlightService {
     private final FlightRep flightRepository;
     private final FlightRep flightRep;
     private final FlightCache cache;
-    private final GlobalExceptionHandler erroHandler;
 
     @Override
     public void createDbFlight(FlightDto FlightDto) {
