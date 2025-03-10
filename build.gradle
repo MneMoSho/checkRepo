@@ -43,7 +43,7 @@ dependencies {
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '3.4.3'
     implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '8.0'
-
+    implementation group: 'ch.qos.logback', name: 'logback-access', version: '1.5.17', ext: 'pom'
 }
 
 tasks.named('test') {
