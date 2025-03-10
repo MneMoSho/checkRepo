@@ -9,10 +9,9 @@ import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.repository.UserRepository;
 import com.example.checkrepo.service.UserService;
 import jakarta.transaction.Transactional;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -22,13 +21,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createUser(UserDto userDto) {
-            userRepository.save(UserMapper.toUser(userDto));
+        userRepository.save(UserMapper.toUser(userDto));
     }
 
     @Override
     public UserDto addingNewFlight(Long flightId, Long userId) {
-        User newUser = userRepository.findById(userId).orElseThrow(() -> new ObjectNotFoundException("not found"));
-        Flight newFlight = flightRep.findById(flightId).orElseThrow(() -> new ObjectNotFoundException("not found"));
+        User newUser = userRepository.findById(userId)
+                .orElseThrow(() -> new ObjectNotFoundException("not found"));
+        Flight newFlight = flightRep.findById(flightId)
+                .orElseThrow(() -> new ObjectNotFoundException("not found"));
         newUser.getFlights().add(newFlight);
         userRepository.save(newUser);
         return UserMapper.toUserDto(newUser);
@@ -41,15 +42,16 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsById(id)) {
             newUser = userRepository.findById(id).get();
             return UserMapper.toUserDto(newUser);
-        }
-        else
+        } else {
             throw new ObjectNotFoundException("not found");
+        }
     }
 
     @Override
     public List<UserDto> getAllUsers() {
-        if (userRepository.findAll().isEmpty())
+        if (userRepository.findAll().isEmpty()) {
             throw new ObjectNotFoundException("nothing can be found");
+        }
         return UserMapper.toDtoList(userRepository.findAll());
     }
 

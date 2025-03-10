@@ -2,11 +2,10 @@ package com.example.checkrepo.mapper;
 
 import com.example.checkrepo.dto.FlightCompanyDto;
 import com.example.checkrepo.entities.FlightCompany;
-import lombok.experimental.UtilityClass;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class FlightCompanyMapper {
@@ -16,7 +15,8 @@ public class FlightCompanyMapper {
         dto.setCompanyId(flightCompany.getId());
         dto.setCompanyName(flightCompany.getCompanyName());
         if (flightCompany.getFlights() != null) {
-            dto.setFlights(flightCompany.getFlights().stream().map(FlightMapper::toFlightDto).collect(Collectors.toSet()));
+            dto.setFlights(flightCompany.getFlights().stream()
+                            .map(FlightMapper::toFlightDto).collect(Collectors.toSet()));
         }
         return dto;
     }
@@ -43,9 +43,9 @@ public class FlightCompanyMapper {
         return dtoList;
     }
 
-    public List<FlightCompany> toEntityList(List<FlightCompanyDto> FlightCompanyDtoList) {
+    public List<FlightCompany> toEntityList(List<FlightCompanyDto> flightCompanyDtoList) {
         List<FlightCompany> list = new ArrayList<>();
-        for (FlightCompanyDto source : FlightCompanyDtoList) {
+        for (FlightCompanyDto source : flightCompanyDtoList) {
             list.add(FlightCompanyMapper.toEntity(source));
         }
         return list;

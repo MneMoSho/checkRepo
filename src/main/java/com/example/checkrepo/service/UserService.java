@@ -1,7 +1,6 @@
 package com.example.checkrepo.service;
 
 import com.example.checkrepo.dto.UserDto;
-
 import java.util.List;
 
 public interface UserService {

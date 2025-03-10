@@ -2,11 +2,10 @@ package com.example.checkrepo.mapper;
 
 import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.entities.Flight;
-import lombok.experimental.UtilityClass;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class FlightMapper {
@@ -19,8 +18,9 @@ public class FlightMapper {
         dto.setEndDestination(flight.getEndDestination());
         dto.setFlightCompany(flight.getFlightCompany().getCompanyName());
         System.out.println(flight.getId());
-        if(flight.getUsers() != null) {
-            dto.setUserDtos(flight.getUsers().stream().map(UserMapper::toUserDtoShallow).collect(Collectors.toSet()));
+        if (flight.getUsers() != null) {
+            dto.setUserDtos(flight.getUsers().stream()
+                    .map(UserMapper::toUserDtoShallow).collect(Collectors.toSet()));
         }
         return dto;
     }
@@ -36,7 +36,7 @@ public class FlightMapper {
     }
 
     public Flight toEntity(FlightDto flightDto) {
-        Flight flight= new Flight();
+        Flight flight = new Flight();
         flight.setLength(flightDto.getLength());
         flight.setStartDestination(flightDto.getStartDestination());
         flight.setEndDestination(flightDto.getEndDestination());
@@ -46,7 +46,7 @@ public class FlightMapper {
 
     public List<FlightDto> toDtoList(List<Flight> flightsList) {
         List<FlightDto> dtoList = new ArrayList<>();
-        for(Flight source : flightsList) {
+        for (Flight source : flightsList) {
             dtoList.add(FlightMapper.toFlightDto(source));
         }
         return dtoList;
@@ -54,7 +54,7 @@ public class FlightMapper {
 
     public List<Flight> toEntityList(List<FlightDto> flightDtoList) {
         List<Flight> list = new ArrayList<>();
-        for(FlightDto source : flightDtoList) {
+        for (FlightDto source : flightDtoList) {
             list.add(FlightMapper.toEntity(source));
         }
         return list;

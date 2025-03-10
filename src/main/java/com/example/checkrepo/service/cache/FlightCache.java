@@ -1,9 +1,8 @@
 package com.example.checkrepo.service.cache;
 
 import com.example.checkrepo.entities.Flight;
-import org.springframework.stereotype.Service;
-
 import java.util.concurrent.ConcurrentHashMap;
+import org.springframework.stereotype.Service;
 
 @Service
 public class FlightCache {
@@ -14,7 +13,7 @@ public class FlightCache {
     }
 
     public void putIfAbsent(Long key, Flight flight) {
-        cache.putIfAbsent(key,flight);
+        cache.putIfAbsent(key, flight);
     }
 
     public void remove(Long key, Flight flight) {

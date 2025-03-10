@@ -5,12 +5,17 @@ import com.example.checkrepo.dto.UserDto;
 import com.example.checkrepo.service.impl.FlightServiceImpl;
 import com.example.checkrepo.service.impl.UserServiceImpl;
 import jakarta.ws.rs.QueryParam;
-
 import java.util.List;
 import java.util.Optional;
-
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor
 @RestController
@@ -41,8 +46,9 @@ public class FlightController {
     }
 
     @PutMapping("/addFlightToUser")
-    public UserDto addingNewFlight(@QueryParam("flightId") Long flightId, @QueryParam("userId") Long userId) {
-       return userService.addingNewFlight(flightId, userId);
+    public UserDto addingNewFlight(@QueryParam("flightId") Long flightId,
+                                   @QueryParam("userId") Long userId) {
+        return userService.addingNewFlight(flightId, userId);
     }
 
     @GetMapping("/getByStart")
@@ -51,9 +57,9 @@ public class FlightController {
     }
 
     @GetMapping("/selectByParametres")
-    public List <FlightDto> selectByParameters(@QueryParam("companyName") String companyName, @QueryParam("maxLength") Long maxLength) {
-
-        if(maxLength == null) {
+    public List<FlightDto> selectByParameters(@QueryParam("companyName") String companyName,
+                                               @QueryParam("maxLength") Long maxLength) {
+        if (maxLength == null) {
             System.out.println("TTTTTTTTTTTT");
         }
 
