@@ -17,7 +17,6 @@ public class FlightMapper {
         dto.setStartDestination(flight.getStartDestination());
         dto.setEndDestination(flight.getEndDestination());
         dto.setFlightCompany(flight.getFlightCompany().getCompanyName());
-        System.out.println(flight.getId());
         if (flight.getUsers() != null) {
             dto.setUserDtos(flight.getUsers().stream()
                     .map(UserMapper::toUserDtoShallow).collect(Collectors.toSet()));

@@ -27,9 +27,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto addingNewFlight(Long flightId, Long userId) {
         User newUser = userRepository.findById(userId)
-                .orElseThrow(() -> new ObjectNotFoundException("not found"));
+                .orElseThrow(() -> new ObjectNotFoundException("User was not found"));
         Flight newFlight = flightRep.findById(flightId)
-                .orElseThrow(() -> new ObjectNotFoundException("not found"));
+                .orElseThrow(() -> new ObjectNotFoundException("Flight was not found"));
         newUser.getFlights().add(newFlight);
         userRepository.save(newUser);
         return UserMapper.toUserDto(newUser);
@@ -43,21 +43,21 @@ public class UserServiceImpl implements UserService {
             newUser = userRepository.findById(id).get();
             return UserMapper.toUserDto(newUser);
         } else {
-            throw new ObjectNotFoundException("not found");
+            throw new ObjectNotFoundException("User is not found");
         }
     }
 
     @Override
     public List<UserDto> getAllUsers() {
         if (userRepository.findAll().isEmpty()) {
-            throw new ObjectNotFoundException("nothing can be found");
+            throw new ObjectNotFoundException("List of users is empty");
         }
         return UserMapper.toDtoList(userRepository.findAll());
     }
 
     @Override
     public void deleteById(Long id) {
-        userRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("not found"));
+        userRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("wrong enter, user can't be deleted"));
         userRepository.deleteById(id);
     }
 }
