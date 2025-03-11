@@ -5,13 +5,14 @@ import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
 import com.example.checkrepo.exception.IncorrectInputException;
 import com.example.checkrepo.exception.ObjectNotFoundException;
-import com.example.checkrepo.exception.ObjectOutOfRangeException;
 import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.service.FlightService;
 import com.example.checkrepo.service.cache.FlightCache;
+
 import java.util.List;
 import java.util.Optional;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -41,16 +42,13 @@ public class FlightServiceImpl implements FlightService {
         Flight deleteFlight = cache.get(id);
         if (deleteFlight == null) {
             Long maxValue = flightRepository.findAll().getLast().getId();
-            if (maxValue > id) {
-                Flight sourceFlight = flightRepository.findById(id)
-                        .orElseThrow(() -> new ObjectNotFoundException("cannot be found"));
-                for (User sourceUser : sourceFlight.getUsers()) {
-                    sourceUser.getFlights().remove(sourceFlight);
-                    sourceFlight.getUsers().remove(sourceUser);
-                }
-            } else {
-                throw new ObjectOutOfRangeException("Out of range");
+            Flight sourceFlight = flightRepository.findById(id)
+                    .orElseThrow(() -> new ObjectNotFoundException("cannot be found"));
+            for (User sourceUser : sourceFlight.getUsers()) {
+                sourceUser.getFlights().remove(sourceFlight);
+                sourceFlight.getUsers().remove(sourceUser);
             }
+
         } else {
             for (User sourceUser : deleteFlight.getUsers()) {
                 sourceUser.getFlights().remove(deleteFlight);

@@ -33,7 +33,7 @@ public class FlightCompanyController {
         return flightCompanyService.addFlightToCompany(flightId, flightCompanyId);
     }
 
-    @GetMapping("/yAll")
+    @GetMapping("/All")
     public List<FlightCompanyDto> displayAll() {
         return flightCompanyService.showAll();
     }

@@ -19,15 +19,6 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(ObjectOutOfRangeException.class)
-    public ResponseEntity<ErrorObject> handleOutOfRange(ObjectOutOfRangeException outOfRange) {
-        ErrorObject error = new ErrorObject();
-        error.setStatusCode(HttpStatus.NOT_FOUND.value());
-        error.setMessage(outOfRange.getMessage());
-        error.setTimestamp(new Date());
-        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
-    }
-
     @ExceptionHandler(IncorrectInputException.class)
     public ResponseEntity<ErrorObject> incorrectInputHandler(IncorrectInputException incorrect) {
         ErrorObject error = new ErrorObject();

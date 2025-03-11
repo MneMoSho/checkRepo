@@ -26,6 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto addingNewFlight(Long flightId, Long userId) {
+        System.out.println("FFFFF");
         User newUser = userRepository.findById(userId)
                 .orElseThrow(() -> new ObjectNotFoundException("User was not found"));
         Flight newFlight = flightRep.findById(flightId)
