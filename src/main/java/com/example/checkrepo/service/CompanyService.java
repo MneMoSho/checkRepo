@@ -1,7 +1,6 @@
 package com.example.checkrepo.service;
 
 import com.example.checkrepo.dto.CompanyDto;
-
 import java.util.List;
 import java.util.Optional;
 

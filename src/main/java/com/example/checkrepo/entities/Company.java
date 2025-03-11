@@ -28,7 +28,6 @@ public class Company {
     @Column(name = "company")
     private String companyName;
 
-    @OneToMany(mappedBy = "company", cascade = {CascadeType.DETACH, CascadeType.MERGE,
-        CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Flight> flights;
 }

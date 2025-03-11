@@ -1,8 +1,8 @@
 package com.example.checkrepo.service.impl;
 
 import com.example.checkrepo.dto.CompanyDto;
-import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.Company;
+import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
 import com.example.checkrepo.exception.ObjectNotFoundException;
 import com.example.checkrepo.mapper.CompanyMapper;
@@ -54,12 +54,10 @@ public class CompanyServiceImpl implements CompanyService {
         for (Flight flightSource : sourceCompany.getFlights()) {
             for (User userSource : flightSource.getUsers()) {
                 userSource.getFlights().remove(flightSource);
-                flightSource.getUsers().remove(userSource);
             }
-            sourceCompany.getFlights().remove(flightSource);
-            flightRepository.deleteById(flightSource.getId());
+            flightRepository.delete(flightSource);
         }
-        companyRepository.deleteById(companyId);
+        companyRepository.delete(sourceCompany);
     }
 }
 
