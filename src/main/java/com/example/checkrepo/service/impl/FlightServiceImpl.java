@@ -41,7 +41,6 @@ public class FlightServiceImpl implements FlightService {
     public void deleteFlight(Long id) {
         Flight deleteFlight = cache.get(id);
         if (deleteFlight == null) {
-            Long maxValue = flightRepository.findAll().getLast().getId();
             Flight sourceFlight = flightRepository.findById(id)
                     .orElseThrow(() -> new ObjectNotFoundException("cannot be found"));
             for (User sourceUser : sourceFlight.getUsers()) {
