@@ -2,7 +2,6 @@ package com.example.checkrepo.mapper;
 
 import com.example.checkrepo.dto.CompanyDto;
 import com.example.checkrepo.entities.Company;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
