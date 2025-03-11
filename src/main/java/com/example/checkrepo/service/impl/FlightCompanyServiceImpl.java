@@ -9,10 +9,8 @@ import com.example.checkrepo.mapper.FlightCompanyMapper;
 import com.example.checkrepo.repository.FlightCompanyRepository;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.service.FlightCompanyService;
-
 import java.util.List;
 import java.util.Optional;
-
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -50,7 +48,8 @@ public class FlightCompanyServiceImpl implements FlightCompanyService {
 
     @Override
     public void deleteCompany(Long companyId) {
-        FlightCompany sourceFlightCompany = flightCompanyRepository.findById(companyId).orElseThrow(() -> new ObjectNotFoundException("Not found"));
+        FlightCompany sourceFlightCompany = flightCompanyRepository
+                .findById(companyId).orElseThrow(() -> new ObjectNotFoundException("Not found"));
         for (Flight flightSource : sourceFlightCompany.getFlights()) {
             for (User userSource : flightSource.getUsers()) {
                 userSource.getFlights().remove(flightSource);
@@ -59,7 +58,7 @@ public class FlightCompanyServiceImpl implements FlightCompanyService {
             sourceFlightCompany.getFlights().remove(flightSource);
             flightRepository.deleteById(flightSource.getId());
         }
-       flightCompanyRepository.deleteById(companyId);
+        flightCompanyRepository.deleteById(companyId);
     }
 }
 

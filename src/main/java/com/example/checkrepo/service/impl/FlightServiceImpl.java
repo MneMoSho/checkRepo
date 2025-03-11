@@ -9,10 +9,8 @@ import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.service.FlightService;
 import com.example.checkrepo.service.cache.FlightCache;
-
 import java.util.List;
 import java.util.Optional;
-
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
