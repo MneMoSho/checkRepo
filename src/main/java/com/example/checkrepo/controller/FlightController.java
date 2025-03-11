@@ -19,13 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api/flight")
+@RequestMapping("/api/flights")
 
 public class FlightController {
     private final FlightServiceImpl flightService;
     private final UserServiceImpl userService;
 
-    @PostMapping("/flights")
+    @PostMapping()
     public void addNewFlight(@RequestBody FlightDto flightAdd) {
         flightService.createDbFlight(flightAdd);
     }
@@ -35,7 +35,7 @@ public class FlightController {
         return flightService.findById(id);
     }
 
-    @GetMapping("/flights")
+    @GetMapping()
     public List<FlightDto> displayAllFlight() {
         return flightService.displayAll();
     }
@@ -51,12 +51,12 @@ public class FlightController {
         return userService.addingNewFlight(flightId, userId);
     }
 
-    @GetMapping("/flights/start")
+    @GetMapping("/start")
     public List<FlightDto> getBySameStart(@QueryParam("startingPoint") String flightStart) {
         return flightService.getByStartDest(flightStart);
     }
 
-    @GetMapping("/flights/search")
+    @GetMapping("/search")
     public List<FlightDto> selectByParameters(@QueryParam("companyName") String companyName,
                                                @QueryParam("maxLength") Long maxLength) {
         return flightService.getByQueryParam(companyName, maxLength);

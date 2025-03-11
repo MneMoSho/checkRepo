@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/company")
+@RequestMapping("/api/companies")
 @AllArgsConstructor
 public class FlightCompanyController {
     private FlightCompanyServiceImpl flightCompanyService;
 
-    @PostMapping("/companies")
+    @PostMapping()
     void newCompany(@RequestBody FlightCompanyDto flightCompanyDto) {
         flightCompanyService.addFlightCompany(flightCompanyDto);
     }
@@ -33,13 +33,13 @@ public class FlightCompanyController {
         return flightCompanyService.addFlightToCompany(flightId, flightCompanyId);
     }
 
-    @GetMapping("/All")
+    @GetMapping()
     public List<FlightCompanyDto> displayAll() {
         return flightCompanyService.showAll();
     }
 
-    @DeleteMapping("/{companyId}")
-    public void deleteById(@PathVariable Long companyId) {
-        flightCompanyService.deleteCompany(companyId);
+    @DeleteMapping("/{companiesId}")
+    public void deleteById(@PathVariable Long companiesId) {
+        flightCompanyService.deleteCompany(companiesId);
     }
 }

@@ -13,27 +13,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/users")
 @AllArgsConstructor
 public class UserController {
     private final UserServiceImpl userService;
 
-    @PostMapping("/users")
+    @PostMapping()
     public void newUser(@RequestBody UserDto userAdd) {
         userService.createUser(userAdd);
     }
 
-    @GetMapping("/users/{id}")
+    @GetMapping("/{id}")
     public UserDto displayUser(@PathVariable Long id) {
         return userService.getUserById(id);
     }
 
-    @GetMapping("/users")
+    @GetMapping()
     public List<UserDto> getAll() {
         return userService.getAllUsers();
     }
 
-    @DeleteMapping("/users/{id}")
+    @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Long id) {
         userService.deleteById(id);
     }

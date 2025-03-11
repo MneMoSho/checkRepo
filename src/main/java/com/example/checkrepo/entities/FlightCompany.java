@@ -29,6 +29,6 @@ public class FlightCompany {
     private String companyName;
 
     @OneToMany(mappedBy = "flightCompany", cascade = {CascadeType.DETACH, CascadeType.MERGE,
-        CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
+        CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.LAZY)
     private Set<Flight> flights;
 }

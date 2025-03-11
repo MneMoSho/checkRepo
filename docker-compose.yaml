@@ -3,7 +3,7 @@ version: '3'
 services:
   postgres:
     image: 'postgres:13'
-    container_name: 'java-postgres'
+    container_name: 'java-postgres32432'
     ports:
       - 5432:5432
     environment:
