@@ -9,8 +9,10 @@ import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.service.FlightService;
 import com.example.checkrepo.service.cache.FlightCache;
+
 import java.util.List;
 import java.util.Optional;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,11 +23,18 @@ public class FlightServiceImpl implements FlightService {
     private final FlightRep flightRepository;
     private final FlightRep flightRep;
     private final FlightCache cache;
-private final CompanyServiceImpl company;
+    private final CompanyServiceImpl company;
+
+    private void resetCount() {
+        if(flightRepository.findAll().getFirst().getId() != 1) {
+            flightRep.resetCount(Long.valueOf(1));
+        }
+    }
 
     @Override
     public void createDbFlight(FlightDto flightDto) {
-        if(flightDto.getCompanyId() == null) {
+        resetCount();
+        if (flightDto.getCompanyId() == null) {
             throw new IncorrectInputException("Incorrect input, Id cannot be null");
         }
         flightRepository.save(FlightMapper.toEntity(flightDto));

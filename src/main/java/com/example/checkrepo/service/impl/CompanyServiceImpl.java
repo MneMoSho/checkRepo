@@ -28,11 +28,6 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public Optional<CompanyDto> addFlightToCompany(Long flightId, Long companyId) {
-
-        //System.out.println(companyRepository.findById(companyId).get().getCompanyName());
-
-        System.out.println(companyId);
-
         Company newCompany = companyRepository.findById(companyId)
                 .orElseThrow(() -> new ObjectNotFoundException("Company cannot be found"));
         newCompany.getFlights().add(flightRepository.findById(flightId)
