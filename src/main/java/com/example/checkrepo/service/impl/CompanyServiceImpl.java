@@ -53,8 +53,6 @@ public class CompanyServiceImpl implements CompanyService {
                 .findById(companyId).orElseThrow(() -> new ObjectNotFoundException("Not found"));
         for (Flight flightSource : sourceCompany.getFlights()) {
             for (User userSource : flightSource.getUsers()) {
-                System.out.println("name");
-                System.out.println(userSource.getUserName());
                 userSource.getFlights().remove(flightSource);
             }
             flightRepository.delete(flightSource);
