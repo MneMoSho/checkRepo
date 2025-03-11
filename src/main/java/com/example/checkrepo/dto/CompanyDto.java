@@ -11,10 +11,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class FlightCompanyDto {
+public class CompanyDto {
     @JsonProperty("id")
     private Long companyId;
-    @JsonProperty("companyName")
+    @JsonProperty("name")
     private String companyName;
     @JsonProperty("flights")
     private Set<FlightDto>

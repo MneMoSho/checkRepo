@@ -21,13 +21,17 @@ public class FlightServiceImpl implements FlightService {
     private final FlightRep flightRepository;
     private final FlightRep flightRep;
     private final FlightCache cache;
+private final CompanyServiceImpl company;
 
     @Override
     public void createDbFlight(FlightDto flightDto) {
+        if(flightDto.getCompanyId() == null) {
+            throw new IncorrectInputException("Incorrect input, Id cannot be null");
+        }
         flightRepository.save(FlightMapper.toEntity(flightDto));
         Flight newFlight = flightRepository.findAll().getLast();
+        company.addFlightToCompany(newFlight.getId(), flightDto.getCompanyId());
         cache.putIfAbsent(newFlight.getId(), newFlight);
-
     }
 
     @Override

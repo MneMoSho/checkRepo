@@ -36,8 +36,8 @@ public class Flight {
     @ManyToOne(fetch = FetchType.LAZY)
 
     @JoinColumn(name = "companies_id")
-    private FlightCompany flightCompany;
+    private Company company;
 
-    @ManyToMany(mappedBy = "flights", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "flights", fetch = FetchType.EAGER)
     private Set<User> users = new HashSet<>();
 }

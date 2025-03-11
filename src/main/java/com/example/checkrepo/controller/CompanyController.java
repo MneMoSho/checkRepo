@@ -1,7 +1,7 @@
 package com.example.checkrepo.controller;
 
-import com.example.checkrepo.dto.FlightCompanyDto;
-import com.example.checkrepo.service.impl.FlightCompanyServiceImpl;
+import com.example.checkrepo.dto.CompanyDto;
+import com.example.checkrepo.service.impl.CompanyServiceImpl;
 import jakarta.ws.rs.QueryParam;
 import java.util.List;
 import java.util.Optional;
@@ -18,28 +18,28 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/companies")
 @AllArgsConstructor
-public class FlightCompanyController {
-    private FlightCompanyServiceImpl flightCompanyService;
+public class CompanyController {
+    private CompanyServiceImpl companyService;
 
     @PostMapping()
-    void newCompany(@RequestBody FlightCompanyDto flightCompanyDto) {
-        flightCompanyService.addFlightCompany(flightCompanyDto);
+    void newCompany(@RequestBody CompanyDto companyDto) {
+        companyService.addFlightCompany(companyDto);
     }
 
     @PutMapping("/assignFlight")
-    public Optional<FlightCompanyDto> addFlightToCompany(
+    public Optional<CompanyDto> addFlightToCompany(
            @QueryParam("flightId") Long flightId,
-           @QueryParam("flightCompanyId") Long flightCompanyId) {
-        return flightCompanyService.addFlightToCompany(flightId, flightCompanyId);
+           @QueryParam("companyId") Long companyId) {
+        return companyService.addFlightToCompany(flightId, companyId);
     }
 
     @GetMapping()
-    public List<FlightCompanyDto> displayAll() {
-        return flightCompanyService.showAll();
+    public List<CompanyDto> displayAll() {
+        return companyService.showAll();
     }
 
     @DeleteMapping("/{companiesId}")
     public void deleteById(@PathVariable Long companiesId) {
-        flightCompanyService.deleteCompany(companiesId);
+        companyService.deleteCompany(companiesId);
     }
 }

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FlightRep extends JpaRepository<Flight, Long> {
 
-    @Query("SELECT m from Flight m where m.flightCompany.companyName =:flightCompany "
+    @Query("SELECT m from Flight m where m.company.companyName =:flightCompany "
             + "AND m.length< :maxLength")
     List<Flight> findByCompany(@Param("flightCompany") String flightCompany,
                                @Param("maxLength") Long maxLength);

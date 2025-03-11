@@ -35,7 +35,7 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH,
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH,
         CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinTable(
             name = "user_flights",

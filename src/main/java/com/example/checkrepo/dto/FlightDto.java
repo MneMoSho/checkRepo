@@ -1,6 +1,5 @@
 package com.example.checkrepo.dto;
 
-import com.example.checkrepo.entities.FlightCompany;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Set;
 import lombok.AllArgsConstructor;
@@ -21,6 +20,8 @@ public class FlightDto {
     private String endDestination;
     @JsonProperty("startDestination")
     private String startDestination;
+    @JsonProperty("companyId")
+    private Long companyId;
     @JsonProperty("company")
     private String flightCompany;
     @JsonProperty("users")

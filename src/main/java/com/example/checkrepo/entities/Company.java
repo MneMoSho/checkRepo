@@ -21,14 +21,14 @@ import lombok.Setter;
 @Setter
 @Getter
 @Table(name = "companies")
-public class FlightCompany {
+public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "company_name")
+    @Column(name = "company")
     private String companyName;
 
-    @OneToMany(mappedBy = "flightCompany", cascade = {CascadeType.DETACH, CascadeType.MERGE,
-        CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "company", cascade = {CascadeType.DETACH, CascadeType.MERGE,
+        CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     private Set<Flight> flights;
 }
