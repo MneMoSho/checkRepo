@@ -9,9 +9,21 @@ import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.service.FlightService;
 import com.example.checkrepo.service.cache.FlightCache;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -94,5 +106,16 @@ public class FlightServiceImpl implements FlightService {
             throw new ObjectNotFoundException("Company or Flight is entered wrong");
         }
         return FlightMapper.toDtoList(flightList);
+    }
+
+    @Override
+    public void getFromExcel() throws IOException {
+        String fileName = "Flights.xlsx";
+        Path excelFilepath = Paths.get("ExcelFiles", fileName);
+
+        FileInputStream excelFile = new FileInputStream(new File(excelFilepath.toString()));
+
+        List<Flight> flightList= new ArrayList<>();
+        Workbook workbook = new HSSFWorkbook(excelFile);
     }
 }

@@ -5,6 +5,8 @@ import com.example.checkrepo.dto.UserDto;
 import com.example.checkrepo.service.impl.FlightServiceImpl;
 import com.example.checkrepo.service.impl.UserServiceImpl;
 import jakarta.ws.rs.QueryParam;
+
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
@@ -60,5 +62,10 @@ public class FlightController {
     public List<FlightDto> selectByParameters(@QueryParam("companyName") String companyName,
                                                @QueryParam("maxLength") Long maxLength) {
         return flightService.getByQueryParam(companyName, maxLength);
+    }
+
+    @GetMapping("/fromExcel")
+    public void getFromExcel() throws IOException {
+        flightService.getFromExcel();
     }
 }

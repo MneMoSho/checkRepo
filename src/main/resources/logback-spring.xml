@@ -1,34 +1,27 @@
 <configuration>
-
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%date %level [%thread] %logger{10} [%file:%line] -%kvp- %msg%n</pattern>
         </encoder>
     </appender>
 
-    <root level="TRACE">
-        <appender-ref ref="STDOUT"/>
-    </root>
-
-    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>test-logBack.log</file>
-        <append>true</append>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>test-logBack.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <append>true</append>
+            <fileNamePattern>logs/app.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <timeBasedRollingPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedRollingPolicy>
             <maxHistory>30</maxHistory>
-            <totalSizeCap>1GB</totalSizeCap>
         </rollingPolicy>
-        <immediateFlush>true</immediateFlush>
         <encoder>
-            <pattern>%date %level [%thread] %logger{10} [%file:%line] -%kvp- %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <logger name="com.example.checkrepo.aspect.LoggingAspect" level="TRACE">
-        <appender-ref ref="FILE"/>
-    </logger>
-
     <root level="INFO">
         <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
     </root>
 </configuration>
