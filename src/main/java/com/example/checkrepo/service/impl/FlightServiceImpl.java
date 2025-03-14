@@ -12,9 +12,7 @@ import com.example.checkrepo.service.cache.FlightCache;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -24,7 +22,6 @@ import java.util.Optional;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
@@ -50,10 +47,11 @@ public class FlightServiceImpl implements FlightService {
         if (flightDto.getCompanyId() == null) {
             throw new IncorrectInputException("Incorrect input, Id cannot be null");
         }
-        flightRepository.save(FlightMapper.toEntity(flightDto));
-        Flight newFlight = flightRepository.findAll().getLast();
-        company.addFlightToCompany(newFlight.getId(), flightDto.getCompanyId());
-        cache.putIfAbsent(newFlight.getId(), newFlight);
+        Flight saveFlight = FlightMapper.toEntity(flightDto);
+        flightRepository.save(saveFlight);
+        company.addFlightToCompany(saveFlight.getId(), flightDto.getCompanyId());
+        System.out.println(saveFlight.getId());
+        cache.putIfAbsent(saveFlight.getId(), saveFlight);
     }
 
     @Override
@@ -80,6 +78,7 @@ public class FlightServiceImpl implements FlightService {
             cache.remove(id);
         }
         flightRepository.deleteById(id);
+        restartSequence(flightRepository.findAll().getLast().getId().intValue());
     }
 
     @Override
@@ -121,7 +120,6 @@ public class FlightServiceImpl implements FlightService {
     @Override
     @Transactional
     public void getFromExcel() throws IOException {
-        restartSequence(1);
         String fileName = "Flights.xlsx";
         Path excelFilepath = Paths.get("ExcelFiles", fileName);
         FileInputStream excelFile = new FileInputStream(new File(excelFilepath.toString()));
@@ -129,16 +127,14 @@ public class FlightServiceImpl implements FlightService {
         Workbook workbook = new XSSFWorkbook(excelFile);
         Sheet sheet = workbook.getSheetAt(0);
         sheet.forEach(row -> {
-            if (row.getRowNum() > 0) {
-                FlightDto newFlightDto = new FlightDto();
+            FlightDto newFlightDto = new FlightDto();
+            if (row.getRowNum() != 0) {
+                newFlightDto.setLength((int)row.getCell(0).getNumericCellValue());
                 newFlightDto.setEndDestination(row.getCell(1).getStringCellValue());
                 newFlightDto.setStartDestination(row.getCell(2).getStringCellValue());
-                newFlightDto.setLength((int)row.getCell(0).getNumericCellValue());
                 newFlightDto.setCompanyId((long)row.getCell(3).getNumericCellValue());
-                System.out.println(newFlightDto.getCompanyId());
-                flightList.add(newFlightDto);
+                createDbFlight(newFlightDto);
             }
         });
-        flightRepository.saveAll(FlightMapper.toEntityList(flightList));
     }
 }

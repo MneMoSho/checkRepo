@@ -45,8 +45,7 @@ public class FlightMapper {
         flight.setLength(flightDto.getLength());
         flight.setStartDestination(flightDto.getStartDestination());
         flight.setEndDestination(flightDto.getEndDestination());
-        flight.setId(flightDto.getId());
-        flight.setCompany(flightDto.getId());
+       // flight.setId(flightDto.getId());
         return flight;
     }
 
