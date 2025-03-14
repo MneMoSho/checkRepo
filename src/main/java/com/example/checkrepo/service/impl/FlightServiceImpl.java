@@ -20,10 +20,13 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,9 +34,16 @@ import org.springframework.stereotype.Service;
 public class FlightServiceImpl implements FlightService {
 
     private final FlightRep flightRepository;
-    private final FlightRep flightRep;
     private final FlightCache cache;
     private final CompanyServiceImpl company;
+    private EntityManager entityManager;
+
+    @Override
+    public void restartSequence(int restartIndex)
+    {
+        String sql = "ALTER SEQUENCE flight_id_seq RESTART WITH " +restartIndex ;
+        entityManager.createNativeQuery(sql).executeUpdate();
+    }
 
     @Override
     public void createDbFlight(FlightDto flightDto) {
@@ -88,11 +98,11 @@ public class FlightServiceImpl implements FlightService {
     @Override
     public List<FlightDto> getByStartDest(String startName) {
 
-        List<Flight> flightList = flightRep.findByStartDestination(startName);
+        List<Flight> flightList = flightRepository.findByStartDestination(startName);
         if (flightList.isEmpty()) {
             throw new ObjectNotFoundException("List is empty");
         }
-        return FlightMapper.toDtoList(flightRep.findByStartDestination(startName));
+        return FlightMapper.toDtoList(flightRepository.findByStartDestination(startName));
     }
 
     @Override
@@ -109,13 +119,26 @@ public class FlightServiceImpl implements FlightService {
     }
 
     @Override
+    @Transactional
     public void getFromExcel() throws IOException {
+        restartSequence(1);
         String fileName = "Flights.xlsx";
         Path excelFilepath = Paths.get("ExcelFiles", fileName);
-
         FileInputStream excelFile = new FileInputStream(new File(excelFilepath.toString()));
-
-        List<Flight> flightList= new ArrayList<>();
-        Workbook workbook = new HSSFWorkbook(excelFile);
+        List<FlightDto> flightList = new ArrayList<>();
+        Workbook workbook = new XSSFWorkbook(excelFile);
+        Sheet sheet = workbook.getSheetAt(0);
+        sheet.forEach(row -> {
+            if (row.getRowNum() > 0) {
+                FlightDto newFlightDto = new FlightDto();
+                newFlightDto.setEndDestination(row.getCell(1).getStringCellValue());
+                newFlightDto.setStartDestination(row.getCell(2).getStringCellValue());
+                newFlightDto.setLength((int)row.getCell(0).getNumericCellValue());
+                newFlightDto.setCompanyId((long)row.getCell(3).getNumericCellValue());
+                System.out.println(newFlightDto.getCompanyId());
+                flightList.add(newFlightDto);
+            }
+        });
+        flightRepository.saveAll(FlightMapper.toEntityList(flightList));
     }
 }

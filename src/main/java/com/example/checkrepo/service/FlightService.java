@@ -21,4 +21,6 @@ public interface FlightService {
     List<FlightDto> getByQueryParam(String companyName, Long maxLength);
 
     void getFromExcel() throws IOException;
+
+    void restartSequence(int restartIndex);
 }
