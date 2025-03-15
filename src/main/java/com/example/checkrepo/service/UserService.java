@@ -13,4 +13,6 @@ public interface UserService {
     List<UserDto> getAllUsers();
 
     void deleteById(Long id);
+
+    List<UserDto> findByEndDest(List<String> endDestinations);
 }

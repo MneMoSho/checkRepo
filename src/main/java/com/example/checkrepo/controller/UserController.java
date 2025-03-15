@@ -37,4 +37,9 @@ public class UserController {
     public void deleteById(@PathVariable Long id) {
         userService.deleteById(id);
     }
+
+    @PostMapping("/byFlight")
+        public List<UserDto> byRoute(@RequestBody List<String> finalDests) {
+        return userService.findByEndDest(finalDests);
+    }
 }

@@ -9,6 +9,7 @@ import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.repository.UserRepository;
 import com.example.checkrepo.service.UserService;
 import jakarta.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -62,5 +63,18 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
     }
 
+    @Override
+    public List<UserDto> findByEndDest(List<String> endDestinations) {
+        List<User> findByEnd = userRepository.findAll();
+        List<User> foundUsers = new ArrayList<>();
 
+        for (String endDestination : endDestinations) {
+            List<User> bufList = findByEnd.stream().filter(
+                    user -> user.getFlights().stream().anyMatch(
+                            flight -> flight.getEndDestination()
+                                    .equals(endDestination))).toList();
+            foundUsers.addAll(bufList);
+        }
+        return UserMapper.toDtoList(foundUsers);
+    }
 }
