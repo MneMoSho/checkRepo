@@ -3,12 +3,14 @@ package com.example.checkrepo.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Set;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class UserDto {
     private Long id;
     private String userName;

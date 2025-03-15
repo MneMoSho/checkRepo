@@ -1,8 +1,10 @@
 package com.example.checkrepo.controller;
 
 import com.example.checkrepo.dto.UserDto;
-import com.example.checkrepo.service.impl.UserServiceImpl;
+
 import java.util.List;
+
+import com.example.checkrepo.service.impl.UserServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/users")
 @AllArgsConstructor
 public class UserController {
-    private final UserServiceImpl userService;
+    private UserServiceImpl userService;
 
     @PostMapping()
     public void newUser(@RequestBody UserDto userAdd) {
