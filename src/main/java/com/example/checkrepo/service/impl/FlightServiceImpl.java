@@ -18,6 +18,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
@@ -36,9 +37,8 @@ public class FlightServiceImpl implements FlightService {
     private EntityManager entityManager;
 
     @Override
-    public void restartSequence(int restartIndex)
-    {
-        String sql = "ALTER SEQUENCE flight_id_seq RESTART WITH " +restartIndex ;
+    public void restartSequence(int restartIndex) {
+        String sql = "ALTER SEQUENCE flight_id_seq RESTART WITH " + restartIndex;
         entityManager.createNativeQuery(sql).executeUpdate();
     }
 
@@ -123,18 +123,31 @@ public class FlightServiceImpl implements FlightService {
         String fileName = "Flights.xlsx";
         Path excelFilepath = Paths.get("ExcelFiles", fileName);
         FileInputStream excelFile = new FileInputStream(new File(excelFilepath.toString()));
-        List<FlightDto> flightList = new ArrayList<>();
         Workbook workbook = new XSSFWorkbook(excelFile);
         Sheet sheet = workbook.getSheetAt(0);
         sheet.forEach(row -> {
             FlightDto newFlightDto = new FlightDto();
             if (row.getRowNum() != 0) {
-                newFlightDto.setLength((int)row.getCell(0).getNumericCellValue());
+                newFlightDto.setLength((int) row.getCell(0).getNumericCellValue());
                 newFlightDto.setEndDestination(row.getCell(1).getStringCellValue());
                 newFlightDto.setStartDestination(row.getCell(2).getStringCellValue());
-                newFlightDto.setCompanyId((long)row.getCell(3).getNumericCellValue());
+                newFlightDto.setCompanyId((long) row.getCell(3).getNumericCellValue());
                 createDbFlight(newFlightDto);
             }
         });
+    }
+
+    public List<FlightDto> bulkOperation(List<String> companies) {
+        List<Flight> flightList = flightRepository.findAll();
+        List<Flight> sortedFlights = new ArrayList<>();
+        for(String company : companies) {
+            List<Flight> bufList = new ArrayList<>(flightList.stream().filter(newFlight ->
+                    newFlight.getCompany().getCompanyName().equals(company)).toList());
+            if(bufList.isEmpty()) {
+                System.out.println("not found");
+            }
+            sortedFlights.addAll(bufList);
+        }
+        return FlightMapper.toDtoList(sortedFlights);
     }
 }

@@ -23,4 +23,6 @@ public interface FlightService {
     void getFromExcel() throws IOException;
 
     void restartSequence(int restartIndex);
+
+    List<FlightDto> bulkOperation(List<String> companies);
 }

@@ -61,4 +61,6 @@ public class UserServiceImpl implements UserService {
                 -> new ObjectNotFoundException("wrong enter, user can't be deleted"));
         userRepository.deleteById(id);
     }
+
+
 }

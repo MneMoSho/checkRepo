@@ -68,4 +68,9 @@ public class FlightController {
     public void getFromExcel() throws IOException {
         flightService.getFromExcel();
     }
+
+    @PostMapping("/bulkOp")
+    public List<FlightDto> bulkOperation(@RequestBody List<String> nameOfCompanies) {
+       return flightService.bulkOperation(nameOfCompanies);
+    }
 }
