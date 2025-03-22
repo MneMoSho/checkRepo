@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -51,17 +52,33 @@ public class FlightServiceImpl implements FlightService {
         flightRepository.save(saveFlight);
         company.addFlightToCompany(saveFlight.getId(), flightDto.getCompanyId());
         System.out.println(saveFlight.getId());
-        cache.putIfAbsent(saveFlight.getId(), saveFlight);
+        cache.putFlight(saveFlight.getId(), FlightMapper.toFlightDto(saveFlight));
     }
 
     @Override
     public List<FlightDto> displayAll() {
-        return FlightMapper.toDtoList(flightRepository.findAll());
+        Collection<FlightDto> allFlights = cache.getAllFlights();
+        if (!allFlights.isEmpty() && allFlights.size() == flightRepository.count()) {
+            return new ArrayList<>(allFlights);
+        } else {
+            List<FlightDto> flights = flightRepository.findAll().stream().map(FlightMapper::toFlightDto).toList();
+            if (!allFlights.isEmpty()) {
+                for (FlightDto source : allFlights) {
+                    if (flights.stream().noneMatch(flight -> flight.getId().equals(source.getId()))) {
+                        cache.putFlight(source.getId(), source);
+                    }
+                }
+            } else {
+                flights.forEach(flight -> cache.putFlight(flight.getId(), flight));
+            }
+            return flights;
+        }
     }
 
+    @Transactional
     @Override
     public void deleteFlight(Long id) {
-        Flight deleteFlight = cache.get(id);
+        FlightDto deleteFlight = cache.getFlight(id);
         if (deleteFlight == null) {
             Flight sourceFlight = flightRepository.findById(id)
                     .orElseThrow(() -> new ObjectNotFoundException("cannot be found"));
@@ -69,34 +86,38 @@ public class FlightServiceImpl implements FlightService {
                 sourceUser.getFlights().remove(sourceFlight);
                 sourceFlight.getUsers().remove(sourceUser);
             }
-
+            flightRepository.deleteById(id);
+           // restartSequence(flightRepository.findAll().getLast().getId().intValue());
         } else {
-            for (User sourceUser : deleteFlight.getUsers()) {
-                sourceUser.getFlights().remove(deleteFlight);
-                deleteFlight.getUsers().remove(sourceUser);
+            Flight flight = FlightMapper.toEntity(deleteFlight);
+            System.out.println(flight.getId());
+            System.out.println(flight.getEndDestination());
+            for (User sourceUser : flight.getUsers()) {
+                sourceUser.getFlights().remove(flight);
+                flight.getUsers().remove(sourceUser);
+                cache.updateFlight(deleteFlight.getId(), deleteFlight, FlightMapper.toFlightDto(flight));
             }
-            cache.remove(id);
+            flightRepository.delete(flight);
+            cache.deleteFlight(id);
+           // restartSequence(flightRepository.findAll().getLast().getId().intValue());
         }
-        flightRepository.deleteById(id);
-        restartSequence(flightRepository.findAll().getLast().getId().intValue());
     }
 
     @Override
     public Optional<FlightDto> findById(Long id) {
-        Flight foundFlight = cache.get(id);
+        FlightDto foundFlight = cache.getFlight(id);
         if (foundFlight == null) {
             Flight flightById = flightRepository.findById(id)
                     .orElseThrow(() -> new ObjectNotFoundException("Flight cannot be found"));
-            cache.putIfAbsent(id, flightById);
+            cache.putFlight(id, FlightMapper.toFlightDto(flightById));
             return Optional.ofNullable(FlightMapper.toFlightDto(flightById));
         } else {
-            return Optional.ofNullable(FlightMapper.toFlightDto(foundFlight));
+            return Optional.of(foundFlight);
         }
     }
 
     @Override
     public List<FlightDto> getByStartDestNative(String startName) {
-
         List<Flight> flightList = flightRepository.findByStartDestinationNative(startName);
         if (flightList.isEmpty()) {
             throw new ObjectNotFoundException("List is empty");
@@ -106,12 +127,19 @@ public class FlightServiceImpl implements FlightService {
 
     @Override
     public List<FlightDto> getByStartDestJPQL(String startName) {
-
-        List<Flight> flightList = flightRepository.findByStartDestinationJPQL(startName);
-        if (flightList.isEmpty()) {
-            throw new ObjectNotFoundException("List is empty");
+        Collection<FlightDto> flights = cache.getAllFlights();
+        if (flights.stream().noneMatch(flight -> flight.getStartDestination().equals(startName))) {
+            List<Flight> flightList = flightRepository.findByStartDestinationJPQL(startName);
+            System.out.println("not from cache");
+            if (flightList.isEmpty()) {
+                throw new ObjectNotFoundException("List is empty");
+            }
+            flightList.forEach(flight -> cache.putFlight(flight.getId(), FlightMapper.toFlightDto(flight)));
+            return FlightMapper.toDtoList(flightRepository.findByStartDestinationJPQL(startName));
+        } else {
+            System.out.println("from cache");
+            return flights.stream().filter(flight -> flight.getStartDestination().equals(startName)).toList();
         }
-        return FlightMapper.toDtoList(flightRepository.findByStartDestinationJPQL(startName));
     }
 
     @Override
@@ -130,6 +158,7 @@ public class FlightServiceImpl implements FlightService {
                 newFlightDto.setStartDestination(row.getCell(2).getStringCellValue());
                 newFlightDto.setCompanyId((long) row.getCell(3).getNumericCellValue());
                 createDbFlight(newFlightDto);
+                cache.putFlight(newFlightDto.getId(), newFlightDto);
             }
         });
     }

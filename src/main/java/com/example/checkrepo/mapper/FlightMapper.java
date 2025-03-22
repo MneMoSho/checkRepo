@@ -42,6 +42,7 @@ public class FlightMapper {
 
     public Flight toEntity(FlightDto flightDto) {
         Flight flight = new Flight();
+        flight.setId(flightDto.getId());
         flight.setLength(flightDto.getLength());
         flight.setStartDestination(flightDto.getStartDestination());
         flight.setEndDestination(flightDto.getEndDestination());
