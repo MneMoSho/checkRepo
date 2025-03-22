@@ -77,4 +77,14 @@ public class UserServiceImpl implements UserService {
         }
         return UserMapper.toDtoList(foundUsers);
     }
+
+    @Override
+    public List<UserDto> findByStartDestNative(String startDest) {
+        return UserMapper.toDtoListShallow(userRepository.findByDestNative(startDest));
+    }
+
+    @Override
+    public List<UserDto> findByStartDestJPQL(String startDest) {
+        return UserMapper.toDtoListShallow(userRepository.findByDestJPQL(startDest));
+    }
 }

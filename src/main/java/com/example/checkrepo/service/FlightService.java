@@ -16,13 +16,14 @@ public interface FlightService {
 
     List<FlightDto> displayAll();
 
-    List<FlightDto> getByStartDest(String startName);
+    List<FlightDto> getByStartDestNative(String startName);
 
-    List<FlightDto> getByQueryParam(String companyName, Long maxLength);
+    List<FlightDto> getByStartDestJPQL(String startName);
 
     void getFromExcel() throws IOException;
 
     void restartSequence(int restartIndex);
 
     List<FlightDto> bulkOperation(List<String> companies);
+
 }

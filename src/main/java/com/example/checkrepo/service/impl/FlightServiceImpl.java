@@ -95,26 +95,23 @@ public class FlightServiceImpl implements FlightService {
     }
 
     @Override
-    public List<FlightDto> getByStartDest(String startName) {
+    public List<FlightDto> getByStartDestNative(String startName) {
 
-        List<Flight> flightList = flightRepository.findByStartDestination(startName);
+        List<Flight> flightList = flightRepository.findByStartDestinationNative(startName);
         if (flightList.isEmpty()) {
             throw new ObjectNotFoundException("List is empty");
         }
-        return FlightMapper.toDtoList(flightRepository.findByStartDestination(startName));
+        return FlightMapper.toDtoList(flightRepository.findByStartDestinationNative(startName));
     }
 
     @Override
-    public List<FlightDto> getByQueryParam(String companyName, Long maxLength) {
+    public List<FlightDto> getByStartDestJPQL(String startName) {
 
-        if (maxLength < 0) {
-            throw new IncorrectInputException("incorrect value in length");
-        }
-        List<Flight> flightList = flightRepository.findByCompany(companyName, maxLength);
+        List<Flight> flightList = flightRepository.findByStartDestinationJPQL(startName);
         if (flightList.isEmpty()) {
-            throw new ObjectNotFoundException("Company or Flight is entered wrong");
+            throw new ObjectNotFoundException("List is empty");
         }
-        return FlightMapper.toDtoList(flightList);
+        return FlightMapper.toDtoList(flightRepository.findByStartDestinationJPQL(startName));
     }
 
     @Override

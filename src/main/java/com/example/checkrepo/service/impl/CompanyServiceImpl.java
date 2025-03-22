@@ -1,11 +1,13 @@
 package com.example.checkrepo.service.impl;
 
 import com.example.checkrepo.dto.CompanyDto;
+import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.entities.Company;
 import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
 import com.example.checkrepo.exception.ObjectNotFoundException;
 import com.example.checkrepo.mapper.CompanyMapper;
+import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.CompanyRepository;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.service.CompanyService;
@@ -58,6 +60,16 @@ public class CompanyServiceImpl implements CompanyService {
             flightRepository.delete(flightSource);
         }
         companyRepository.delete(sourceCompany);
+    }
+
+    @Override
+    public List<FlightDto> getCompanyFlightsNative(Long flightId) {
+        return FlightMapper.toDtoListShallow(companyRepository.findByCompanyIdNative(flightId));
+    }
+
+    @Override
+    public List<FlightDto> getCompanyFlightsJPQL(Long flightId) {
+        return FlightMapper.toDtoListShallow(companyRepository.findByCompanyIdJPQL(flightId));
     }
 }
 

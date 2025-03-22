@@ -48,6 +48,14 @@ public class UserMapper {
         return dtoList;
     }
 
+    public List<UserDto> toDtoListShallow(List<User> userList) {
+        List<UserDto> dtoList = new ArrayList<>();
+        for (User source : userList) {
+            dtoList.add(UserMapper.toUserDtoShallow(source));
+        }
+        return dtoList;
+    }
+
     public List<User> toEntityList(List<UserDto> userDtoList) {
         List<User> list = new ArrayList<>();
         for (UserDto source : userDtoList) {

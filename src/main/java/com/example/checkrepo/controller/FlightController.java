@@ -10,14 +10,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
@@ -53,15 +46,14 @@ public class FlightController {
         return userService.addingNewFlight(flightId, userId);
     }
 
-    @GetMapping("/start")
-    public List<FlightDto> getBySameStart(@QueryParam("startingPoint") String flightStart) {
-        return flightService.getByStartDest(flightStart);
+    @GetMapping("/startNative")
+    public List<FlightDto> getBySameStartNative(@QueryParam("startingPoint") String flightStart) {
+        return flightService.getByStartDestNative(flightStart);
     }
 
-    @GetMapping("/search")
-    public List<FlightDto> selectByParameters(@QueryParam("companyName") String companyName,
-                                               @QueryParam("maxLength") Long maxLength) {
-        return flightService.getByQueryParam(companyName, maxLength);
+    @GetMapping("/startJPQL")
+    public List<FlightDto> getBySameStartJPQL(@QueryParam("startingPoint") String flightStart) {
+        return flightService.getByStartDestJPQL(flightStart);
     }
 
     @GetMapping("/fromExcel")

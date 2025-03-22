@@ -45,7 +45,6 @@ public class FlightMapper {
         flight.setLength(flightDto.getLength());
         flight.setStartDestination(flightDto.getStartDestination());
         flight.setEndDestination(flightDto.getEndDestination());
-       // flight.setId(flightDto.getId());
         return flight;
     }
 
@@ -53,6 +52,14 @@ public class FlightMapper {
         List<FlightDto> dtoList = new ArrayList<>();
         for (Flight source : flightsList) {
             dtoList.add(FlightMapper.toFlightDto(source));
+        }
+        return dtoList;
+    }
+
+    public List<FlightDto> toDtoListShallow(List<Flight> flightsList) {
+        List<FlightDto> dtoList = new ArrayList<>();
+        for (Flight source : flightsList) {
+            dtoList.add(FlightMapper.toFlightDtoShallow(source));
         }
         return dtoList;
     }

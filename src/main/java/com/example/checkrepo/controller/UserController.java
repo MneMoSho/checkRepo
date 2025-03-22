@@ -5,6 +5,7 @@ import com.example.checkrepo.dto.UserDto;
 import java.util.List;
 
 import com.example.checkrepo.service.impl.UserServiceImpl;
+import jakarta.ws.rs.QueryParam;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,7 +42,17 @@ public class UserController {
     }
 
     @PostMapping("/byFlight")
-        public List<UserDto> byRoute(@RequestBody List<String> finalDests) {
+    public List<UserDto> byRoute(@RequestBody List<String> finalDests) {
         return userService.findByEndDest(finalDests);
+    }
+
+    @GetMapping("/byFlightNative")
+    public List<UserDto> byFlightNative(@QueryParam("startDest") String startDest) {
+        return userService.findByStartDestNative(startDest);
+    }
+
+    @GetMapping("/byFlightJPQL")
+    public List<UserDto> byFlightJPQL(@QueryParam("startDest") String startDest) {
+        return userService.findByStartDestJPQL(startDest);
     }
 }
