@@ -1,6 +1,7 @@
 package com.example.checkrepo.mapper;
 
 import com.example.checkrepo.dto.FlightDto;
+import com.example.checkrepo.entities.Company;
 import com.example.checkrepo.entities.Flight;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,9 +47,17 @@ public class FlightMapper {
         flight.setLength(flightDto.getLength());
         flight.setStartDestination(flightDto.getStartDestination());
         flight.setEndDestination(flightDto.getEndDestination());
+        Company newCompany = new Company();
+
+        newCompany.setCompanyName(flightDto.getFlightCompany());
+        newCompany.setId(flightDto.getCompanyId());
+
+        if (flightDto.getUserDtos() != null) {
+            flight.setUsers(flightDto.getUserDtos().stream().map(UserMapper::toUserShallow).collect(Collectors.toSet()));
+        }
+
         return flight;
     }
-
     public List<FlightDto> toDtoList(List<Flight> flightsList) {
         List<FlightDto> dtoList = new ArrayList<>();
         for (Flight source : flightsList) {

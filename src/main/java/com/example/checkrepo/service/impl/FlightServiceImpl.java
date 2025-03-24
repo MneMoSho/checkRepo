@@ -1,6 +1,8 @@
 package com.example.checkrepo.service.impl;
 
 import com.example.checkrepo.dto.FlightDto;
+import com.example.checkrepo.dto.UserDto;
+import com.example.checkrepo.entities.Company;
 import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
 import com.example.checkrepo.exception.IncorrectInputException;
@@ -80,6 +82,7 @@ public class FlightServiceImpl implements FlightService {
     public void deleteFlight(Long id) {
         FlightDto deleteFlight = cache.getFlight(id);
         if (deleteFlight == null) {
+            System.out.println("not from cavche");
             Flight sourceFlight = flightRepository.findById(id)
                     .orElseThrow(() -> new ObjectNotFoundException("cannot be found"));
             for (User sourceUser : sourceFlight.getUsers()) {
@@ -87,19 +90,22 @@ public class FlightServiceImpl implements FlightService {
                 sourceFlight.getUsers().remove(sourceUser);
             }
             flightRepository.deleteById(id);
-           // restartSequence(flightRepository.findAll().getLast().getId().intValue());
+            // restartSequence(flightRepository.findAll().getLast().getId().intValue());
         } else {
-            Flight flight = FlightMapper.toEntity(deleteFlight);
-            System.out.println(flight.getId());
-            System.out.println(flight.getEndDestination());
-            for (User sourceUser : flight.getUsers()) {
-                sourceUser.getFlights().remove(flight);
-                flight.getUsers().remove(sourceUser);
-                cache.updateFlight(deleteFlight.getId(), deleteFlight, FlightMapper.toFlightDto(flight));
+
+            Flight newFlight = FlightMapper.toEntity(deleteFlight);
+
+            System.out.println(newFlight.getUsers().stream().findFirst().get().getUserName());
+
+            for (User sourceUser : newFlight.getUsers()) {
+                sourceUser.getFlights().remove(newFlight);
+               // newFlight.getUsers().remove(sourceUser);
+                System.out.println(sourceUser.getUserName());
             }
-            flightRepository.delete(flight);
-            cache.deleteFlight(id);
-           // restartSequence(flightRepository.findAll().getLast().getId().intValue());
+
+            System.out.println("FFFFF");
+          //  flightRepository.delete(FlightMapper.toEntity(deleteFlight));
+           // cache.deleteFlight(id);
         }
     }
 
@@ -166,10 +172,10 @@ public class FlightServiceImpl implements FlightService {
     public List<FlightDto> bulkOperation(List<String> companies) {
         List<Flight> flightList = flightRepository.findAll();
         List<Flight> sortedFlights = new ArrayList<>();
-        for(String company : companies) {
+        for (String company : companies) {
             List<Flight> bufList = new ArrayList<>(flightList.stream().filter(newFlight ->
                     newFlight.getCompany().getCompanyName().equals(company)).toList());
-            if(bufList.isEmpty()) {
+            if (bufList.isEmpty()) {
                 System.out.println("not found");
             }
             sortedFlights.addAll(bufList);

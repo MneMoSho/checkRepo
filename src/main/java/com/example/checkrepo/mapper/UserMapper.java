@@ -40,6 +40,14 @@ public class UserMapper {
         return user;
     }
 
+    public User toUserShallow(UserDto userDto) {
+        User user = new User();
+        user.setId(userDto.getId());
+        user.setUserName(userDto.getUserName());
+        user.setEmail(userDto.getEmail());
+        return user;
+    }
+
     public List<UserDto> toDtoList(List<User> userList) {
         List<UserDto> dtoList = new ArrayList<>();
         for (User source : userList) {
