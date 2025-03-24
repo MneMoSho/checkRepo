@@ -1,8 +1,6 @@
 package com.example.checkrepo.service.impl;
 
 import com.example.checkrepo.dto.FlightDto;
-import com.example.checkrepo.dto.UserDto;
-import com.example.checkrepo.entities.Company;
 import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
 import com.example.checkrepo.exception.IncorrectInputException;
@@ -10,7 +8,7 @@ import com.example.checkrepo.exception.ObjectNotFoundException;
 import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.service.FlightService;
-import com.example.checkrepo.service.cache.FlightCache;
+import com.example.checkrepo.service.cache.Cache;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,7 +19,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
@@ -35,7 +32,7 @@ import org.springframework.stereotype.Service;
 public class FlightServiceImpl implements FlightService {
 
     private final FlightRep flightRepository;
-    private final FlightCache cache;
+    private final Cache cache;
     private final CompanyServiceImpl company;
     private EntityManager entityManager;
 
@@ -80,32 +77,15 @@ public class FlightServiceImpl implements FlightService {
     @Transactional
     @Override
     public void deleteFlight(Long id) {
-        FlightDto deleteFlight = cache.getFlight(id);
-        if (deleteFlight == null) {
-            System.out.println("not from cavche");
-            Flight sourceFlight = flightRepository.findById(id)
-                    .orElseThrow(() -> new ObjectNotFoundException("cannot be found"));
-            for (User sourceUser : sourceFlight.getUsers()) {
-                sourceUser.getFlights().remove(sourceFlight);
-                sourceFlight.getUsers().remove(sourceUser);
-            }
-            flightRepository.deleteById(id);
-            // restartSequence(flightRepository.findAll().getLast().getId().intValue());
-        } else {
-
-            Flight newFlight = FlightMapper.toEntity(deleteFlight);
-
-            System.out.println(newFlight.getUsers().stream().findFirst().get().getUserName());
-
-            for (User sourceUser : newFlight.getUsers()) {
-                sourceUser.getFlights().remove(newFlight);
-               // newFlight.getUsers().remove(sourceUser);
-                System.out.println(sourceUser.getUserName());
-            }
-
-            System.out.println("FFFFF");
-          //  flightRepository.delete(FlightMapper.toEntity(deleteFlight));
-           // cache.deleteFlight(id);
+        Flight newFlight = flightRepository.findById(id)
+                .orElseThrow(() -> new ObjectNotFoundException("cannot be found"));
+        for (User sourceUser : newFlight.getUsers()) {
+            sourceUser.getFlights().remove(newFlight);
+            newFlight.getUsers().remove(sourceUser);
+        }
+        flightRepository.delete(newFlight);
+        if(cache.getFlight(id) != null) {
+            cache.deleteFlight(id);
         }
     }
 

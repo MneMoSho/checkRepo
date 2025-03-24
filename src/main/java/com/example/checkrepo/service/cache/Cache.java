@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.Collection;
 
 @Component
-public class FlightCache {
+public class Cache {
     private static  final int MAX_FLIGHT_CACHE_SIZE = 100;
     private static  final int MAX_USER_CACHE_SIZE = 100;
     private static  final int MAX_COMPANY_CACHE_SIZE = 100;
@@ -17,7 +17,7 @@ public class FlightCache {
     private final LRUCache<Long, FlightDto> flightCache = new LRUCache<>(MAX_FLIGHT_CACHE_SIZE);
     private final LRUCache<Long, UserDto> userCache = new LRUCache<>(MAX_USER_CACHE_SIZE);
     private final LRUCache<Long, CompanyDto> companyCache = new LRUCache<>(MAX_COMPANY_CACHE_SIZE);
-    private static final Logger logger = LoggerFactory.getLogger(FlightCache.class);
+    private static final Logger logger = LoggerFactory.getLogger(Cache.class);
 
     public FlightDto getFlight(Long id) {
         if(flightCache.get(id) == null) {
@@ -48,9 +48,9 @@ public class FlightCache {
         flightCache.putIfAbsent(id, value);
     }
 
-    public void updateFlight(Long id, FlightDto oldValue, FlightDto newValue) {
-        logger.debug("flight is changed in cache, with id: {}", id);
-        flightCache.replace(id, oldValue, newValue);
+    public void updateFlight(Long id, FlightDto newValue) {
+        logger.info("flight is changed in cache, with id: {}", id);
+        flightCache.replace(id, newValue);
     }
 
     public Collection<FlightDto> getAllFlights() {
@@ -59,42 +59,47 @@ public class FlightCache {
     }
 
     public void deleteUser(Long id) {
-        logger.debug("user removed from cache with id: {}", id);
+        logger.info("user removed from cache with id: {}", id);
         userCache.remove(id);
     }
 
     public void putUser(Long id, UserDto value) {
-        logger.debug("user is added into cache, with id: {}", id);
+        logger.info("user is added into cache, with id: {}", id);
         userCache.putIfAbsent(id, value);
     }
 
-    public void updateUser(Long id, UserDto oldValue, UserDto newValue) {
-        logger.debug("User is changed in cache, with id: {}", id);
-        userCache.replace(id, oldValue, newValue);
+    public void updateUser(Long id, UserDto newValue) {
+        logger.info("User is changed in cache, with id: {}", id);
+        userCache.replace(id, newValue);
     }
 
     public Collection<UserDto> getAllUsers() {
-        logger.debug("all users from cache");
+        logger.info("all users from cache");
         return userCache.getAll();
     }
 
     public void deleteCompany(Long id) {
-        logger.debug("company removed from cache with id: {}", id);
+        logger.info("company removed from cache with id: {}", id);
         userCache.remove(id);
     }
 
     public void putCompany(Long id, CompanyDto value) {
-        logger.debug("company is added into cache, with id: {}", id);
+        logger.info("company is added into cache, with id: {}", id);
         companyCache.putIfAbsent(id, value);
     }
 
     public void deleteCompany(Long id, CompanyDto oldValue, CompanyDto newValue) {
-        logger.debug("company is changed in cache, with id: {}", id);
-        companyCache.replace(id, oldValue, newValue);
+        logger.info("company is changed in cache, with id: {}", id);
+        companyCache.replace(id, newValue);
     }
 
     public Collection<CompanyDto> getAllCompanies() {
-        logger.debug("all company from cache");
+        logger.info("all company from cache");
         return companyCache.getAll();
+    }
+
+    public void updateCpompany(Long id, CompanyDto newValue) {
+        logger.info("Company is changed in cache, with id: {}", id);
+        companyCache.replace(id, newValue);
     }
 }

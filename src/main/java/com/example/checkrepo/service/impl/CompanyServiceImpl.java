@@ -11,8 +11,13 @@ import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.CompanyRepository;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.service.CompanyService;
+
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+
+import com.example.checkrepo.service.cache.Cache;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,11 +26,14 @@ import org.springframework.stereotype.Service;
 public class CompanyServiceImpl implements CompanyService {
     private final CompanyRepository companyRepository;
     private final FlightRep flightRepository;
+    private final Cache cache;
 
     @Override
     public void addFlightCompany(CompanyDto companyDto) {
         System.out.println(companyDto.getCompanyName());
-        companyRepository.save(CompanyMapper.toEntity(companyDto));
+        Company company = CompanyMapper.toEntity(companyDto);
+        companyRepository.save(company);
+        cache.putCompany(company.getId(), CompanyMapper.toCompanyDto(company));
     }
 
     @Override
@@ -38,15 +46,28 @@ public class CompanyServiceImpl implements CompanyService {
                 .orElseThrow(() -> new ObjectNotFoundException("Flight cannot be found"));
         newFlight.setCompany(newCompany);
         flightRepository.save(newFlight);
+        cache.updateCpompany(companyId, CompanyMapper.toCompanyDto(newCompany));
         return Optional.ofNullable(CompanyMapper.toCompanyDto(newCompany));
     }
 
     @Override
     public List<CompanyDto> showAll() {
-        if (companyRepository.findAll().isEmpty()) {
-            throw new ObjectNotFoundException("Company List is empty search for something else ");
+        Collection<CompanyDto> allCompanies = cache.getAllCompanies();
+        if (!allCompanies.isEmpty() && allCompanies.size() == flightRepository.count()) {
+            return new ArrayList<>(allCompanies);
+        } else {
+            List<CompanyDto> companies = companyRepository.findAll().stream().map(CompanyMapper::toCompanyDto).toList();
+            if (!allCompanies.isEmpty()) {
+                for (CompanyDto source : companies) {
+                    if (companies.stream().noneMatch(company -> company.getCompanyId().equals(source.getCompanyId()))) {
+                        cache.putCompany(source.getCompanyId(), source);
+                    }
+                }
+            } else {
+                companies.forEach(company -> cache.putCompany(company.getCompanyId(), company));
+            }
+            return companies;
         }
-        return CompanyMapper.toDtoList(companyRepository.findAll());
     }
 
     @Override
@@ -60,6 +81,9 @@ public class CompanyServiceImpl implements CompanyService {
             flightRepository.delete(flightSource);
         }
         companyRepository.delete(sourceCompany);
+        if(cache.getCompany(companyId) != null) {
+            cache.deleteCompany(companyId);
+        }
     }
 
     @Override
