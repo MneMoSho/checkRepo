@@ -66,8 +66,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserDto> getAllUsers() {
-
-
         Collection<UserDto> allUsers = cache.getAllUsers();
         if (!allUsers.isEmpty() && allUsers.size() == userRepository.count()) {
             return new ArrayList<>(allUsers);
@@ -94,28 +92,6 @@ public class UserServiceImpl implements UserService {
         if(cache.getUser(id) != null) {
             cache.deleteUser(id);
         }
-    }
-
-    @Override
-    public List<UserDto> findByEndDest(List<String> endDestinations) {
-       // List<User> findByEnd = userRepository.findAll();
-
-        List<User> findByEnd = UserMapper.toEntityList(cache.getAllUsers().stream().toList());
-
-        if(findByEnd.isEmpty()) {
-            System.out.println("AAAAAAAAAAA");
-            return null;
-        }
-//#######################################################################################
-        List<User> foundUsers = new ArrayList<>();
-        for (String endDestination : endDestinations) {
-            List<User> bufList = findByEnd.stream().filter(
-                    user -> user.getFlights().stream().anyMatch(
-                            flight -> flight.getEndDestination()
-                                    .equals(endDestination))).toList();
-            foundUsers.addAll(bufList);
-        }
-        return UserMapper.toDtoList(foundUsers);
     }
 
     @Override
