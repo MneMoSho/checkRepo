@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/log")
-public class logController {
+public class LogController {
 
     @GetMapping()
     public void newLogFile(@QueryParam("date") String date, @QueryParam("minutes") String minutes) {
