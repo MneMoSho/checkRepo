@@ -1,12 +1,9 @@
 package com.example.checkrepo.service.impl;
 
-import com.example.checkrepo.dto.CompanyDto;
 import com.example.checkrepo.dto.UserDto;
 import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
 import com.example.checkrepo.exception.ObjectNotFoundException;
-import com.example.checkrepo.mapper.CompanyMapper;
-import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.mapper.UserMapper;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.repository.UserRepository;
@@ -28,9 +25,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createUser(UserDto userDto) {
-       User saveUser = UserMapper.toUser(userDto);
-       userRepository.save(saveUser);
-       cache.putUser(saveUser.getId(), UserMapper.toUserDto(saveUser));
+        User saveUser = UserMapper.toUser(userDto);
+        userRepository.save(saveUser);
+        cache.putUser(saveUser.getId(), UserMapper.toUserDto(saveUser));
     }
 
     @Override
@@ -48,9 +45,9 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserDto getUserById(Long id) {
-        UserDto newUser =cache.getUser(id);
+        UserDto newUser = cache.getUser(id);
         if (newUser == null) {
-            if(userRepository.existsById(id)) {
+            if (userRepository.existsById(id)) {
                 newUser = UserMapper.toUserDto(userRepository.findById(id).get());
                 cache.putUser(id, newUser);
                 return newUser;
@@ -68,7 +65,8 @@ public class UserServiceImpl implements UserService {
         if (!allUsers.isEmpty() && allUsers.size() == userRepository.count()) {
             return new ArrayList<>(allUsers);
         } else {
-            List<UserDto> users = userRepository.findAll().stream().map(UserMapper::toUserDto).toList();
+            List<UserDto> users = userRepository.findAll()
+                    .stream().map(UserMapper::toUserDto).toList();
             if (!allUsers.isEmpty()) {
                 for (UserDto source : users) {
                     if (users.stream().noneMatch(user -> user.getId().equals(source.getId()))) {
@@ -87,7 +85,7 @@ public class UserServiceImpl implements UserService {
         userRepository.findById(id).orElseThrow(()
                 -> new ObjectNotFoundException("wrong enter, user can't be deleted"));
         userRepository.deleteById(id);
-        if(cache.getUser(id) != null) {
+        if (cache.getUser(id) != null) {
             cache.deleteUser(id);
         }
     }
@@ -96,21 +94,22 @@ public class UserServiceImpl implements UserService {
     public List<UserDto> findByEndDest(List<String> endDestinations) {
         List<User> findByEnd = UserMapper.toEntityList(cache.getAllUsers().stream().toList());
 
-       if(findByEnd.isEmpty() || findByEnd.size() != userRepository.count()) {
-           findByEnd = userRepository.findAll();
-       } else {
-           System.out.println(findByEnd.getFirst().getFlights().stream().findFirst().get().getEndDestination());
-       }
+        if (findByEnd.isEmpty() || findByEnd.size() != userRepository.count()) {
+            findByEnd = userRepository.findAll();
+        } else {
+            System.out.println(findByEnd
+                    .getFirst().getFlights().stream().findFirst().get().getEndDestination());
+        }
 
-       List<User> foundUsers = new ArrayList<>();
-       for (String endDestination : endDestinations) {
-           List<User> bufList = findByEnd.stream().filter(
-                   user -> user.getFlights().stream().anyMatch(
-                           flight -> flight.getEndDestination()
-                                   .equals(endDestination))).toList();
-           foundUsers.addAll(bufList);
-       }
-       return UserMapper.toDtoList(foundUsers);
+        List<User> foundUsers = new ArrayList<>();
+        for (String endDestination : endDestinations) {
+            List<User> bufList = findByEnd.stream().filter(
+                    user -> user.getFlights().stream().anyMatch(
+                            flight -> flight.getEndDestination()
+                                    .equals(endDestination))).toList();
+            foundUsers.addAll(bufList);
+        }
+        return UserMapper.toDtoList(foundUsers);
     }
 
     @Override
@@ -119,7 +118,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserDto> findByStartDestJPQL(String startDest) {
-        return UserMapper.toDtoListShallow(userRepository.findByDestJPQL(startDest));
+    public List<UserDto> findByStartDestJpql(String startDest) {
+        return UserMapper.toDtoListShallow(userRepository.findByDestJpql(startDest));
     }
 }

@@ -18,5 +18,5 @@ public interface UserService {
 
     List<UserDto> findByStartDestNative(String startDest);
 
-    List<UserDto> findByStartDestJPQL(String startDest);
+    List<UserDto> findByStartDestJpql(String startDest);
 }

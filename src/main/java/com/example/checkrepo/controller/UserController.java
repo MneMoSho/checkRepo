@@ -1,11 +1,9 @@
 package com.example.checkrepo.controller;
 
 import com.example.checkrepo.dto.UserDto;
-
-import java.util.List;
-
 import com.example.checkrepo.service.impl.UserServiceImpl;
 import jakarta.ws.rs.QueryParam;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,7 +50,7 @@ public class UserController {
     }
 
     @GetMapping("/byFlightJPQL")
-    public List<UserDto> byFlightJPQL(@QueryParam("startDest") String startDest) {
-        return userService.findByStartDestJPQL(startDest);
+    public List<UserDto> byFlightJpql(@QueryParam("startDest") String startDest) {
+        return userService.findByStartDestJpql(startDest);
     }
 }

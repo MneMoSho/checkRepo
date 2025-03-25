@@ -9,7 +9,8 @@ import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.service.FlightService;
 import com.example.checkrepo.service.cache.Cache;
-
+import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -19,11 +20,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-
-import jakarta.persistence.EntityManager;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 
@@ -60,10 +59,12 @@ public class FlightServiceImpl implements FlightService {
         if (!allFlights.isEmpty() && allFlights.size() == flightRepository.count()) {
             return new ArrayList<>(allFlights);
         } else {
-            List<FlightDto> flights = flightRepository.findAll().stream().map(FlightMapper::toFlightDto).toList();
+            List<FlightDto> flights = flightRepository
+                    .findAll().stream().map(FlightMapper::toFlightDto).toList();
             if (!allFlights.isEmpty()) {
                 for (FlightDto source : allFlights) {
-                    if (flights.stream().noneMatch(flight -> flight.getId().equals(source.getId()))) {
+                    if (flights.stream().noneMatch(
+                            flight -> flight.getId().equals(source.getId()))) {
                         cache.putFlight(source.getId(), source);
                     }
                 }
@@ -84,7 +85,7 @@ public class FlightServiceImpl implements FlightService {
             newFlight.getUsers().remove(sourceUser);
         }
         flightRepository.delete(newFlight);
-        if(cache.getFlight(id) != null) {
+        if (cache.getFlight(id) != null) {
             cache.deleteFlight(id);
         }
     }
@@ -112,7 +113,7 @@ public class FlightServiceImpl implements FlightService {
     }
 
     @Override
-    public List<FlightDto> getByStartDestJPQL(String startName) {
+    public List<FlightDto> getByStartDestJpql(String startName) {
         Collection<FlightDto> flights = cache.getAllFlights();
         if (flights.stream().noneMatch(flight -> flight.getStartDestination().equals(startName))) {
             List<Flight> flightList = flightRepository.findByStartDestinationJPQL(startName);
@@ -120,11 +121,13 @@ public class FlightServiceImpl implements FlightService {
             if (flightList.isEmpty()) {
                 throw new ObjectNotFoundException("List is empty");
             }
-            flightList.forEach(flight -> cache.putFlight(flight.getId(), FlightMapper.toFlightDto(flight)));
+            flightList.forEach(flight ->
+                    cache.putFlight(flight.getId(), FlightMapper.toFlightDto(flight)));
             return FlightMapper.toDtoList(flightRepository.findByStartDestinationJPQL(startName));
         } else {
             System.out.println("from cache");
-            return flights.stream().filter(flight -> flight.getStartDestination().equals(startName)).toList();
+            return flights.stream().filter(
+                    flight -> flight.getStartDestination().equals(startName)).toList();
         }
     }
 

@@ -51,7 +51,8 @@ public class FlightMapper {
         newCompany.setCompanyName(flightDto.getFlightCompany());
         newCompany.setId(flightDto.getCompanyId());
         if (flightDto.getUserDtos() != null) {
-            flight.setUsers(flightDto.getUserDtos().stream().map(UserMapper::toUserShallow).collect(Collectors.toSet()));
+            flight.setUsers(flightDto.getUserDtos().stream()
+                    .map(UserMapper::toUserShallow).collect(Collectors.toSet()));
         }
         return flight;
     }

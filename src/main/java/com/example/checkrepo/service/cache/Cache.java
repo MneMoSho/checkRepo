@@ -3,10 +3,10 @@ package com.example.checkrepo.service.cache;
 import com.example.checkrepo.dto.CompanyDto;
 import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
+import java.util.Collection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import java.util.Collection;
 
 @Component
 public class Cache {
@@ -14,13 +14,13 @@ public class Cache {
     private static  final int MAX_USER_CACHE_SIZE = 100;
     private static  final int MAX_COMPANY_CACHE_SIZE = 100;
 
-    private final LRUCache<Long, FlightDto> flightCache = new LRUCache<>(MAX_FLIGHT_CACHE_SIZE);
-    private final LRUCache<Long, UserDto> userCache = new LRUCache<>(MAX_USER_CACHE_SIZE);
-    private final LRUCache<Long, CompanyDto> companyCache = new LRUCache<>(MAX_COMPANY_CACHE_SIZE);
+    private final LruCache<Long, FlightDto> flightCache = new LruCache<>(MAX_FLIGHT_CACHE_SIZE);
+    private final LruCache<Long, UserDto> userCache = new LruCache<>(MAX_USER_CACHE_SIZE);
+    private final LruCache<Long, CompanyDto> companyCache = new LruCache<>(MAX_COMPANY_CACHE_SIZE);
     private static final Logger logger = LoggerFactory.getLogger(Cache.class);
 
     public FlightDto getFlight(Long id) {
-        if(flightCache.get(id) == null) {
+        if (flightCache.get(id) == null) {
             return null;
         } else {
             logger.info("flight access, with id: {}", id);
@@ -83,14 +83,14 @@ public class Cache {
         userCache.remove(id);
     }
 
+    public void updateCompany(Long id, CompanyDto oldValue, CompanyDto newValue) {
+        logger.info("company is changed in cache, with id: {}", id);
+        companyCache.replace(id, newValue);
+    }
+
     public void putCompany(Long id, CompanyDto value) {
         logger.info("company is added into cache, with id: {}", id);
         companyCache.putIfAbsent(id, value);
-    }
-
-    public void deleteCompany(Long id, CompanyDto oldValue, CompanyDto newValue) {
-        logger.info("company is changed in cache, with id: {}", id);
-        companyCache.replace(id, newValue);
     }
 
     public Collection<CompanyDto> getAllCompanies() {

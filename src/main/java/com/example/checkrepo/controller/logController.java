@@ -2,21 +2,17 @@ package com.example.checkrepo.controller;
 
 import com.example.checkrepo.exception.ObjectNotFoundException;
 import jakarta.ws.rs.QueryParam;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/log")
@@ -32,10 +28,10 @@ public class logController {
         } else {
             System.out.println("ok");
         }
-        String currentTime = date+" "+minutes;
+        String currentTime = date + " " + minutes;
         System.out.println(currentTime);
 
-        String newLogFile ="logs/byDate/"+ date+"."+minutes+ ".log";
+        String newLogFile = "logs/byDate/" + date + "." + minutes + ".log";
         Path logNewPath = Paths.get("logs", logname);
 
         List<String> logEntries = new ArrayList<>();

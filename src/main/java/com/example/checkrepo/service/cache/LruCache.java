@@ -1,17 +1,14 @@
 package com.example.checkrepo.service.cache;
 
-import com.example.checkrepo.entities.Flight;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
-public class LRUCache<K, V> {
+public class LruCache<K, V> {
     private final Map<K, V> cache;
 
-    public LRUCache(int max) {
+    public LruCache(int max) {
         this.cache = new LinkedHashMap<>(max, 0.75f, true);
 
     }
@@ -30,7 +27,7 @@ public class LRUCache<K, V> {
 
     public void replace(K key, V newValue) {
         V currentValue = cache.get(key);
-        if(currentValue == null || !currentValue.equals(newValue)) {
+        if (currentValue == null || !currentValue.equals(newValue)) {
             cache.remove(key, cache.get(key));
             cache.putIfAbsent(key, newValue);
         }

@@ -11,13 +11,11 @@ import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.CompanyRepository;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.service.CompanyService;
-
+import com.example.checkrepo.service.cache.Cache;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
-
-import com.example.checkrepo.service.cache.Cache;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -56,10 +54,12 @@ public class CompanyServiceImpl implements CompanyService {
         if (!allCompanies.isEmpty() && allCompanies.size() == flightRepository.count()) {
             return new ArrayList<>(allCompanies);
         } else {
-            List<CompanyDto> companies = companyRepository.findAll().stream().map(CompanyMapper::toCompanyDto).toList();
+            List<CompanyDto> companies = companyRepository.findAll()
+                    .stream().map(CompanyMapper::toCompanyDto).toList();
             if (!allCompanies.isEmpty()) {
                 for (CompanyDto source : companies) {
-                    if (companies.stream().noneMatch(company -> company.getCompanyId().equals(source.getCompanyId()))) {
+                    if (companies.stream().noneMatch(company -> company
+                            .getCompanyId().equals(source.getCompanyId()))) {
                         cache.putCompany(source.getCompanyId(), source);
                     }
                 }
@@ -81,7 +81,7 @@ public class CompanyServiceImpl implements CompanyService {
             flightRepository.delete(flightSource);
         }
         companyRepository.delete(sourceCompany);
-        if(cache.getCompany(companyId) != null) {
+        if (cache.getCompany(companyId) != null) {
             cache.deleteCompany(companyId);
         }
     }
@@ -92,8 +92,8 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    public List<FlightDto> getCompanyFlightsJPQL(Long flightId) {
-        return FlightMapper.toDtoListShallow(companyRepository.findByCompanyIdJPQL(flightId));
+    public List<FlightDto> getCompanyFlightsJpql(Long flightId) {
+        return FlightMapper.toDtoListShallow(companyRepository.findByCompanyIdJpql(flightId));
     }
 }
 
