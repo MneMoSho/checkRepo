@@ -41,6 +41,11 @@ public class UserController {
         userService.deleteById(id);
     }
 
+    @PostMapping("/byFlight")
+    public List<UserDto> byRoute(@RequestBody List<String> finalDests) {
+        return userService.findByEndDest(finalDests);
+    }
+
     @GetMapping("/byFlightNative")
     public List<UserDto> byFlightNative(@QueryParam("startDest") String startDest) {
         return userService.findByStartDestNative(startDest);

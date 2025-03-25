@@ -35,8 +35,13 @@ public class UserMapper {
 
     public User toUser(UserDto userDto) {
         User user = new User();
+        user.setId(userDto.getId());
         user.setUserName(userDto.getUserName());
         user.setEmail(userDto.getEmail());
+        if (user.getFlights() != null) {
+            user.setFlights(userDto.getFlights().stream()
+                    .map(FlightMapper::toEntityShallow).collect(Collectors.toSet()));
+        }
         return user;
     }
 

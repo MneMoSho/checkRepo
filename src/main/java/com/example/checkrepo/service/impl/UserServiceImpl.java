@@ -51,7 +51,6 @@ public class UserServiceImpl implements UserService {
         UserDto newUser =cache.getUser(id);
         if (newUser == null) {
             if(userRepository.existsById(id)) {
-                System.out.println("not From cache");
                 newUser = UserMapper.toUserDto(userRepository.findById(id).get());
                 cache.putUser(id, newUser);
                 return newUser;
@@ -59,7 +58,6 @@ public class UserServiceImpl implements UserService {
                 throw new ObjectNotFoundException("User is not found");
             }
         } else {
-            System.out.println("From cache");
             return newUser;
         }
     }
@@ -92,6 +90,27 @@ public class UserServiceImpl implements UserService {
         if(cache.getUser(id) != null) {
             cache.deleteUser(id);
         }
+    }
+
+    @Override
+    public List<UserDto> findByEndDest(List<String> endDestinations) {
+        List<User> findByEnd = UserMapper.toEntityList(cache.getAllUsers().stream().toList());
+
+       if(findByEnd.isEmpty() || findByEnd.size() != userRepository.count()) {
+           findByEnd = userRepository.findAll();
+       } else {
+           System.out.println(findByEnd.getFirst().getFlights().stream().findFirst().get().getEndDestination());
+       }
+
+       List<User> foundUsers = new ArrayList<>();
+       for (String endDestination : endDestinations) {
+           List<User> bufList = findByEnd.stream().filter(
+                   user -> user.getFlights().stream().anyMatch(
+                           flight -> flight.getEndDestination()
+                                   .equals(endDestination))).toList();
+           foundUsers.addAll(bufList);
+       }
+       return UserMapper.toDtoList(foundUsers);
     }
 
     @Override

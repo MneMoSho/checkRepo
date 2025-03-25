@@ -14,6 +14,8 @@ public interface UserService {
 
     void deleteById(Long id);
 
+    List<UserDto> findByEndDest(List<String> endDestinations);
+
     List<UserDto> findByStartDestNative(String startDest);
 
     List<UserDto> findByStartDestJPQL(String startDest);
