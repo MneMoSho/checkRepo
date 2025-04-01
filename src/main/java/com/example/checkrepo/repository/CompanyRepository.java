@@ -11,12 +11,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, Long> {
 
-    @Query("SELECT f \n" +
-            "FROM Flight f \n" +
-            "JOIN f.company c \n" +
-            "WHERE f.startDestination = :destinationName")
+    @Query("SELECT f FROM Flight f JOIN f.company c \n"
+            + "WHERE f.startDestination = :destinationName")
     List<Flight> findByCompanyIdNative(@Param("destinationName") String destinationName);
 
-    @Query(value = "SELECT f.id, length, startdestination, enddestination, companies_id from companies c join flights f ON c.id = f.companies_id where f.startdestination =:destinationName", nativeQuery = true)
+    @Query(value = "SELECT f.id, length, startdestination, enddestination, companies_id "
+            + "from companies c join flights f ON c.id = f.companies_id"
+            + " where f.startdestination =:destinationName", nativeQuery = true)
     List<Flight> findByCompanyIdJpql(@Param("destinationName") String destinationName);
 }

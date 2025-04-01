@@ -11,9 +11,10 @@ import org.springframework.stereotype.Repository;
 public interface FlightRep extends JpaRepository<Flight, Long> {
 
     @Query("SELECT m from Flight m where m.startDestination =:startDestination")
-    List<Flight> findByStartDestinationJPQL(@Param("startDestination") String start);
+    List<Flight> findByStartDestinationJpql(@Param("startDestination") String start);
 
-    @Query(value = "SELECT * from flights m where m.startDestination =:startDestination", nativeQuery = true)
+    @Query(value = "SELECT * from flights m "
+            + "where m.startDestination =:startDestination", nativeQuery = true)
     List<Flight> findByStartDestinationNative(@Param("startDestination") String start);
 }
 

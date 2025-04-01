@@ -117,14 +117,14 @@ public class FlightServiceImpl implements FlightService {
     public List<FlightDto> getByStartDestJpql(String startName) {
         Collection<FlightDto> flights = cache.getAllFlights();
         if (flights.stream().noneMatch(flight -> flight.getStartDestination().equals(startName))) {
-            List<Flight> flightList = flightRepository.findByStartDestinationJPQL(startName);
+            List<Flight> flightList = flightRepository.findByStartDestinationJpql(startName);
             System.out.println("not from cache");
             if (flightList.isEmpty()) {
                 throw new ObjectNotFoundException("List is empty");
             }
             flightList.forEach(flight ->
                     cache.putFlight(flight.getId(), FlightMapper.toFlightDto(flight)));
-            return FlightMapper.toDtoList(flightRepository.findByStartDestinationJPQL(startName));
+            return FlightMapper.toDtoList(flightRepository.findByStartDestinationJpql(startName));
         } else {
             System.out.println("from cache");
             return flights.stream().filter(

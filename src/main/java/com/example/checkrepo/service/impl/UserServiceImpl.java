@@ -1,6 +1,5 @@
 package com.example.checkrepo.service.impl;
 
-import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
 import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
@@ -15,8 +14,6 @@ import jakarta.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
-
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -59,9 +56,6 @@ public class UserServiceImpl implements UserService {
         if (newUser == null) {
             if (userRepository.existsById(id)) {
                 newUser = UserMapper.toUserDto(userRepository.findById(id).get());
-
-                System.out.println(newUser.getFlights().stream().findFirst().get().getEndDestination());
-
                 cache.putUser(id, newUser);
                 return newUser;
             } else {
