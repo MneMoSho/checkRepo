@@ -47,12 +47,12 @@ public class CompanyController {
     }
 
     @GetMapping("/findByFlightNative")
-    public List<FlightDto> findByCompanyIdNative(@RequestParam("companyId") Long companyId) {
-        return companyService.getCompanyFlightsNative(companyId);
+    public List<CompanyDto> findByCompanyIdNative(@RequestParam("endDestination") String endDestination) {
+       return companyService.getCompanyFlightsNative(endDestination);
     }
 
     @GetMapping("/findByFlightJPQL")
-    public List<FlightDto> findByCompanyIdJpql(@RequestParam("companyId") Long companyId) {
-        return companyService.getCompanyFlightsJpql(companyId);
+    public List<CompanyDto> findByCompanyIdJpql(@RequestParam("satrtDestinationName") String endDest) {
+        return companyService.getCompanyFlightsJpql(endDest);
     }
 }

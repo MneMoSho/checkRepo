@@ -50,4 +50,12 @@ public class CompanyMapper {
         }
         return list;
     }
+
+    public List<CompanyDto> toDtoListShallow(List<Company> companysList) {
+        List<CompanyDto> dtoList = new ArrayList<>();
+        for (Company source : companysList) {
+            dtoList.add(CompanyMapper.toDtoShallow(source));
+        }
+        return dtoList;
+    }
 }

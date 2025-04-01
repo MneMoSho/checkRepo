@@ -43,14 +43,4 @@ public class UserController {
     public List<UserDto> byRoute(@RequestBody List<String> finalDests) {
         return userService.findByEndDest(finalDests);
     }
-
-    @GetMapping("/byFlightNative")
-    public List<UserDto> byFlightNative(@QueryParam("startDest") String startDest) {
-        return userService.findByStartDestNative(startDest);
-    }
-
-    @GetMapping("/byFlightJPQL")
-    public List<UserDto> byFlightJpql(@QueryParam("startDest") String startDest) {
-        return userService.findByStartDestJpql(startDest);
-    }
 }

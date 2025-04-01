@@ -12,10 +12,9 @@ import com.example.checkrepo.repository.CompanyRepository;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.service.CompanyService;
 import com.example.checkrepo.service.cache.Cache;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
+
+import java.util.*;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -78,22 +77,39 @@ public class CompanyServiceImpl implements CompanyService {
             for (User userSource : flightSource.getUsers()) {
                 userSource.getFlights().remove(flightSource);
             }
+            cache.deleteFlight(flightSource.getId());
             flightRepository.delete(flightSource);
         }
-        companyRepository.delete(sourceCompany);
         if (cache.getCompany(companyId) != null) {
             cache.deleteCompany(companyId);
         }
+        companyRepository.delete(sourceCompany);
     }
 
     @Override
-    public List<FlightDto> getCompanyFlightsNative(Long flightId) {
-        return FlightMapper.toDtoListShallow(companyRepository.findByCompanyIdNative(flightId));
+    public List<CompanyDto> getCompanyFlightsNative(String destinationName) {
+        List<FlightDto> dtoList = FlightMapper.toDtoListShallow(companyRepository.findByCompanyIdNative(destinationName));
+        Map<Long, CompanyDto> companyDtoMap = new HashMap<>();
+        for(FlightDto flightDto : dtoList) {
+            Long companyId = flightDto.getCompanyId();
+            CompanyDto companyDto = companyDtoMap.computeIfAbsent(companyId, id->new CompanyDto(companyId, companyRepository.findById(companyId).get().getCompanyName(), new HashSet<>()));
+            companyDto.getFlights().add(flightDto);
+        }
+        List<CompanyDto> company = new ArrayList<>(companyDtoMap.values());
+        return company;
     }
 
     @Override
-    public List<FlightDto> getCompanyFlightsJpql(Long flightId) {
-        return FlightMapper.toDtoListShallow(companyRepository.findByCompanyIdJpql(flightId));
+    public List<CompanyDto> getCompanyFlightsJpql(String destinationName) {
+        List<FlightDto> dtoList = FlightMapper.toDtoListShallow(companyRepository.findByCompanyIdJpql(destinationName));
+        Map<Long, CompanyDto> companyDtoMap = new HashMap<>();
+        for(FlightDto flightDto : dtoList) {
+            Long companyId = flightDto.getCompanyId();
+            CompanyDto companyDto = companyDtoMap.computeIfAbsent(companyId, id->new CompanyDto(companyId, companyRepository.findById(companyId).get().getCompanyName(), new HashSet<>()));
+            companyDto.getFlights().add(flightDto);
+        }
+        List<CompanyDto> company = new ArrayList<>(companyDtoMap.values());
+        return company;
     }
 }
 

@@ -84,13 +84,14 @@ public class FlightServiceImpl implements FlightService {
             sourceUser.getFlights().remove(newFlight);
             newFlight.getUsers().remove(sourceUser);
         }
-        flightRepository.delete(newFlight);
         if (cache.getFlight(id) != null) {
             cache.deleteFlight(id);
         }
+        flightRepository.delete(newFlight);
     }
 
     @Override
+    @Transactional
     public Optional<FlightDto> findById(Long id) {
         FlightDto foundFlight = cache.getFlight(id);
         if (foundFlight == null) {

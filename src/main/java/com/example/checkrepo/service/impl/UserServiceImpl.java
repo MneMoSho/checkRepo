@@ -1,9 +1,11 @@
 package com.example.checkrepo.service.impl;
 
+import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
 import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
 import com.example.checkrepo.exception.ObjectNotFoundException;
+import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.mapper.UserMapper;
 import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.repository.UserRepository;
@@ -13,6 +15,8 @@ import jakarta.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,20 +29,26 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createUser(UserDto userDto) {
-        User saveUser = UserMapper.toUser(userDto);
+        User saveUser = UserMapper.toUserShallow(userDto);
         userRepository.save(saveUser);
         cache.putUser(saveUser.getId(), UserMapper.toUserDto(saveUser));
     }
 
     @Override
+    @Transactional
     public UserDto addingNewFlight(Long flightId, Long userId) {
         User newUser = userRepository.findById(userId)
                 .orElseThrow(() -> new ObjectNotFoundException("User was not found"));
         Flight newFlight = flightRep.findById(flightId)
                 .orElseThrow(() -> new ObjectNotFoundException("Flight was not found"));
         newUser.getFlights().add(newFlight);
+        newFlight.getUsers().add(newUser);
+
+        flightRep.save(newFlight);
         userRepository.save(newUser);
+
         cache.updateUser(newUser.getId(), UserMapper.toUserDto(newUser));
+        cache.updateFlight(newFlight.getId(), FlightMapper.toFlightDto(newFlight));
         return UserMapper.toUserDto(newUser);
     }
 
@@ -49,6 +59,9 @@ public class UserServiceImpl implements UserService {
         if (newUser == null) {
             if (userRepository.existsById(id)) {
                 newUser = UserMapper.toUserDto(userRepository.findById(id).get());
+
+                System.out.println(newUser.getFlights().stream().findFirst().get().getEndDestination());
+
                 cache.putUser(id, newUser);
                 return newUser;
             } else {
@@ -110,15 +123,5 @@ public class UserServiceImpl implements UserService {
             foundUsers.addAll(bufList);
         }
         return UserMapper.toDtoList(foundUsers);
-    }
-
-    @Override
-    public List<UserDto> findByStartDestNative(String startDest) {
-        return UserMapper.toDtoListShallow(userRepository.findByDestNative(startDest));
-    }
-
-    @Override
-    public List<UserDto> findByStartDestJpql(String startDest) {
-        return UserMapper.toDtoListShallow(userRepository.findByDestJpql(startDest));
     }
 }

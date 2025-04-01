@@ -8,9 +8,13 @@ import java.util.Map;
 public class LruCache<K, V> {
     private final Map<K, V> cache;
 
-    public LruCache(int max) {
-        this.cache = new LinkedHashMap<>(max, 0.75f, true);
-
+    public LruCache(int maxSize) {
+        this.cache = new LinkedHashMap<>(maxSize, 0.75f, true) {
+            @Override
+            protected boolean removeEldestEntry(Map.Entry<K, V> old) {
+                return size() > maxSize;
+            }
+        };
     }
 
     public V get(K key) {
@@ -22,12 +26,14 @@ public class LruCache<K, V> {
     }
 
     public void remove(K key) {
-        cache.remove(key);
+        System.out.println("cache removed");
+        cache.remove(key, cache.get(key));
     }
 
     public void replace(K key, V newValue) {
         V currentValue = cache.get(key);
         if (currentValue == null || !currentValue.equals(newValue)) {
+            System.out.println("cache updated");
             cache.remove(key, cache.get(key));
             cache.putIfAbsent(key, newValue);
         }

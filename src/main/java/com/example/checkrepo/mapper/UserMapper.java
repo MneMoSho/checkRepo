@@ -39,10 +39,13 @@ public class UserMapper {
         user.setUserName(userDto.getUserName());
         user.setEmail(userDto.getEmail());
         if (user.getFlights() != null) {
+            System.out.println("not empty");
             user.setFlights(userDto.getFlights().stream()
                     .map(FlightMapper::toEntityShallow).collect(Collectors.toSet()));
+        } else {
+            System.out.println("Emptuy");
         }
-        return user;
+            return user;
     }
 
     public User toUserShallow(UserDto userDto) {

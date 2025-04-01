@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Cache {
-    private static  final int MAX_FLIGHT_CACHE_SIZE = 100;
-    private static  final int MAX_USER_CACHE_SIZE = 100;
-    private static  final int MAX_COMPANY_CACHE_SIZE = 100;
+    private static final int MAX_FLIGHT_CACHE_SIZE = 100;
+    private static final int MAX_USER_CACHE_SIZE = 100;
+    private static final int MAX_COMPANY_CACHE_SIZE = 100;
 
     private final LruCache<Long, FlightDto> flightCache = new LruCache<>(MAX_FLIGHT_CACHE_SIZE);
     private final LruCache<Long, UserDto> userCache = new LruCache<>(MAX_USER_CACHE_SIZE);

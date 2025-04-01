@@ -15,7 +15,7 @@ public interface CompanyService {
 
     void deleteCompany(Long id);
 
-    List<FlightDto> getCompanyFlightsNative(Long flightId);
+    List<CompanyDto> getCompanyFlightsNative(String destinationName);
 
-    List<FlightDto> getCompanyFlightsJpql(Long flightId);
+    List<CompanyDto> getCompanyFlightsJpql(String destinationName);
 }
