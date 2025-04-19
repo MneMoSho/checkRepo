@@ -26,21 +26,18 @@ public class LruCache<K, V> {
     }
 
     public void remove(K key) {
-        System.out.println("cache removed");
         cache.remove(key, cache.get(key));
     }
 
     public void replace(K key, V newValue) {
         V currentValue = cache.get(key);
         if (currentValue == null || !currentValue.equals(newValue)) {
-            System.out.println("cache updated");
             cache.remove(key, cache.get(key));
             cache.putIfAbsent(key, newValue);
         }
     }
 
     public Collection<V> getAll() {
-        System.out.println("from cache");
         return new ArrayList<>(cache.values());
     }
 }

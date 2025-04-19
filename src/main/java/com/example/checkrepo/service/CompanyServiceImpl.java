@@ -1,4 +1,4 @@
-package com.example.checkrepo.service.impl;
+package com.example.checkrepo.service;
 
 import com.example.checkrepo.dto.CompanyDto;
 import com.example.checkrepo.dto.FlightDto;
@@ -13,7 +13,6 @@ import com.example.checkrepo.repository.FlightRep;
 import com.example.checkrepo.service.CompanyService;
 import com.example.checkrepo.service.cache.Cache;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,24 +52,9 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public List<CompanyDto> showAll() {
-        Collection<CompanyDto> allCompanies = cache.getAllCompanies();
-        if (!allCompanies.isEmpty() && allCompanies.size() == flightRepository.count()) {
-            return new ArrayList<>(allCompanies);
-        } else {
-            List<CompanyDto> companies = companyRepository.findAll()
-                    .stream().map(CompanyMapper::toCompanyDto).toList();
-            if (!allCompanies.isEmpty()) {
-                for (CompanyDto source : companies) {
-                    if (companies.stream().noneMatch(company -> company
-                            .getCompanyId().equals(source.getCompanyId()))) {
-                        cache.putCompany(source.getCompanyId(), source);
-                    }
-                }
-            } else {
-                companies.forEach(company -> cache.putCompany(company.getCompanyId(), company));
-            }
-            return companies;
-        }
+        List<CompanyDto> companies = companyRepository.findAll()
+                .stream().map(CompanyMapper::toCompanyDto).toList();
+        return companies;
     }
 
     @Override
@@ -91,9 +75,25 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
+    public CompanyDto findById(Long companyId) {
+        if(companyId == null) {
+            System.out.println("String");
+        }
+        CompanyDto findCompany = cache.getCompany(companyId);
+        if(findCompany == null) {
+            Company addCompany = companyRepository.findById(companyId).orElseThrow(()
+                    -> new ObjectNotFoundException("Flight cannot be found"));
+            cache.putCompany(companyId, CompanyMapper.toCompanyDto(addCompany));
+            return CompanyMapper.toCompanyDto(addCompany);
+        } else {
+            return findCompany;
+        }
+    }
+
+    @Override
     public List<CompanyDto> getCompanyFlightsNative(String destinationName) {
         List<FlightDto> dtoList = FlightMapper
-                .toDtoListShallow(companyRepository.findByCompanyIdNative(destinationName));
+                .toDtoListShallow(companyRepository.findByDestinationNative(destinationName));
         Map<Long, CompanyDto> companyDtoMap = new HashMap<>();
         for (FlightDto flightDto : dtoList) {
             Long companyId = flightDto.getCompanyId();
@@ -109,7 +109,10 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public List<CompanyDto> getCompanyFlightsJpql(String destinationName) {
         List<FlightDto> dtoList = FlightMapper
-                .toDtoListShallow(companyRepository.findByCompanyIdJpql(destinationName));
+                .toDtoListShallow(companyRepository.findByDestinationJpql(destinationName));
+        if(dtoList.isEmpty()) {
+            throw new ObjectNotFoundException("Not found");
+        }
         Map<Long, CompanyDto> companyDtoMap = new HashMap<>();
         for (FlightDto flightDto : dtoList) {
             Long companyId = flightDto.getCompanyId();

@@ -1,4 +1,4 @@
-package com.example.checkrepo.service.impl;
+package com.example.checkrepo.service;
 
 import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.entities.Flight;
@@ -7,7 +7,6 @@ import com.example.checkrepo.exception.IncorrectInputException;
 import com.example.checkrepo.exception.ObjectNotFoundException;
 import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.repository.FlightRep;
-import com.example.checkrepo.service.FlightService;
 import com.example.checkrepo.service.cache.Cache;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
@@ -25,6 +24,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 
 @Service
 @AllArgsConstructor
@@ -46,6 +46,10 @@ public class FlightServiceImpl implements FlightService {
         if (flightDto.getCompanyId() == null) {
             throw new IncorrectInputException("Incorrect input, Id cannot be null");
         }
+
+        if (flightDto.getCompanyId() < 6378) {
+            throw new IncorrectInputException("Earth radius is less");
+        }
         Flight saveFlight = FlightMapper.toEntity(flightDto);
         flightRepository.save(saveFlight);
         company.addFlightToCompany(saveFlight.getId(), flightDto.getCompanyId());
@@ -55,24 +59,9 @@ public class FlightServiceImpl implements FlightService {
 
     @Override
     public List<FlightDto> displayAll() {
-        Collection<FlightDto> allFlights = cache.getAllFlights();
-        if (!allFlights.isEmpty() && allFlights.size() == flightRepository.count()) {
-            return new ArrayList<>(allFlights);
-        } else {
-            List<FlightDto> flights = flightRepository
-                    .findAll().stream().map(FlightMapper::toFlightDto).toList();
-            if (!allFlights.isEmpty()) {
-                for (FlightDto source : allFlights) {
-                    if (flights.stream().noneMatch(
-                            flight -> flight.getId().equals(source.getId()))) {
-                        cache.putFlight(source.getId(), source);
-                    }
-                }
-            } else {
-                flights.forEach(flight -> cache.putFlight(flight.getId(), flight));
-            }
-            return flights;
-        }
+        List<FlightDto> flights = flightRepository
+                .findAll().stream().map(FlightMapper::toFlightDto).toList();
+        return  flights;
     }
 
     @Transactional
@@ -108,7 +97,7 @@ public class FlightServiceImpl implements FlightService {
     public List<FlightDto> getByStartDestNative(String startName) {
         List<Flight> flightList = flightRepository.findByStartDestinationNative(startName);
         if (flightList.isEmpty()) {
-            throw new ObjectNotFoundException("List is empty");
+           throw new ObjectNotFoundException("List is empty");
         }
         return FlightMapper.toDtoList(flightRepository.findByStartDestinationNative(startName));
     }
@@ -118,7 +107,6 @@ public class FlightServiceImpl implements FlightService {
         Collection<FlightDto> flights = cache.getAllFlights();
         if (flights.stream().noneMatch(flight -> flight.getStartDestination().equals(startName))) {
             List<Flight> flightList = flightRepository.findByStartDestinationJpql(startName);
-            System.out.println("not from cache");
             if (flightList.isEmpty()) {
                 throw new ObjectNotFoundException("List is empty");
             }
@@ -126,7 +114,6 @@ public class FlightServiceImpl implements FlightService {
                     cache.putFlight(flight.getId(), FlightMapper.toFlightDto(flight)));
             return FlightMapper.toDtoList(flightRepository.findByStartDestinationJpql(startName));
         } else {
-            System.out.println("from cache");
             return flights.stream().filter(
                     flight -> flight.getStartDestination().equals(startName)).toList();
         }
@@ -160,7 +147,6 @@ public class FlightServiceImpl implements FlightService {
             List<Flight> bufList = new ArrayList<>(flightList.stream().filter(newFlight ->
                     newFlight.getCompany().getCompanyName().equals(company)).toList());
             if (bufList.isEmpty()) {
-                System.out.println("not found");
             }
             sortedFlights.addAll(bufList);
         }

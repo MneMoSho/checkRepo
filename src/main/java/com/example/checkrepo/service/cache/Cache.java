@@ -29,8 +29,12 @@ public class Cache {
     }
 
     public UserDto getUser(Long id) {
-        logger.info("user access, with id: {}", id);
-        return userCache.get(id);
+        if(userCache.get(id) == null) {
+            return null;
+        } else {
+            logger.info("user access, with id: {}", id);
+            return userCache.get(id);
+        }
     }
 
     public CompanyDto getCompany(Long id) {

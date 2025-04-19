@@ -1,6 +1,8 @@
 package com.example.checkrepo.aspect;
 
+import com.example.checkrepo.exception.IncorrectInputException;
 import com.example.checkrepo.exception.ObjectNotFoundException;
+import com.example.checkrepo.exception.TypeMissMatchException;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -9,6 +11,9 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+
+import java.util.Arrays;
 
 @Component
 @Aspect
@@ -28,19 +33,20 @@ public class LoggingAspect {
     }
 
     @AfterThrowing(pointcut = "controllerLog()", throwing = "exception")
-    public void logError(ObjectNotFoundException exception) {
+    public void logError(Exception exception) {
         long start = System.currentTimeMillis();
         long executionTime = System.currentTimeMillis() - start;
-        log.error("Exception thrown {}, {}", exception, executionTime);
+        if (exception instanceof ObjectNotFoundException || exception instanceof MethodArgumentTypeMismatchException) {
+            log.error("Exception thrown {}, {}", exception, executionTime);
+        }
     }
 
     @Around("controllerLog()")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
         Object proceed = joinPoint.proceed();
-        long executionTime = System.currentTimeMillis() - start;
-        log.info("Executed successfully: {}.{}. Execution {}", joinPoint.getSignature()
-                .getDeclaringTypeName(), joinPoint.getSignature().getName(), executionTime);
+        log.info("Executed successfully: {}.{}.", joinPoint.getSignature()
+                .getDeclaringTypeName(), joinPoint.getSignature().getName());
         return proceed;
     }
 }

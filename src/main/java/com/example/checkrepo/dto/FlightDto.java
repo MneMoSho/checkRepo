@@ -2,6 +2,9 @@ package com.example.checkrepo.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Set;
+
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,6 +18,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FlightDto {
+    @Min(value = 1, message = "id must not be less than 1")
     @JsonProperty("id")
     private Long id;
     @JsonProperty("length")

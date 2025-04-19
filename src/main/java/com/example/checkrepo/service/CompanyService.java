@@ -18,4 +18,6 @@ public interface CompanyService {
     List<CompanyDto> getCompanyFlightsNative(String destinationName);
 
     List<CompanyDto> getCompanyFlightsJpql(String destinationName);
+
+    CompanyDto findById(Long companyId);
 }

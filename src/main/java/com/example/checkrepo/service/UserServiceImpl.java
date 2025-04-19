@@ -1,8 +1,9 @@
-package com.example.checkrepo.service.impl;
+package com.example.checkrepo.service;
 
 import com.example.checkrepo.dto.UserDto;
 import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
+import com.example.checkrepo.exception.IncorrectInputException;
 import com.example.checkrepo.exception.ObjectNotFoundException;
 import com.example.checkrepo.mapper.FlightMapper;
 import com.example.checkrepo.mapper.UserMapper;
@@ -26,6 +27,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createUser(UserDto userDto) {
+        if (!userDto.getEmail().contains("@")) {
+            throw new IncorrectInputException("Invalid email");
+        }
         User saveUser = UserMapper.toUserShallow(userDto);
         userRepository.save(saveUser);
         cache.putUser(saveUser.getId(), UserMapper.toUserDto(saveUser));
@@ -68,23 +72,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserDto> getAllUsers() {
-        Collection<UserDto> allUsers = cache.getAllUsers();
-        if (!allUsers.isEmpty() && allUsers.size() == userRepository.count()) {
-            return new ArrayList<>(allUsers);
-        } else {
-            List<UserDto> users = userRepository.findAll()
-                    .stream().map(UserMapper::toUserDto).toList();
-            if (!allUsers.isEmpty()) {
-                for (UserDto source : users) {
-                    if (users.stream().noneMatch(user -> user.getId().equals(source.getId()))) {
-                        cache.putUser(source.getId(), source);
-                    }
-                }
-            } else {
-                users.forEach(user -> cache.putUser(user.getId(), user));
-            }
-            return users;
-        }
+        List<UserDto> users = userRepository.findAll()
+                .stream().map(UserMapper::toUserDto).toList();
+        return users;
     }
 
     @Override
@@ -100,14 +90,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserDto> findByEndDest(List<String> endDestinations) {
         List<User> findByEnd = UserMapper.toEntityList(cache.getAllUsers().stream().toList());
-
         if (findByEnd.isEmpty() || findByEnd.size() != userRepository.count()) {
             findByEnd = userRepository.findAll();
         } else {
             System.out.println(findByEnd
                     .getFirst().getFlights().stream().findFirst().get().getEndDestination());
         }
-
         List<User> foundUsers = new ArrayList<>();
         for (String endDestination : endDestinations) {
             List<User> bufList = findByEnd.stream().filter(

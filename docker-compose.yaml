@@ -1,59 +1,11 @@
-version: '3'
-
 services:
 
   postgres:
     image: 'postgres:13'
-    container_name: 'java-postgres32432'
+    container_name: 'java-postgres789748'
     ports:
       - '5432:5432'
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 18092005
       POSTGRES_DB: java
-
-  elasticsearch:
-    image: elasticsearch:7.16.1
-    volumes:
-      - ./elk-config/elasticsearch/elasticConfig.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
-      - ./docker_volumes/elasticsearch/data:/usr/share/elasticsearch/data
-    environment:
-      ES_JAVA_OPTS: "-Xmx512m -Xms512m"
-      ELASTIC_USERNAME: "elastic"
-      ELASTIC_PASSWORD: "MyPw123"
-      discovery.type: single-node
-    networks:
-      - elk
-    ports:
-      - "9200:9200"
-      - "9300:9300"
-
-  logstash:
-    image: logstash:7.16.2
-    volumes:
-      - ./elk-config/logstash/config.yml:/usr/share/logstash/config/logstash.yml:ro
-    environment:
-      LS_JAVA_OPTS: "-Xmx512m -Xms512m"
-    ports:
-      - "5044:5044"
-      - "5000:5000"
-      - "9600:9600"
-    networks:
-      - elk
-    depends_on:
-      - elasticsearch
-
-  kibana:
-    image: kibana:7.16.1
-    depends_on:
-      - elasticsearch
-    volumes:
-      - ./elk-config/kibana/config.yml:/usr/share/kibana/config/kibana.yml:ro
-    networks:
-      - elk
-    ports:
-      - "5601:5601"
-
-networks:
-  elk:
-    driver: bridge

@@ -41,7 +41,7 @@ public class UserMapper {
         if (user.getFlights() != null) {
             System.out.println("not empty");
             user.setFlights(userDto.getFlights().stream()
-                    .map(FlightMapper::toEntityShallow).collect(Collectors.toSet()));
+                    .map(FlightMapper::toEntity).collect(Collectors.toSet()));
         } else {
             System.out.println("Emptuy");
         }
