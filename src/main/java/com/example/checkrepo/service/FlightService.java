@@ -18,10 +18,11 @@ public interface FlightService {
 
     List<FlightDto> getByStartDestJpql(String startName);
 
-    void getFromExcel() throws IOException;
+   // void getFromExcel() throws IOException;
 
-    void restartSequence(int restartIndex);
+    //void restartSequence(int restartIndex);
 
     List<FlightDto> bulkOperation(List<String> companies);
 
+    List<FlightDto> postFlights(List<FlightDto> flightDtos);
 }

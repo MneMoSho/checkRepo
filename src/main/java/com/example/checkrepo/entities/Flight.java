@@ -12,16 +12,15 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Table(name = "flights")
 public class Flight {
     @Id
@@ -34,10 +33,8 @@ public class Flight {
     @Column(name = "enddestination")
     private String endDestination;
     @ManyToOne(fetch = FetchType.LAZY)
-
     @JoinColumn(name = "companies_id")
     private Company company;
-
     @ManyToMany(mappedBy = "flights", fetch = FetchType.EAGER)
     private Set<User> users = new HashSet<>();
 }

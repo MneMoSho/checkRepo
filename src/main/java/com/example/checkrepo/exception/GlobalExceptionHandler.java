@@ -27,4 +27,12 @@ public class GlobalExceptionHandler {
         error.setTimestamp(new Date());
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
+    @ExceptionHandler(FileNotFound.class)
+    public ResponseEntity<ErrorObject> fileNotCreated(ObjectNotFoundException except) {
+        ErrorObject error = new ErrorObject();
+        error.setStatusCode(HttpStatus.BAD_REQUEST.value());
+        error.setMessage(except.getMessage());
+        error.setTimestamp(new Date());
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
 }

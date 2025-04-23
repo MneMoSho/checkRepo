@@ -11,11 +11,6 @@ import com.example.checkrepo.service.FlightService;
 import com.example.checkrepo.service.cache.Cache;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -35,44 +30,29 @@ public class FlightServiceImpl implements FlightService {
     private final CompanyServiceImpl company;
     private EntityManager entityManager;
 
-    @Override
-    public void restartSequence(int restartIndex) {
-        String sql = "ALTER SEQUENCE flight_id_seq RESTART WITH " + restartIndex;
-        entityManager.createNativeQuery(sql).executeUpdate();
-    }
+//    @Override
+//    public void restartSequence(int restartIndex) {
+//        String sql = "ALTER SEQUENCE flight_id_seq RESTART WITH " + restartIndex;
+//        entityManager.createNativeQuery(sql).executeUpdate();
+//    }
 
     @Override
     public void createDbFlight(FlightDto flightDto) {
         if (flightDto.getCompanyId() == null) {
             throw new IncorrectInputException("Incorrect input, Id cannot be null");
         }
+        System.out.println(flightDto.getFlightCompany());
         Flight saveFlight = FlightMapper.toEntity(flightDto);
         flightRepository.save(saveFlight);
         company.addFlightToCompany(saveFlight.getId(), flightDto.getCompanyId());
-        System.out.println(saveFlight.getId());
-        cache.putFlight(saveFlight.getId(), FlightMapper.toFlightDto(saveFlight));
+         cache.putFlight(saveFlight.getId(), FlightMapper.toFlightDto(saveFlight));
     }
 
     @Override
     public List<FlightDto> displayAll() {
-        Collection<FlightDto> allFlights = cache.getAllFlights();
-        if (!allFlights.isEmpty() && allFlights.size() == flightRepository.count()) {
-            return new ArrayList<>(allFlights);
-        } else {
             List<FlightDto> flights = flightRepository
                     .findAll().stream().map(FlightMapper::toFlightDto).toList();
-            if (!allFlights.isEmpty()) {
-                for (FlightDto source : allFlights) {
-                    if (flights.stream().noneMatch(
-                            flight -> flight.getId().equals(source.getId()))) {
-                        cache.putFlight(source.getId(), source);
-                    }
-                }
-            } else {
-                flights.forEach(flight -> cache.putFlight(flight.getId(), flight));
-            }
             return flights;
-        }
     }
 
     @Transactional
@@ -132,38 +112,38 @@ public class FlightServiceImpl implements FlightService {
         }
     }
 
-    @Override
-    @Transactional
-    public void getFromExcel() throws IOException {
-        String fileName = "Flights.xlsx";
-        Path excelFilepath = Paths.get("ExcelFiles", fileName);
-        FileInputStream excelFile = new FileInputStream(new File(excelFilepath.toString()));
-        Workbook workbook = new XSSFWorkbook(excelFile);
-        Sheet sheet = workbook.getSheetAt(0);
-        sheet.forEach(row -> {
-            FlightDto newFlightDto = new FlightDto();
-            if (row.getRowNum() != 0) {
-                newFlightDto.setLength((int) row.getCell(0).getNumericCellValue());
-                newFlightDto.setEndDestination(row.getCell(1).getStringCellValue());
-                newFlightDto.setStartDestination(row.getCell(2).getStringCellValue());
-                newFlightDto.setCompanyId((long) row.getCell(3).getNumericCellValue());
-                createDbFlight(newFlightDto);
-                cache.putFlight(newFlightDto.getId(), newFlightDto);
-            }
-        });
-    }
-
     public List<FlightDto> bulkOperation(List<String> companies) {
+        if(companies.isEmpty()) {
+            throw new ObjectNotFoundException("You haven't entered anything");
+        }
         List<Flight> flightList = flightRepository.findAll();
         List<Flight> sortedFlights = new ArrayList<>();
         for (String company : companies) {
             List<Flight> bufList = new ArrayList<>(flightList.stream().filter(newFlight ->
                     newFlight.getCompany().getCompanyName().equals(company)).toList());
-            if (bufList.isEmpty()) {
-                System.out.println("not found");
-            }
             sortedFlights.addAll(bufList);
         }
+        if (sortedFlights.isEmpty()) {
+            throw new ObjectNotFoundException("Company you've chosen doesn't have any flights");
+        }
         return FlightMapper.toDtoList(sortedFlights);
+    }
+
+    @Override
+    public List<FlightDto> postFlights(List<FlightDto> flightDtos) {
+        if(flightDtos.isEmpty()) {
+            throw new ObjectNotFoundException("List is empty");
+        }
+
+        List<Flight> flightToSave = flightDtos.stream().map(FlightMapper::toEntity).toList();
+        List<Flight> savedFlights = flightRepository.saveAll(flightToSave);
+
+        for(int i = 0; i<savedFlights.size(); i++) {
+            Flight companyFlight = savedFlights.get(i);
+            FlightDto flightDto = flightDtos.get(i);
+            company.addFlightToCompany(companyFlight.getId(), flightDto.getCompanyId());
+            cache.putFlight(companyFlight.getId(), FlightMapper.toFlightDto(companyFlight));
+        }
+        return FlightMapper.toDtoList(savedFlights);
     }
 }

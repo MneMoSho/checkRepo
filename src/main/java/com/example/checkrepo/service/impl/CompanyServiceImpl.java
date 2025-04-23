@@ -53,24 +53,10 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public List<CompanyDto> showAll() {
-        Collection<CompanyDto> allCompanies = cache.getAllCompanies();
-        if (!allCompanies.isEmpty() && allCompanies.size() == flightRepository.count()) {
-            return new ArrayList<>(allCompanies);
-        } else {
             List<CompanyDto> companies = companyRepository.findAll()
                     .stream().map(CompanyMapper::toCompanyDto).toList();
-            if (!allCompanies.isEmpty()) {
-                for (CompanyDto source : companies) {
-                    if (companies.stream().noneMatch(company -> company
-                            .getCompanyId().equals(source.getCompanyId()))) {
-                        cache.putCompany(source.getCompanyId(), source);
-                    }
-                }
-            } else {
-                companies.forEach(company -> cache.putCompany(company.getCompanyId(), company));
-            }
-            return companies;
-        }
+
+        return companies;
     }
 
     @Override
@@ -121,5 +107,7 @@ public class CompanyServiceImpl implements CompanyService {
         List<CompanyDto> company = new ArrayList<>(companyDtoMap.values());
         return company;
     }
+
+
 }
 

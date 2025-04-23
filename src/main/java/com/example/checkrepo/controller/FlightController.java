@@ -62,13 +62,13 @@ public class FlightController {
         return flightService.getByStartDestJpql(flightStart);
     }
 
-    @GetMapping("/fromExcel")
-    public void getFromExcel() throws IOException {
-        flightService.getFromExcel();
-    }
-
     @PostMapping("/bulkOp")
     public List<FlightDto> bulkOperation(@RequestBody List<String> nameOfCompanies) {
         return flightService.bulkOperation(nameOfCompanies);
+    }
+
+    @PostMapping("/addMany")
+    public List<FlightDto> saveFlights(@RequestBody List<FlightDto> nameOfFlights) {
+        return flightService.postFlights(nameOfFlights);
     }
 }
