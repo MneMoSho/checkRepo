@@ -1,7 +1,6 @@
 package com.example.checkrepo.controller;
 
 import com.example.checkrepo.entities.LogTask;
-import com.example.checkrepo.exception.FileNotFound;
 import com.example.checkrepo.exception.IncorrectInputException;
 import com.example.checkrepo.exception.ObjectNotFoundException;
 import com.example.checkrepo.logging.LogFileId;
@@ -15,7 +14,6 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;

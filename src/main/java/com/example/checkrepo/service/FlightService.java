@@ -25,4 +25,10 @@ public interface FlightService {
     List<FlightDto> bulkOperation(List<String> companies);
 
     List<FlightDto> postFlights(List<FlightDto> flightDtos);
+
+    int findMinPrice();
+
+    List<FlightDto> findByCountry();
+
+    List<FlightDto> findFromFront(FlightDto destination);
 }

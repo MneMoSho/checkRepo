@@ -57,4 +57,5 @@ public class CompanyController {
                                                     String endDest) {
         return companyService.getCompanyFlightsJpql(endDest);
     }
+
 }

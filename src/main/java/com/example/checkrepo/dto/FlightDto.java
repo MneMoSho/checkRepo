@@ -29,4 +29,8 @@ public class FlightDto {
     private String flightCompany;
     @JsonProperty("users")
     private Set<UserDto> userDtos;
+    @JsonProperty("country")
+    private String country;
+    @JsonProperty("price")
+    private int price;
 }

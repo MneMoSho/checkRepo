@@ -11,10 +11,9 @@ import com.example.checkrepo.service.FlightService;
 import com.example.checkrepo.service.cache.Cache;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
+
+import java.util.*;
+
 import lombok.AllArgsConstructor;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -145,5 +144,38 @@ public class FlightServiceImpl implements FlightService {
             cache.putFlight(companyFlight.getId(), FlightMapper.toFlightDto(companyFlight));
         }
         return FlightMapper.toDtoList(savedFlights);
+    }
+
+    public int findMinPrice() {
+        List<Flight> allFlights = flightRepository.findAll();
+        Optional<Flight> minFlight = allFlights.stream().min(Comparator.comparing(flight -> flight.getPrice()));
+        System.out.println(minFlight.get().getPrice());
+        return minFlight.get().getPrice();
+    }
+
+    @Override
+    public List<FlightDto> findByCountry() {
+        List<Flight> allFlights = flightRepository.findAll();
+        Map<String, Flight> countryToFlightMap = new HashMap<>();
+        for (Flight flight : allFlights) {
+            countryToFlightMap.putIfAbsent(flight.getCountry(), flight);
+        }
+        return FlightMapper.toDtoList(new ArrayList<>(countryToFlightMap.values()));
+    }
+
+    @Override
+    public List<FlightDto> findFromFront(FlightDto destination) {
+        List<Flight> allFlights = flightRepository.findAll();
+        List<Flight> foundFlight = new ArrayList<>();
+        foundFlight = allFlights.stream()
+                .filter(flight -> flight.getStartDestination().equals(destination.getStartDestination()))
+                .filter(flight -> flight.getEndDestination().equals(destination.getEndDestination()))
+                .toList();
+        for(Flight List : foundFlight ) {
+            System.out.println(List.getLength());
+            System.out.println(List.getEndDestination());
+            System.out.println(List.getCountry());
+        }
+        return FlightMapper.toDtoList(foundFlight);
     }
 }

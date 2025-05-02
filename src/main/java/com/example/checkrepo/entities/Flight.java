@@ -37,4 +37,8 @@ public class Flight {
     private Company company;
     @ManyToMany(mappedBy = "flights", fetch = FetchType.EAGER)
     private Set<User> users = new HashSet<>();
+    @Column(name = "country")
+    private String country;
+    @Column(name = "price")
+    private int price;
 }

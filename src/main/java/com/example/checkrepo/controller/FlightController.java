@@ -9,17 +9,11 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/flights")
 
 public class FlightController {
@@ -70,5 +64,20 @@ public class FlightController {
     @PostMapping("/addMany")
     public List<FlightDto> saveFlights(@RequestBody List<FlightDto> nameOfFlights) {
         return flightService.postFlights(nameOfFlights);
+    }
+
+    @PostMapping("/FindFromFront")
+    public List<FlightDto> findFromFront(@RequestBody FlightDto destination) {
+        return flightService.findFromFront(destination);
+    }
+
+    @GetMapping("/findMinPrice")
+    public int findMinPrice() {
+        return flightService.findMinPrice();
+    }
+
+    @GetMapping("/findByCountry")
+    public List<FlightDto> findByCountry() {
+        return flightService.findByCountry();
     }
 }
