@@ -18,6 +18,7 @@ public class UserMapper {
         userDto.setId(user.getId());
         userDto.setUserName(user.getUserName());
         userDto.setEmail(user.getEmail());
+        userDto.setPassword(user.getPassword());
         if (user.getFlights() != null) {
             userDto.setFlightDtos(user.getFlights().stream()
                     .map(FlightMapper::toFlightDtoShallow).collect(Collectors.toSet()));
@@ -30,6 +31,7 @@ public class UserMapper {
         dto.setId(user.getId());
         dto.setUserName(user.getUserName());
         dto.setEmail(user.getEmail());
+        dto.setPassword(user.getPassword());
         return dto;
     }
 
@@ -38,6 +40,7 @@ public class UserMapper {
         user.setId(userDto.getId());
         user.setUserName(userDto.getUserName());
         user.setEmail(userDto.getEmail());
+        user.setPassword(userDto.getPassword());
         if (user.getFlights() != null) {
             System.out.println("not empty");
             user.setFlights(userDto.getFlights().stream()
@@ -53,6 +56,7 @@ public class UserMapper {
         user.setId(userDto.getId());
         user.setUserName(userDto.getUserName());
         user.setEmail(userDto.getEmail());
+        user.setPassword(userDto.getPassword());
         return user;
     }
 

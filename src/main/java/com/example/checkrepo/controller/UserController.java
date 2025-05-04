@@ -1,20 +1,16 @@
 package com.example.checkrepo.controller;
 
+import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
 import com.example.checkrepo.service.impl.UserServiceImpl;
 import jakarta.ws.rs.QueryParam;
 import java.util.List;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin(origins = "http://localhost:3000")
 @AllArgsConstructor
 public class UserController {
     private UserServiceImpl userService;
@@ -42,5 +38,20 @@ public class UserController {
     @PostMapping("/byFlight")
     public List<UserDto> byRoute(@RequestBody List<String> finalDests) {
         return userService.findByEndDest(finalDests);
+    }
+
+    @PostMapping("/fromExisting")
+    public UserDto findExistingUser(@RequestBody UserDto checkUser) {
+        return userService.findExistingUser(checkUser);
+    }
+
+    @PostMapping("/getAllUserFlights")
+    public List<FlightDto> findAllUserFlights(@RequestBody UserDto user) {
+        return userService.findUserFlights(user);
+    }
+
+    @PostMapping("/removeUser")
+    public UserDto detachUser(Long flightId, @RequestBody UserDto user) {
+    return userService.detachFlightFromUser(flightId, user);
     }
 }

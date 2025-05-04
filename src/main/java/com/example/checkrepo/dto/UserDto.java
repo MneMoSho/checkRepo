@@ -15,6 +15,7 @@ public class UserDto {
     private Long id;
     private String userName;
     private String email;
+    private String password;
     private Set<FlightDto> flightDtos;
 
     @JsonProperty("id")
@@ -36,4 +37,7 @@ public class UserDto {
     public Set<FlightDto> getFlights() {
         return flightDtos;
     }
+
+    @JsonProperty("password")
+    public String getPassword() {return password;}
 }

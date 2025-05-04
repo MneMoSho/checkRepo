@@ -1,5 +1,6 @@
 package com.example.checkrepo.service.impl;
 
+import com.example.checkrepo.dto.FlightDto;
 import com.example.checkrepo.dto.UserDto;
 import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
@@ -23,6 +24,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final FlightRep flightRep;
     private final Cache cache;
+
 
     @Override
     public void createUser(UserDto userDto) {
@@ -117,5 +119,65 @@ public class UserServiceImpl implements UserService {
             foundUsers.addAll(bufList);
         }
         return UserMapper.toDtoList(foundUsers);
+    }
+
+    @Override
+    public UserDto findExistingUser(UserDto searchUser) {
+        List<User> allUsers = userRepository.findAll();
+        for(User user: allUsers) {
+            if(user.getPassword().equals(searchUser.getPassword()) && user.getUserName().equals(searchUser.getUserName())) {
+                return UserMapper.toUserDto(user);
+            }
+        }
+        throw new ObjectNotFoundException("User doesn't exist");
+    }
+
+    @Override
+    public List<FlightDto> findUserFlights(UserDto user) {
+
+        System.out.println(user.getUserName());
+
+        User foundUser = userRepository.findAll().stream()
+                .filter(userSearch -> userSearch.getUserName().equals(user.getUserName()))
+                .filter(userSearch -> userSearch.getPassword().equals(user.getPassword()))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        List<Flight> userFlights = foundUser.getFlights().stream().toList();
+
+        for(Flight flight : userFlights) {
+            System.out.println(flight.getStartDestination());
+        }
+
+        return FlightMapper.toDtoList(userFlights);
+    }
+
+    @Override
+    @Transactional
+    public UserDto detachFlightFromUser(Long flightId, UserDto user) {
+        User foundUser = userRepository.findAll().stream()
+                .filter(userSearch -> userSearch.getUserName().equals(user.getUserName()))
+                .filter(userSearch -> userSearch.getPassword().equals(user.getPassword()))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        System.out.println(foundUser.getUserName());
+
+        Flight flightToRemove = flightRep.findById(flightId)
+                .orElseThrow(() -> new ObjectNotFoundException("Flight not found"));
+
+        System.out.println(flightToRemove.getStartDestination());
+
+        foundUser.getFlights().remove(flightToRemove);
+        flightToRemove.getUsers().remove(foundUser);
+
+        userRepository.save(foundUser);
+        flightRep.save(flightToRemove);
+
+        cache.updateUser(user.getId(), UserMapper.toUserDto(foundUser));
+        cache.updateFlight(flightToRemove.getId(), FlightMapper.toFlightDto(flightToRemove));
+
+        System.out.println(foundUser.getFlights().stream().findFirst().get().getStartDestination());
+
+        return UserMapper.toUserDto(foundUser);
     }
 }
