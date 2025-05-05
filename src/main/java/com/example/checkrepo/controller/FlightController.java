@@ -80,4 +80,10 @@ public class FlightController {
     public List<FlightDto> findByCountry() {
         return flightService.findByCountry();
     }
+
+    @GetMapping("/findAllToursByCountry")
+    public List<FlightDto> findUniqueByCountry(@RequestParam("country") String country) {
+        System.out.println(country);
+        return flightService.uniqueFlightsByCountry(country);
+    }
 }

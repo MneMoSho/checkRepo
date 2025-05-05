@@ -178,4 +178,18 @@ public class FlightServiceImpl implements FlightService {
         }
         return FlightMapper.toDtoList(foundFlight);
     }
+
+    @Override
+    public List<FlightDto> uniqueFlightsByCountry(String country) {
+        List<Flight> allFlights = flightRepository.findAll();
+        List<Flight> foundFlights = new ArrayList<>();
+        for(Flight flight : allFlights) {
+            if(flight.getCountry().equals(country)) {
+               System.out.println(flight.getStartDestination());
+                foundFlights.add(flight);
+            }
+        }
+        return FlightMapper.toDtoList(foundFlights);
+    }
+
 }

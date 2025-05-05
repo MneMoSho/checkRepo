@@ -24,4 +24,6 @@ public interface UserService {
     List<FlightDto> findUserFlights(UserDto user);
 
     UserDto detachFlightFromUser(Long flightId, UserDto user);
+
+    void bookFlightToUser(UserDto user, Long flightId);
 }

@@ -180,4 +180,15 @@ public class UserServiceImpl implements UserService {
 
         return UserMapper.toUserDto(foundUser);
     }
+
+    @Override
+    public void bookFlightToUser(UserDto user, Long flightId) {
+        User foundUser = userRepository.findAll().stream()
+                .filter(userSearch -> userSearch.getUserName().equals(user.getUserName()))
+                .filter(userSearch -> userSearch.getPassword().equals(user.getPassword()))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        addingNewFlight(flightId, foundUser.getId());
+    }
 }

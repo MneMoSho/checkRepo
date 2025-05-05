@@ -54,4 +54,9 @@ public class UserController {
     public UserDto detachUser(Long flightId, @RequestBody UserDto user) {
     return userService.detachFlightFromUser(flightId, user);
     }
+
+    @PostMapping("/saveFlightToUser")
+    public void bookFlightToUser(Long flightId, @RequestBody UserDto user) {
+      userService.bookFlightToUser(user, flightId);
+    }
 }
