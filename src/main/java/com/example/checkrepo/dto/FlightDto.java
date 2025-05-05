@@ -2,6 +2,8 @@ package com.example.checkrepo.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Set;
+
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -33,4 +35,8 @@ public class FlightDto {
     private String country;
     @JsonProperty("price")
     private int price;
+    @JsonProperty("timeLeaving")
+    private String timeLeaving;
+    @JsonProperty("timeArriving")
+    private String timeArriving;
 }

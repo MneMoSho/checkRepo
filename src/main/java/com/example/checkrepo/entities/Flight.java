@@ -41,4 +41,9 @@ public class Flight {
     private String country;
     @Column(name = "price")
     private int price;
+    @Column(name = "timeleaving")
+    private String timeLeaving;
+    @Column(name = "timearriving")
+    private String timeArriving;
+
 }

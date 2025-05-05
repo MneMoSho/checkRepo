@@ -19,6 +19,8 @@ public class FlightMapper {
         dto.setEndDestination(flight.getEndDestination());
         dto.setCountry(flight.getCountry());
         dto.setPrice(flight.getPrice());
+        dto.setTimeArriving(flight.getTimeArriving());
+        dto.setTimeLeaving(flight.getTimeLeaving());
         if (flight.getCompany() != null) {
             dto.setCompanyId(flight.getCompany().getId());
             dto.setFlightCompany(flight.getCompany().getCompanyName());
@@ -38,6 +40,8 @@ public class FlightMapper {
         dto.setCompanyId(flight.getCompany().getId());
         dto.setCountry(flight.getCountry());
         dto.setPrice(flight.getPrice());
+        dto.setTimeArriving(flight.getTimeArriving());
+        dto.setTimeLeaving(flight.getTimeLeaving());
         if (flight.getCompany() != null) {
             dto.setFlightCompany(flight.getCompany().getCompanyName());
         }
@@ -53,6 +57,8 @@ public class FlightMapper {
         flight.setEndDestination(flightDto.getEndDestination());
         flight.setCountry(flightDto.getCountry());
         flight.setPrice(flightDto.getPrice());
+        flight.setTimeLeaving(flightDto.getTimeLeaving());
+        flight.setTimeArriving(flightDto.getTimeArriving());
         Company newCompany = new Company();
         newCompany.setCompanyName(flightDto.getFlightCompany());
         newCompany.setId(flightDto.getCompanyId());
@@ -71,6 +77,8 @@ public class FlightMapper {
         flight.setEndDestination(flightDto.getEndDestination());
         flight.setCountry(flightDto.getCountry());
         flight.setPrice(flightDto.getPrice());
+        flight.setTimeLeaving(flightDto.getTimeLeaving());
+        flight.setTimeArriving(flightDto.getTimeArriving());
         Company newCompany = new Company();
         newCompany.setCompanyName(flightDto.getFlightCompany());
         newCompany.setId(flightDto.getCompanyId());

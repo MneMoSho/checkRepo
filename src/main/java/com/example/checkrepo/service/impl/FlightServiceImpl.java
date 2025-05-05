@@ -1,12 +1,15 @@
 package com.example.checkrepo.service.impl;
 
 import com.example.checkrepo.dto.FlightDto;
+import com.example.checkrepo.entities.Company;
 import com.example.checkrepo.entities.Flight;
 import com.example.checkrepo.entities.User;
 import com.example.checkrepo.exception.IncorrectInputException;
 import com.example.checkrepo.exception.ObjectNotFoundException;
 import com.example.checkrepo.mapper.FlightMapper;
+import com.example.checkrepo.repository.CompanyRepository;
 import com.example.checkrepo.repository.FlightRep;
+import com.example.checkrepo.service.CompanyService;
 import com.example.checkrepo.service.FlightService;
 import com.example.checkrepo.service.cache.Cache;
 import jakarta.persistence.EntityManager;
@@ -25,8 +28,10 @@ import org.springframework.stereotype.Service;
 public class FlightServiceImpl implements FlightService {
 
     private final FlightRep flightRepository;
+    private final CompanyRepository companyRepository;
     private final Cache cache;
     private final CompanyServiceImpl company;
+    private final CompanyService companyService;
     private EntityManager entityManager;
 
 //    @Override
@@ -166,10 +171,35 @@ public class FlightServiceImpl implements FlightService {
     @Override
     public List<FlightDto> findFromFront(FlightDto destination) {
         List<Flight> allFlights = flightRepository.findAll();
+
+        System.out.println(destination.getTimeLeaving());
+        System.out.println(allFlights.stream().findFirst().get().getTimeLeaving());
         List<Flight> foundFlight = new ArrayList<>();
         foundFlight = allFlights.stream()
                 .filter(flight -> flight.getStartDestination().equals(destination.getStartDestination()))
                 .filter(flight -> flight.getEndDestination().equals(destination.getEndDestination()))
+                .filter(flight -> flight.getTimeLeaving().equals(destination.getTimeLeaving()))
+               .filter(flight -> flight.getTimeArriving().equals(destination.getTimeArriving()))
+                .toList();
+        for(Flight List : foundFlight ) {
+            System.out.println(List.getLength());
+            System.out.println(List.getEndDestination());
+            System.out.println(List.getCountry());
+        }
+        return FlightMapper.toDtoList(foundFlight);
+    }
+
+    @Override
+    public List<FlightDto> findByCities(FlightDto destination) {
+        List<Flight> allFlights = flightRepository.findAll();
+
+        System.out.println(destination.getTimeLeaving());
+        System.out.println(allFlights.stream().findFirst().get().getTimeLeaving());
+        List<Flight> foundFlight = new ArrayList<>();
+        foundFlight = allFlights.stream()
+                .filter(flight -> flight.getStartDestination().equals(destination.getStartDestination()))
+                .filter(flight -> flight.getEndDestination().equals(destination.getEndDestination()))
+                .filter(flight -> flight.getCountry().equals(destination.getCountry()))
                 .toList();
         for(Flight List : foundFlight ) {
             System.out.println(List.getLength());
@@ -190,6 +220,22 @@ public class FlightServiceImpl implements FlightService {
             }
         }
         return FlightMapper.toDtoList(foundFlights);
+    }
+
+    @Override
+    public void createFlightFromFront(FlightDto flight) {
+        System.out.println("FFFFFFFFF");
+
+        System.out.println(flight.getFlightCompany());
+
+        List<Company> companyList= companyRepository.findAll();
+        for(Company company : companyList) {
+            if(company.getCompanyName().equals(flight.getFlightCompany())) {
+                flight.setCompanyId(company.getId());
+            }
+        }
+        System.out.println(flight.getCompanyId());
+        createDbFlight(flight);
     }
 
 }

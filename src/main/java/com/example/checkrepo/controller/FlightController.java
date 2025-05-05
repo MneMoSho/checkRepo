@@ -68,6 +68,7 @@ public class FlightController {
 
     @PostMapping("/FindFromFront")
     public List<FlightDto> findFromFront(@RequestBody FlightDto destination) {
+        System.out.println(destination.getTimeLeaving());
         return flightService.findFromFront(destination);
     }
 
@@ -83,7 +84,18 @@ public class FlightController {
 
     @GetMapping("/findAllToursByCountry")
     public List<FlightDto> findUniqueByCountry(@RequestParam("country") String country) {
-        System.out.println(country);
         return flightService.uniqueFlightsByCountry(country);
+    }
+
+    @PostMapping("/findOnlyByCities")
+    public List<FlightDto> findCities(@RequestBody FlightDto destination) {
+        System.out.println(destination.getEndDestination());
+        return flightService.findByCities(destination);
+    }
+
+    @PostMapping("/createNewFlight")
+    public void createNewFlight(@RequestBody FlightDto newFlight) {
+        System.out.println(newFlight.getEndDestination());
+        flightService.createFlightFromFront(newFlight);
     }
 }
