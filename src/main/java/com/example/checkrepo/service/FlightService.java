@@ -35,4 +35,8 @@ public interface FlightService {
     List<FlightDto> findFromFront(FlightDto destination);
 
     List<FlightDto> uniqueFlightsByCountry(String uniqueFlightsByCountry);
+
+    List<FlightDto> findByCities(FlightDto city);
+
+    void createFlightFromFront(FlightDto flight);
 }
