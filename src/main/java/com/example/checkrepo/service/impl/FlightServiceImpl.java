@@ -192,20 +192,12 @@ public class FlightServiceImpl implements FlightService {
     @Override
     public List<FlightDto> findByCities(FlightDto destination) {
         List<Flight> allFlights = flightRepository.findAll();
-
-        System.out.println(destination.getTimeLeaving());
-        System.out.println(allFlights.stream().findFirst().get().getTimeLeaving());
         List<Flight> foundFlight = new ArrayList<>();
         foundFlight = allFlights.stream()
                 .filter(flight -> flight.getStartDestination().equals(destination.getStartDestination()))
                 .filter(flight -> flight.getEndDestination().equals(destination.getEndDestination()))
                 .filter(flight -> flight.getCountry().equals(destination.getCountry()))
                 .toList();
-        for(Flight List : foundFlight ) {
-            System.out.println(List.getLength());
-            System.out.println(List.getEndDestination());
-            System.out.println(List.getCountry());
-        }
         return FlightMapper.toDtoList(foundFlight);
     }
 
@@ -215,7 +207,6 @@ public class FlightServiceImpl implements FlightService {
         List<Flight> foundFlights = new ArrayList<>();
         for(Flight flight : allFlights) {
             if(flight.getCountry().equals(country)) {
-               System.out.println(flight.getStartDestination());
                 foundFlights.add(flight);
             }
         }

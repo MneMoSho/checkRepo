@@ -130,9 +130,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<FlightDto> findUserFlights(UserDto user) {
-
         System.out.println(user.getUserName());
-
         User foundUser = userRepository.findAll().stream()
                 .filter(userSearch -> userSearch.getUserName().equals(user.getUserName()))
                 .filter(userSearch -> userSearch.getPassword().equals(user.getPassword()))
@@ -163,16 +161,12 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new ObjectNotFoundException("Flight not found"));
 
         System.out.println(flightToRemove.getStartDestination());
-
         foundUser.getFlights().remove(flightToRemove);
         flightToRemove.getUsers().remove(foundUser);
-
         userRepository.save(foundUser);
         flightRep.save(flightToRemove);
-
         cache.updateUser(user.getId(), UserMapper.toUserDto(foundUser));
         cache.updateFlight(flightToRemove.getId(), FlightMapper.toFlightDto(flightToRemove));
-
         return UserMapper.toUserDto(foundUser);
     }
 
@@ -185,6 +179,6 @@ public class UserServiceImpl implements UserService {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        addingNewFlight(flightId, foundUser.getId());
+       addingNewFlight(flightId, foundUser.getId());
     }
 }

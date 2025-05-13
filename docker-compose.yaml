@@ -1,59 +1,54 @@
-version: '3'
-
+version: '3.8'
 services:
+  client-frontend:
+    image: client:0.0.1
+    build: ./front
+    restart: always
+    ports:
+      - '3000:3000'
+    volumes:
+      - /app/node_modules
+      - ./front:/app
+    networks:
+      - app-network
+
+  server:
+    image: server:0.0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      - SERVER_PORT= 8080
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=18092005
+      - SPRING_JPA_HIBERNATE_DDL-AUTO=update
+      - SPRING_JPA_SHOW-SQL=true
+    networks:
+      - app-network
 
   postgres:
-    image: 'postgres:13'
-    container_name: 'java-postgres32432'
+    image: 'postgres:17'
+    container_name: 'java-postgres2345'
     ports:
       - '5432:5432'
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 18092005
-      POSTGRES_DB: java
-
-  elasticsearch:
-    image: elasticsearch:7.16.1
+      POSTGRES_DB: postgres
     volumes:
-      - ./elk-config/elasticsearch/elasticConfig.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
-      - ./docker_volumes/elasticsearch/data:/usr/share/elasticsearch/data
-    environment:
-      ES_JAVA_OPTS: "-Xmx512m -Xms512m"
-      ELASTIC_USERNAME: "elastic"
-      ELASTIC_PASSWORD: "MyPw123"
-      discovery.type: single-node
+      - postgres_data:/var/lib/postgresql/data
     networks:
-      - elk
-    ports:
-      - "9200:9200"
-      - "9300:9300"
+      - app-network
+    restart: unless-stopped
 
-  logstash:
-    image: logstash:7.16.2
-    volumes:
-      - ./elk-config/logstash/config.yml:/usr/share/logstash/config/logstash.yml:ro
-    environment:
-      LS_JAVA_OPTS: "-Xmx512m -Xms512m"
-    ports:
-      - "5044:5044"
-      - "5000:5000"
-      - "9600:9600"
-    networks:
-      - elk
-    depends_on:
-      - elasticsearch
-
-  kibana:
-    image: kibana:7.16.1
-    depends_on:
-      - elasticsearch
-    volumes:
-      - ./elk-config/kibana/config.yml:/usr/share/kibana/config/kibana.yml:ro
-    networks:
-      - elk
-    ports:
-      - "5601:5601"
+volumes:
+  postgres_data:
 
 networks:
-  elk:
+  app-network:
     driver: bridge

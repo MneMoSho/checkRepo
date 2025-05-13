@@ -89,7 +89,6 @@ public class FlightController {
 
     @PostMapping("/findOnlyByCities")
     public List<FlightDto> findCities(@RequestBody FlightDto destination) {
-        System.out.println(destination.getEndDestination());
         return flightService.findByCities(destination);
     }
 
