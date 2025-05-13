@@ -52,6 +52,7 @@ public class UserController {
 
     @PostMapping("/removeUser")
     public UserDto detachUser(Long flightId, @RequestBody UserDto user) {
+        System.out.println("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
     return userService.detachFlightFromUser(flightId, user);
     }
 

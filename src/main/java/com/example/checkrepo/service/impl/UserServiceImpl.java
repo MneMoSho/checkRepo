@@ -105,11 +105,7 @@ public class UserServiceImpl implements UserService {
 
         if (findByEnd.isEmpty() || findByEnd.size() != userRepository.count()) {
             findByEnd = userRepository.findAll();
-        } else {
-            System.out.println(findByEnd
-                    .getFirst().getFlights().stream().findFirst().get().getEndDestination());
         }
-
         List<User> foundUsers = new ArrayList<>();
         for (String endDestination : endDestinations) {
             List<User> bufList = findByEnd.stream().filter(
@@ -154,6 +150,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserDto detachFlightFromUser(Long flightId, UserDto user) {
+        System.out.println("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
         User foundUser = userRepository.findAll().stream()
                 .filter(userSearch -> userSearch.getUserName().equals(user.getUserName()))
                 .filter(userSearch -> userSearch.getPassword().equals(user.getPassword()))
@@ -176,13 +173,12 @@ public class UserServiceImpl implements UserService {
         cache.updateUser(user.getId(), UserMapper.toUserDto(foundUser));
         cache.updateFlight(flightToRemove.getId(), FlightMapper.toFlightDto(flightToRemove));
 
-        System.out.println(foundUser.getFlights().stream().findFirst().get().getStartDestination());
-
         return UserMapper.toUserDto(foundUser);
     }
 
     @Override
     public void bookFlightToUser(UserDto user, Long flightId) {
+        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         User foundUser = userRepository.findAll().stream()
                 .filter(userSearch -> userSearch.getUserName().equals(user.getUserName()))
                 .filter(userSearch -> userSearch.getPassword().equals(user.getPassword()))
