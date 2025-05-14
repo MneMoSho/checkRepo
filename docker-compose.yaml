@@ -1,54 +1,54 @@
 version: '3.8'
 services:
-  client-frontend:
-    image: client:0.0.1
-    build: ./front
-    restart: always
-    ports:
-      - '3000:3000'
-    volumes:
-      - ./front:/app
-    networks:
-      - app-network
-
-  server:
-    image: server:0.0.1
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
-   # depends_on:
-     # - postgres
-    environment:
-      - SERVER_PORT= 8080
-#      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
-     # - SPRING_DATASOURCE_USERNAME=&{POSTGRES_USER}
-     # - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
-      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
-      - SPRING_JPA_HIBERNATE_DDL-AUTO=update
-      - SPRING_JPA_SHOW-SQL=true
-    networks:
-      - app-network
-
-#  postgres:
-#    image: 'postgres:17'
-#    container_name: 'java-postgres2345'
+#  client-frontend:
+#    image: client:0.0.1
+#    build: ./front
+#    restart: always
 #    ports:
-#      - '5432:5432'
+#      - '3000:3000'
+#    volumes:
+#      - ./front:/app
+#    networks:
+#      - app-network
+#
+#  server:
+#    image: server:0.0.1
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - postgres
 #    environment:
-#      POSTGRES_USER: postgres
-#      POSTGRES_PASSWORD: 180905
-#      POSTGRES_DB: postgres
+#      - SERVER_PORT= 8080
+#      - SPRING_DATASOURCE_USERNAME=&{POSTGRES_USER}
+#      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
+#      - SPRING_JPA_HIBERNATE_DDL-AUTO=update
+#      - SPRING_JPA_SHOW-SQL=true
+#    networks:
+#      - app-network
+
+  postgres:
+    image: 'postgres:17'
+    container_name: 'java-postgres'
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_HOST_AUTH_METHOD: "scram-sha-256"
+
 #    volumes:
 #      - postgres_data:/var/lib/postgresql/data
 #    networks:
 #      - app-network
 #    restart: unless-stopped
-
-volumes:
-  postgres_data:
-
-networks:
-  app-network:
-    driver: bridge
+#
+#volumes:
+#  postgres_data:
+#
+#networks:
+#  app-network:
+#    driver: bridge
