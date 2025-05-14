@@ -1,0 +1,347 @@
+.mainBackground {
+    display: flex;
+    width: 80vw;
+    height: 80vh;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .mainBody {
+    display: flex;
+    border-radius: 100px;
+    width: 80%;
+    height: 90%;
+    background-color: #E5E5E5;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Enables vertical scrolling if content overflows */
+    max-height: 80vh; /* Limits the maximum height */
+  }
+  
+  .flightPassCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: white;
+    gap: 10px;
+    width: 50%;
+    height: 20%;
+    margin-top: 1%;
+    border-radius: 3vh;
+    margin-bottom: 20px;
+  }
+  
+  .flightPassCard.userHasFlight {
+    background-color: #d3f9d8; /* Light green background for flights the user already has */
+    border: 2px solid #34c759; /* Green border */
+  }
+  
+  .startAndEnd {
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  
+  .priceSect {
+    margin-top: 4%;
+    width: 10%;
+    padding: 0 5%; /* Use padding for spacing instead of fixed width if content varies */
+  }
+  
+  .price {
+    font-size: 200%;
+    font-weight: 700;
+  }
+  
+  .flightInfo {
+    width: 80%;
+  }
+  
+  .flightBar {
+    background-color: #606060;
+    width: 11vw;
+    height: 5px;
+    margin-top: 4%;
+    border-radius: 10vh;
+  }
+  
+  .countries {
+    font-size: 150%;
+  }
+  
+  .company {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+  }
+  
+  .buttonToSend {
+    display: flex;
+    width: 120%;
+    height: 4vh;
+    margin-top: 40%;
+    margin-bottom: 10px;
+    background-color: orangered;
+    border-radius: 10vh;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  .buttonToSend, .Button, .userFlightDeleteButton {
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .buttonToSend:hover, .Button:hover, .userFlightDeleteButton:hover {
+    transform: scale(1.1); /* Slightly increase size on hover */
+    background-color: #ff9900; /* Change background color on hover */
+  }
+
+  .footer {
+
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: #018DC8;
+    z-index: 1000; /* Ensure it stays above other elements */
+  }
+  
+  .HeaderForOtherPages {
+    display: flex;
+    height: 12vh;
+    width: 100vw;
+    background-color: #018DC8;
+  }
+  
+  .flymeIcon {
+    position: relative;
+    width: 100px;
+    height: auto;
+    max-height: 100%;
+  }
+  
+  .registerUserInput {
+    width: 40vw;
+    height: 6vh;
+    font-size: 150%;
+    border-radius: 1vh;
+    border: none;
+    margin-bottom: 1%;
+  }
+  
+  .topInfo {
+    font-size: 3vh;
+    font-weight: 600;
+    margin-bottom: 1%;
+  }
+  
+  .commonPhrase {
+    display: flex;
+    font-size: 4vh;
+    margin-bottom: 1%;
+    font-weight: 900;
+    align-items: center;
+    justify-content: center;
+    color: #018DC8;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .Button {
+    display: flex;
+    background-color: rgb(255, 140, 0);
+    font-size: 3vh;
+    font-weight: 600;
+    color: #E5E5E5;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3vh;
+    margin-top: 1%;
+    padding: 10px 20px;
+    min-width: fit-content;
+  }
+  
+  .username {
+    font-weight: 600;
+    margin-top: 6vh;
+    color: #E5E5E5;
+    margin-left: -50%;
+    margin-right: auto;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+  }
+  
+  .userFlights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E5E5E5;
+    width: 100vw;
+    height: 80vh;
+  }
+  
+  .userFlights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E5E5E5;
+    width: 100vw;
+    min-height: 80vh;
+    padding: 20px 0;
+    box-sizing: border-box;
+  }
+  
+  /* Поле для ввода/отображения информации (список полетов) */
+  .fieldForInput {
+    display: flex;
+    width: 80vw;
+    min-height: 70vh;
+    background-color: #018DC8;
+    border-radius: 10vh;
+    align-items: center;
+    flex-direction: column; 
+    font-size: 1.2em;
+    color: #E5E5E5;
+    font-weight: 700;
+    padding: 20px;
+    box-sizing: border-box;
+}
+  /* Заголовок "Your Flights" */
+  .fieldForInput .newPhrase {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  
+  .citiesListBig {
+    overflow-y: auto; /* Включает вертикальную прокрутку при необходимости */
+    max-height: 60vh; /* Ограничивает максимальную высоту */
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%; /* Занимает всю ширину родителя */
+    gap: 10px;
+}
+  
+  /* Карточка полета пользователя */
+  .userFlightCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    gap: 10px;
+    width: 40%;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+  
+
+  .userFlightDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.9em;
+    color: #333333;
+  }
+  
+  .userFlightDetails p {
+    margin: 0;
+  }
+  
+  .userFlightPrice {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #018DC8;
+    text-align: right;
+  }
+  
+  /* Сообщение об ошибке */
+  .error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Сообщение об отсутствии полетов */
+  .noFlights {
+    text-align: center;
+    color: #777;
+    margin-top: 10px;
+  }
+  
+  /* Стилизация полосы прокрутки (для WebKit-браузеров) */
+  .citiesList::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .citiesList::-webkit-scrollbar-thumb {
+    background-color: #a0a0a0;
+    border-radius: 4px;
+  }
+  
+  .citiesList::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+
+  /* Added styles for the delete button */
+.userFlightDeleteButton {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    align-self: flex-end;
+    transition: background-color 0.3s;
+}
+
+.userFlightDeleteButton:hover {
+    background-color: #d9363e;
+}
+
+
+
+.mostPopularCountries {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Ensure content wraps instead of causing scroll */
+  gap: 20px; /* Add spacing between items */
+  padding: 20px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+body {
+  overflow: hidden; /* Remove scrollbars */
+}
+
+.titleText {
+  display: flex;
+  justify-content: center;
+}
+
+.timeLeaving {
+  font-weight: 700;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+}
