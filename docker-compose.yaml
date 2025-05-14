@@ -22,28 +22,28 @@ services:
       - postgres
     environment:
       - SERVER_PORT= 8080
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=18092005
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=&{POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
       - SPRING_JPA_HIBERNATE_DDL-AUTO=update
       - SPRING_JPA_SHOW-SQL=true
     networks:
       - app-network
 
-  postgres:
-    image: 'postgres:17'
-    container_name: 'java-postgres2345'
-    ports:
-      - '5432:5432'
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 180905
-      POSTGRES_DB: postgres
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - app-network
-    restart: unless-stopped
+#  postgres:
+#    image: 'postgres:17'
+#    container_name: 'java-postgres2345'
+#    ports:
+#      - '5432:5432'
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: 180905
+#      POSTGRES_DB: postgres
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#    networks:
+#      - app-network
+#    restart: unless-stopped
 
 volumes:
   postgres_data:
