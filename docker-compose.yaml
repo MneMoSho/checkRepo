@@ -1,5 +1,15 @@
 version: '3.8'
 services:
+  postgres:
+    image: 'postgres:17'
+    container_name: 'java-postgres'
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_HOST_AUTH_METHOD: "scram-sha-256"
 #  client-frontend:
 #    image: client:0.0.1
 #    build: ./front
@@ -29,16 +39,7 @@ services:
 #    networks:
 #      - app-network
 
-  postgres:
-    image: 'postgres:17'
-    container_name: 'java-postgres'
-    ports:
-      - '5432:5432'
-    environment:
-      POSTGRES_USER: ${DB_USERNAME}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_HOST_AUTH_METHOD: "scram-sha-256"
+
 
 #    volumes:
 #      - postgres_data:/var/lib/postgresql/data
