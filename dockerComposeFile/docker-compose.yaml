@@ -1,0 +1,52 @@
+version: '3.8'
+services:
+  client-frontend:
+    image: frontend:0.0.1
+    build: ./front
+    restart: always
+    ports:
+      - '3000:3000'
+    volumes:
+      - /app/node_modules
+      - ./front:/app
+    networks:
+      - app-network
+
+  server:
+    image: server:0.0.1
+    build:
+      context: .
+      dockerfile: .../src/docker-compose.yaml
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      - SERVER_PORT= 8080
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=18092005
+      - SPRING_JPA_HIBERNATE_DDL-AUTO=update
+      - SPRING_JPA_SHOW-SQL=true
+    networks:
+      - app-network
+
+  postgres:
+    image: 'postgres:13'
+    container_name: 'java-postgres32432'
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 18092005
+      POSTGRES_DB: java
+    networks:
+      - app-network
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+
+networks:
+  app-network:
+    driver: bridge

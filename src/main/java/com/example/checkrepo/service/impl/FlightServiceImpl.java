@@ -173,11 +173,12 @@ public class FlightServiceImpl implements FlightService {
         List<Flight> allFlights = flightRepository.findAll();
 
         System.out.println(destination.getTimeLeaving());
+        System.out.println(destination.getTimeArriving());
         System.out.println(allFlights.stream().findFirst().get().getTimeLeaving());
         List<Flight> foundFlight = new ArrayList<>();
         foundFlight = allFlights.stream()
-                .filter(flight -> flight.getStartDestination().equals(destination.getStartDestination()))
-                .filter(flight -> flight.getEndDestination().equals(destination.getEndDestination()))
+//                .filter(flight -> flight.getStartDestination().equals(destination.getStartDestination()))
+//                .filter(flight -> flight.getEndDestination().equals(destination.getEndDestination()))
                 .filter(flight -> flight.getTimeLeaving().equals(destination.getTimeLeaving()))
                .filter(flight -> flight.getTimeArriving().equals(destination.getTimeArriving()))
                 .toList();
