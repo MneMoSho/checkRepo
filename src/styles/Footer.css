@@ -1,0 +1,35 @@
+.footer {
+    height: 10vh;
+    width: auto;
+    background-color: #018DC8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.footer .left {
+    display: flex;
+    margin-left: 2%;
+    text-align: left;
+}
+
+.footer .center {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .right {
+    margin-right: 2%;
+    text-align: right;
+}
+
+.footerIcon {
+    width: 10%; 
+    height: 10%; 
+    margin-right: 10px; 
+}
