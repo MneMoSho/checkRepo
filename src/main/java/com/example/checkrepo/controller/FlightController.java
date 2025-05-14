@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://checkrepo-1-1mf3.onrender.com")
 @RequestMapping("/api/flights")
 
 public class FlightController {
