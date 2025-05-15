@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import cl from './ModalWindowStyles.module.css';
 import FlightService from '../ServicesAPI/FlightServiceAPI';
+import DatePickerComponent from "../Components/DatePickerComponent";
 
 const FlightInputModal = ({ visible, setVisible, onSubmit }) => {
     const rootClasses = [cl.modalPage];
@@ -78,19 +79,19 @@ const FlightInputModal = ({ visible, setVisible, onSubmit }) => {
                     />
                 </div>
                 <div>
-                    <input
-                        className="registerUserInput"
-                        placeholder="Time Leaving"
-                        value={flightData.timeLeaving}
-                        onChange={handleInputChange('timeLeaving')}
-                    />
-                </div>
-                <div>
-                    <input
+                    <DatePickerComponent
                         className="registerUserInput"
                         placeholder="Time Arriving"
                         value={flightData.timeArriving}
                         onChange={handleInputChange('timeArriving')}
+                    />
+                </div>
+                <div>
+                    <DatePickerComponent
+                        className="registerUserInput"
+                        placeholder="Time Leaving"
+                        value={flightData.timeLeaving}
+                        onChange={handleInputChange('timeLeaving')}
                     />
                 </div>
                 <div>
