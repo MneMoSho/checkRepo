@@ -345,7 +345,9 @@ margin-top: 15%;
     color: #000000;
     font-weight: 700;
     font-size: 200%;
+    font-size: clamp(14px, 200%, 30px);
 }
+
 
 .countryCardInfo {
     color: #5f5e5e;
