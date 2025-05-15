@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import cl from './ModalWindowStyles.module.css';
 import FlightService from '../ServicesAPI/FlightServiceAPI';
 import DatePickerComponent from "../Components/DatePickerComponent";
 
-const FlightInputModal = ({ visible, setVisible, onSubmit }) => {
+const FlightInputModal = ({visible, setVisible, onSubmit}) => {
     const rootClasses = [cl.modalPage];
     const [flightData, setFlightData] = useState({
         startDestination: "",
@@ -27,7 +27,7 @@ const FlightInputModal = ({ visible, setVisible, onSubmit }) => {
     }, [visible]);
 
     const handleInputChange = (field) => (event) => {
-        setFlightData({ ...flightData, [field]: event.target.value });
+        setFlightData({...flightData, [field]: event.target.value});
     };
 
     const handleSubmit = () => {
@@ -80,20 +80,21 @@ const FlightInputModal = ({ visible, setVisible, onSubmit }) => {
                 </div>
                 <div>
                     <div className="registerUserInputForTime">
-                    <DatePickerComponent
-                        placeholder="Time Arriving"
-                        value={flightData.timeArriving}
-                        onChange={handleInputChange('timeArriving')}
-                    />
+                        <DatePickerComponent
+                            placeholder="Time Arriving"
+                            value={flightData.timeArriving}
+                            onChange={handleInputChange('timeArriving')}
+                        />
                     </div>
                 </div>
                 <div>
-                    <DatePickerComponent
-                        className="registerUserInputForTime"
-                        placeholder="Time Leaving"
-                        value={flightData.timeLeaving}
-                        onChange={handleInputChange('timeLeaving')}
-                    />
+                    <div className="registerUserInputForTime">
+                        <DatePickerComponent
+                            placeholder="Time Leaving"
+                            value={flightData.timeLeaving}
+                            onChange={handleInputChange('timeLeaving')}
+                        />
+                    </div>
                 </div>
                 <div>
                     <input
