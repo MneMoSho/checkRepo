@@ -118,10 +118,10 @@ function MainPage() {
 
       <div className="choosingDir">
 
-        <div className="Squares">
-          <div className='Squares top-right'></div>
-          <div className='Squares bottom-left'></div>
-        </div>
+        {/*<div className="Squares">*/}
+        {/*  <div className='Squares top-right'></div>*/}
+        {/*  <div className='Squares bottom-left'></div>*/}
+        {/*</div>*/}
 
         <div className="bestTickets"><span id="line1">Best</span> <span id="line2">tickets</span></div>
         <div className="forBestPrice">For the best price</div>
