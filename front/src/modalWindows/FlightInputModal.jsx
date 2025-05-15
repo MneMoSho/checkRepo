@@ -79,12 +79,13 @@ const FlightInputModal = ({ visible, setVisible, onSubmit }) => {
                     />
                 </div>
                 <div>
+                    <div className="registerUserInput">
                     <DatePickerComponent
-                        className="registerUserInput"
                         placeholder="Time Arriving"
                         value={flightData.timeArriving}
                         onChange={handleInputChange('timeArriving')}
                     />
+                    </div>
                 </div>
                 <div>
                     <DatePickerComponent
