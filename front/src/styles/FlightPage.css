@@ -133,7 +133,17 @@
     border: none;
     margin-bottom: 1%;
   }
-  
+
+.registerUserInputForTime {
+  width: 40vw;
+  height: 6vh;
+  font-size: 100%;
+  border-radius: 1vh;
+  border: none;
+  margin-bottom: 1%;
+  background-color: white;
+}
+
   .topInfo {
     font-size: 3vh;
     font-weight: 600;
