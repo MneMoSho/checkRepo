@@ -361,8 +361,8 @@ margin-top: 15%;
     height: 50%;
     background-color: #E5E5E5;
     align-items: center;
-    border-top-left-radius: 100px ;
-    border-bottom-left-radius: 100px ;
+    border-top-left-radius: 50px ;
+    border-bottom-left-radius: 50px ;
 }
 
 .whenFrom {
@@ -371,8 +371,8 @@ margin-top: 15%;
     height: 50%;
     background-color: #E5E5E5;
     align-items: center;
-    border-top-right-radius: 100px ;
-    border-bottom-right-radius: 100px ;
+    border-top-right-radius: 50px ;
+    border-bottom-right-radius: 50px ;
 }
 
 .where {
