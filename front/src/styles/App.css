@@ -19,7 +19,7 @@ html {
 
 .choosingDir {
     background-color: #018DC8;
-    height: 60vh;
+    height: 70vh;
     width: 100%; /* Changed from 100vw to 100% */
     overflow-x: hidden; /* Prevent horizontal overflow */
 }
