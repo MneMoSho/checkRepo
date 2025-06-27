@@ -21,7 +21,7 @@ const FlightListComponent = ({ flight, user }) => {
                     <div className="flightBar"></div>
                     <div className="countries">{flight.endDestination}</div>
                 </div>
-                <div className="timeLeaving">{flight.timeLeaving} - {flight.timeArriving}</div>
+                <div className="timeLeaving">{flight.timeArriving} - {flight.timeLeaving}</div>
                 <div className="countryFrom">{flight.country}</div>
             </div>
         </div>

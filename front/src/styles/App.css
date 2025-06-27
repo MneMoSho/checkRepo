@@ -19,7 +19,7 @@ html {
 
 .choosingDir {
     background-color: #018DC8;
-    height: 60vh;
+    height: 70vh;
     width: 100%; /* Changed from 100vw to 100% */
     overflow-x: hidden; /* Prevent horizontal overflow */
 }
@@ -357,22 +357,22 @@ margin-top: 15%;
 
 .whenTo {
     display: flex;
-    width: 20%;
+    width: 21%;
     height: 50%;
     background-color: #E5E5E5;
     align-items: center;
-    border-top-left-radius: 100px ;
-    border-bottom-left-radius: 100px ;
+    border-top-left-radius: 50px ;
+    border-bottom-left-radius: 50px ;
 }
 
 .whenFrom {
     display: flex;
-    width: 20%;
+    width: 21%;
     height: 50%;
     background-color: #E5E5E5;
     align-items: center;
-    border-top-right-radius: 100px ;
-    border-bottom-right-radius: 100px ;
+    border-top-right-radius: 50px ;
+    border-bottom-right-radius: 50px ;
 }
 
 .where {
