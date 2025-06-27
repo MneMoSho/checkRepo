@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,11 +29,13 @@ public class UserServiceImpl implements UserService {
     private final Cache cache;
 
 
+    @CachePut(value="USER_CACHE", key ="#result.id")
     @Override
-    public void createUser(UserDto userDto) {
+    public UserDto createUser(UserDto userDto) {
         User saveUser = UserMapper.toUserShallow(userDto);
         userRepository.save(saveUser);
         cache.putUser(saveUser.getId(), UserMapper.toUserDto(saveUser));
+        return UserMapper.toUserDto(saveUser);
     }
 
     @Override
@@ -53,6 +58,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
+    @Cacheable(value="USER_CACHE", key ="#id")
     public UserDto getUserById(Long id) {
         UserDto newUser = cache.getUser(id);
         if (newUser == null) {
@@ -90,6 +96,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @CacheEvict(value="USER_CACHE", key ="#id")
     public void deleteById(Long id) {
         userRepository.findById(id).orElseThrow(()
                 -> new ObjectNotFoundException("wrong enter, user can't be deleted"));
@@ -100,6 +107,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Cacheable(value="USER_CACHE", key ="#endDestinations")
     public List<UserDto> findByEndDest(List<String> endDestinations) {
         List<User> findByEnd = UserMapper.toEntityList(cache.getAllUsers().stream().toList());
 
@@ -118,6 +126,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Cacheable(value="USER_CACHE", key ="#searchUser.id")
     public UserDto findExistingUser(UserDto searchUser) {
         List<User> allUsers = userRepository.findAll();
         for(User user: allUsers) {
@@ -148,7 +157,6 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserDto detachFlightFromUser(Long flightId, UserDto user) {
-        System.out.println("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
         User foundUser = userRepository.findAll().stream()
                 .filter(userSearch -> userSearch.getUserName().equals(user.getUserName()))
                 .filter(userSearch -> userSearch.getPassword().equals(user.getPassword()))
@@ -172,7 +180,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void bookFlightToUser(UserDto user, Long flightId) {
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         User foundUser = userRepository.findAll().stream()
                 .filter(userSearch -> userSearch.getUserName().equals(user.getUserName()))
                 .filter(userSearch -> userSearch.getPassword().equals(user.getPassword()))

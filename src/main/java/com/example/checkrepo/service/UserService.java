@@ -7,7 +7,7 @@ import com.example.checkrepo.entities.User;
 import java.util.List;
 
 public interface UserService {
-    void createUser(UserDto userDto);
+    UserDto createUser(UserDto userDto);
 
     UserDto addingNewFlight(Long flightId, Long userId);
 

@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/companies")
-@CrossOrigin(origins = "https://checkrepo-1-1mf3.onrender.com")
+//@CrossOrigin(origins = "https://checkrepo-1-1mf3.onrender.com")
+@CrossOrigin(origins = "http://localhost:3000")
 @AllArgsConstructor
 public class CompanyController {
     private CompanyServiceImpl companyService;

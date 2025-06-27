@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = "https://checkrepo-1-1mf3.onrender.com")
+//@CrossOrigin(origins = "https://checkrepo-1-1mf3.onrender.com")
+@CrossOrigin(origins = "http://localhost:3000")
 @AllArgsConstructor
 public class UserController {
     private UserServiceImpl userService;
 
     @PostMapping()
-    public void newUser(@RequestBody UserDto userAdd) {
-        userService.createUser(userAdd);
+    public UserDto newUser(@RequestBody UserDto userAdd) {
+        return userService.createUser(userAdd);
     }
 
     @GetMapping("/{id}")
