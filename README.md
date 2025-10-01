@@ -5,15 +5,17 @@
     1.1. [Назначение](#appointment)  
     1.2. [Бизнес-требования](#business_requirements)  
         1.2.1. [Исходные данные](#initial_data)
-           1.2.1.2
+   <br>
         1.2.2. [Возможности](#business_opportunities)  
         1.2.3. [Границы проекта](#project_boundary)  
     1.3. [Аналоги](#analogues)  
-2. [Требования пользователя](#user_requirements)  
+3. [Требования пользователя](#user_requirements)  
     2.1. [Интерфейс пользователя](#user_interface)  
-    2.2. [Характеристики пользователей](#user_specifications)  
-        2.2.1. [Целевая аудитория](#application_audience)
-        2.2.2. [Нецелевая аудитория](#not_application_audience)
+    2.2. [Характеристики пользователей](#user_specifications)
+   <br> 
+       2.2.1. [Целевая аудитория](#application_audience)
+   <br>
+        2.2.2. [Нецелевая аудитория](#not_application_audience) 
 4. [Системные требования](#system_requirements)  
     3.1. [Функциональные требования](#function_demand)  
         3.1.1. [Функции](#function)  
@@ -22,7 +24,6 @@
             3.2.1.1. [Требования к безопасности](#security)  
             3.2.1.2. [Требования к доступности](#accessibility)  
     3.3. [Используемые технологии](#used_technologies)  
-
 
 <a name="intro"/>
 
