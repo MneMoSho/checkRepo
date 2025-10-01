@@ -26,10 +26,41 @@
 # 2 Требования пользователя
 # 2.1 Интерфейс пользователя
 
-<img width="280" height="551" alt="интерфейс 1" src="https://github.com/user-attachments/assets/de16c392-df61-4d70-a0d2-2a72486b0846" />
+<img width="635" height="1086" alt="interface4" src="https://github.com/user-attachments/assets/bd66a4b3-8fe4-471b-b6c0-8ce66de5619e" />
 
+Окно выбора пользователя
 
+<img width="635" height="1102" alt="interface2" src="https://github.com/user-attachments/assets/0da54092-ec49-41bd-9ccd-92cbd92cff34" />
 
+Вход как зарегистированный пользователь
+
+<img width="635" height="1086" alt="interface3" src="https://github.com/user-attachments/assets/c88d58ee-24cd-4259-a884-29a5339a5caf" />
+
+Создание нового пользователя
+
+<img width="624" height="1064" alt="interface8" src="https://github.com/user-attachments/assets/3bf613e4-c846-44d3-8e74-8cee5f942982" />
+
+Добавление нового маршрута как владелец компании
+
+<img width="624" height="1064" alt="Диаграмма без названия drawio" src="https://github.com/user-attachments/assets/aa348af9-d729-4ec8-b2a7-41802c23559f" />
+
+Общий вид сайта
+
+<img width="635" height="1086" alt="interface6" src="https://github.com/user-attachments/assets/0e6ac80c-b39a-417e-a8b9-6da374503842" />
+
+Вид при выборе конкретной точки начала и конца
+
+<img width="635" height="1086" alt="interface5" src="https://github.com/user-attachments/assets/b269c11c-aa3c-4e05-b876-d572288e75db" />
+
+Выбор полёт только по городу прилёта
+
+<img width="635" height="1086" alt="interface7" src="https://github.com/user-attachments/assets/2ee988b1-c188-41d2-9da5-3fa9339e650b" />
+
+Выбор полёта по направлениям, популярным в данный момент
+
+<img width="624" height="1064" alt="interface9" src="https://github.com/user-attachments/assets/e3f0e2b3-280e-41ff-9c4c-7f9e59a523fc" />
+
+Забронированные пользователем авиаперелёты
 
 ## Функции
 
