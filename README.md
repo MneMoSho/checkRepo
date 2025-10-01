@@ -26,6 +26,10 @@
 # 2 Требования пользователя
 # 2.1 Интерфейс пользователя
 
+<img width="280" height="551" alt="интерфейс 1" src="https://github.com/user-attachments/assets/de16c392-df61-4d70-a0d2-2a72486b0846" />
+
+
+
 
 ## Функции
 
