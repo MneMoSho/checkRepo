@@ -4,7 +4,8 @@
 1. [Введение](#intro)  
     1.1. [Назначение](#appointment)  
     1.2. [Бизнес-требования](#business_requirements)  
-        1.2.1. [Исходные данные](#initial_data)  
+        1.2.1. [Исходные данные](#initial_data)
+           1.2.1.2
         1.2.2. [Возможности](#business_opportunities)  
         1.2.3. [Границы проекта](#project_boundary)  
     1.3. [Аналоги](#analogues)  
@@ -13,14 +14,15 @@
     2.2. [Характеристики пользователей](#user_specifications)  
         2.2.1. [Целевая аудитория](#application_audience)
         2.2.2. [Нецелевая аудитория](#not_application_audience)
-3. [Системные требования](#system_requirements)  
-    3.1. [Функциональные требования](#function_demand) 
-        3.1.1. [Функции](#function) 
-    3.2. [Нефункциональные требования](#non-function) 
-        3.2.1. [Требования к удобству использования](#usage-comfortable) 
-            3.2.1.1. [Требования к безопасности](#security) 
-            3.2.1.2. [Требования к доступности](#accessibility) 
-    3.3. [Используемые технологии](#used_technologies)
+4. [Системные требования](#system_requirements)  
+    3.1. [Функциональные требования](#function_demand)  
+        3.1.1. [Функции](#function)  
+    3.2. [Нефункциональные требования](#non-function)  
+        3.2.1. [Требования к удобству использования](#usage-comfortable)  
+            3.2.1.1. [Требования к безопасности](#security)  
+            3.2.1.2. [Требования к доступности](#accessibility)  
+    3.3. [Используемые технологии](#used_technologies)  
+
 
 <a name="intro"/>
 
